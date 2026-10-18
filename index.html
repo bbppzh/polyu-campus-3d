@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>PolyU Campus 3D — 理大校園</title>
+<meta name="description" content="A low-poly Three.js landmark study of the Hong Kong Polytechnic University campus in Hung Hom." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ad2035'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia' font-weight='bold' font-size='34' fill='white'%3EP%3C/text%3E%3C/svg%3E" />
+<style>
+  :root{
+    --ink:#26221f;
+    --ink-soft:#6c655d;
+    --paper:#f4f1ea;
+    --line:rgba(38,34,31,.14);
+    --brand:#ad2035;
+    --panel:rgba(250,248,244,.88);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;overflow:hidden;background:#dfe4e6;color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,"PingFang HK","Noto Sans HK",sans-serif;
+    -webkit-font-smoothing:antialiased}
+  canvas{display:block}
+  #app{position:fixed;inset:0}
+  #labels{position:fixed;inset:0;pointer-events:none;z-index:3;overflow:hidden}
+  .label{pointer-events:auto;cursor:pointer;transform:translate(-50%,-100%);
+    font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    color:#37312b;background:rgba(255,253,249,.82);border:1px solid rgba(38,34,31,.10);
+    padding:3px 7px 2px;border-radius:3px;white-space:nowrap;
+    box-shadow:0 1px 0 rgba(255,255,255,.6) inset;backdrop-filter:blur(6px);
+    transition:opacity .25s, transform .25s, background .2s}
+  .label::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:9px;background:rgba(38,34,31,.28)}
+  .label:hover,.label.is-active{background:#fff;color:var(--brand)}
+  .label small{display:block;font-size:8px;letter-spacing:.12em;color:var(--ink-soft);font-weight:500}
+  #hud{position:fixed;left:34px;top:30px;z-index:5;pointer-events:none;max-width:380px;padding:20px 22px 18px;border-radius:10px;background:linear-gradient(180deg,rgba(250,248,244,.86),rgba(250,248,244,.68));border:1px solid rgba(38,34,31,.09);box-shadow:0 16px 40px rgba(38,34,31,.10);backdrop-filter:blur(12px)}
+  #hud .kicker{display:flex;align-items:center;gap:9px;font-size:10px;font-weight:700;letter-spacing:.28em;color:var(--brand)}
+  #hud .kicker i{width:22px;height:1px;background:var(--brand);display:inline-block}
+  #hud h1{margin:14px 0 0;font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:34px;line-height:1.06;letter-spacing:-.01em}
+  #hud h1 span{display:block;font-family:"PingFang HK","Noto Sans HK",sans-serif;font-size:16px;letter-spacing:.34em;color:#5c564d;margin-top:8px;font-weight:400}
+  #hud p{margin:12px 0 0;font-size:12px;line-height:1.6;color:#5a544c;max-width:300px}
+  #controls{position:fixed;left:34px;bottom:28px;z-index:6;display:flex;align-items:center;gap:10px;
+    background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:9px 12px;
+    box-shadow:0 12px 30px rgba(38,34,31,.10);backdrop-filter:blur(10px)}
+  #controls .time{display:flex;align-items:center;gap:8px;padding-right:10px;border-right:1px solid var(--line)}
+  #controls .time span{font-size:13px;line-height:1;opacity:.75}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:110px;height:16px;background:transparent;cursor:pointer}
+  input[type=range]::-webkit-slider-runnable-track{height:2px;background:rgba(38,34,31,.25);border-radius:2px}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:11px;height:11px;border-radius:50%;
+    background:var(--brand);margin-top:-4.5px;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+  button.toggle{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:rgba(255,255,255,.5);
+    color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 9px;border-radius:5px;cursor:pointer;
+    transition:background .2s,color .2s,border-color .2s;font-family:inherit}
+  button.toggle:hover{background:#fff}
+  button.toggle.on{background:var(--ink);color:#f7f3ec;border-color:var(--ink)}
+  #panel{position:fixed;right:30px;top:30px;bottom:auto;width:308px;max-height:calc(100vh - 60px);z-index:7;
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:auto;
+    box-shadow:0 24px 60px rgba(38,34,31,.16);backdrop-filter:blur(14px);
+    transform:translateX(22px);opacity:0;pointer-events:none;transition:opacity .3s, transform .3s}
+  #panel.open{opacity:1;transform:none;pointer-events:auto}
+  #panel .thumb{aspect-ratio:16/9;width:100%;object-fit:cover;background:#d9d4c9;display:block;filter:saturate(.92)}
+  #panel .body{padding:16px 18px 18px}
+  #panel .cat{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--brand)}
+  #panel h2{margin:7px 0 1px;font-family:Georgia,serif;font-weight:500;font-size:22px;line-height:1.15}
+  #panel .zh{font-family:"PingFang HK","Noto Sans HK",sans-serif;font-size:13px;color:var(--ink-soft);letter-spacing:.06em}
+  #panel p{margin:12px 0 0;font-size:12px;line-height:1.65;color:#4d4741}
+  #panel .meta{display:flex;gap:14px;margin-top:13px;padding-top:12px;border-top:1px solid var(--line);font-size:10px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase}
+  #panel .meta b{display:block;font-size:13px;color:var(--ink);letter-spacing:0;text-transform:none;margin-top:2px;font-weight:600}
+  #panel .basis{display:block;margin-top:8px;font-size:10px;line-height:1.45;color:var(--ink-soft);letter-spacing:.02em}
+  #panel a{display:inline-block;margin-top:14px;font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--brand);text-decoration:none;border-bottom:1px solid rgba(173,32,53,.35);padding-bottom:2px}
+  #panel .close{position:absolute;top:10px;right:10px;width:24px;height:24px;border-radius:50%;border:none;background:rgba(255,255,255,.85);
+    color:#37312b;font-size:15px;line-height:22px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+  #minimap{position:fixed;right:30px;bottom:74px;z-index:5;width:180px;height:262px;border-radius:10px;overflow:hidden;
+    background:var(--panel);border:1px solid var(--line);box-shadow:0 16px 40px rgba(38,34,31,.14);backdrop-filter:blur(10px);
+    transition:opacity .3s, transform .3s}
+  #minimap.hidden{opacity:0;transform:translateY(8px);pointer-events:none}
+  #minimap canvas{width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+  #minimap canvas.dragging{cursor:grabbing}
+  #minimap .mm-corner{position:absolute;inset:6px;border:1px solid rgba(38,34,31,.10);border-radius:6px;pointer-events:none}
+  #hint{position:fixed;right:30px;bottom:28px;z-index:5;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(38,34,31,.55);text-align:right;line-height:1.8}
+  #loading{position:fixed;inset:0;z-index:20;display:grid;place-items:center;background:#efebe3;transition:opacity .7s}
+  #loading.done{opacity:0;pointer-events:none}
+  #loading .wrap{text-align:center}
+  #loading .bar{width:180px;height:2px;background:rgba(38,34,31,.15);margin:18px auto 0;overflow:hidden;border-radius:2px}
+  #loading .bar i{display:block;height:100%;width:35%;background:var(--brand);animation:load 1.2s infinite ease-in-out}
+  @keyframes load{0%{transform:translateX(-110%)}100%{transform:translateX(320%)}}
+  #loading .t{font-family:Georgia,serif;font-size:15px;letter-spacing:.04em}
+  #loading .s{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
+  #finder{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);pointer-events:auto}
+  #finder .finder-head{display:flex;justify-content:space-between;align-items:baseline;font-size:9px;font-weight:700;letter-spacing:.18em;color:var(--ink-soft);text-transform:uppercase}
+  #finder .finder-head span:last-child{letter-spacing:.04em;font-weight:500;color:var(--ink-soft);text-transform:none}
+  #searchInput{width:100%;margin-top:8px;padding:7px 9px;border:1px solid var(--line);border-radius:5px;background:rgba(255,255,255,.66);
+    font:inherit;font-size:12px;color:var(--ink);outline:none;transition:border-color .2s,background .2s}
+  #searchInput::placeholder{color:#9a938a}
+  #searchInput:focus{border-color:rgba(173,32,53,.55);background:#fff}
+  .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .chip{border:1px solid var(--line);background:rgba(255,255,255,.4);border-radius:999px;padding:3px 8px;font:inherit;font-size:9.5px;
+    letter-spacing:.06em;color:var(--ink-soft);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+  .chip:hover{background:#fff;color:var(--ink)}
+  .chip.on{background:var(--ink);border-color:var(--ink);color:#f7f3ec}
+  .results{margin-top:9px;max-height:190px;overflow:auto;border-top:1px solid var(--line);padding-top:5px}
+  .result{display:flex;align-items:baseline;justify-content:space-between;gap:10px;width:100%;padding:6px 7px;border:none;background:transparent;
+    text-align:left;font:inherit;font-size:12px;color:var(--ink);cursor:pointer;border-radius:4px}
+  .result:hover,.result:focus-visible{background:#fff;outline:none}
+  .result small{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);flex:none}
+  .result em{font-style:normal;color:var(--ink-soft);font-size:10px;margin-left:6px;font-family:"PingFang HK","Noto Sans HK",sans-serif}
+  .results-empty{padding:8px 7px;font-size:11px;color:var(--ink-soft)}
+  .pano-cta{margin-top:14px;display:inline-flex;align-items:center;gap:7px;border:1px solid var(--brand);background:var(--brand);color:#fff;
+    font:inherit;font-size:11px;font-weight:600;letter-spacing:.08em;padding:9px 13px;border-radius:4px;cursor:pointer;transition:background .2s}
+  .pano-cta span{font-size:12px;opacity:.85}
+  .pano-cta:hover{background:#791729}
+  .pano-modal{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:24px;background:rgba(24,21,19,.66);
+    backdrop-filter:blur(10px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s, visibility .3s}
+  .pano-modal.open{opacity:1;visibility:visible;pointer-events:auto}
+  .pano-shell{position:relative;width:min(1080px,100%);height:min(78vh,760px);background:#1b1917;border-radius:12px;overflow:hidden;
+    box-shadow:0 40px 100px rgba(0,0,0,.5);display:flex;flex-direction:column;transform:translateY(10px);transition:transform .3s}
+  .pano-modal.open .pano-shell{transform:none}
+  .pano-top{position:absolute;top:0;left:0;right:0;z-index:3;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+    padding:18px 20px 28px;background:linear-gradient(180deg,rgba(20,18,16,.72),rgba(20,18,16,0));color:#fff;pointer-events:none}
+  .pano-top>div{pointer-events:auto}
+  .pano-kicker{font-size:9px;letter-spacing:.22em;color:rgba(255,255,255,.66)}
+  .pano-top h3{margin:6px 0 0;font-family:Georgia,serif;font-weight:400;font-size:22px;letter-spacing:-.01em}
+  .pano-close{pointer-events:auto;width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.25);
+    color:#fff;font-size:19px;line-height:28px;cursor:pointer;transition:background .2s}
+  .pano-close:hover{background:rgba(0,0,0,.5)}
+  .pano-stage{position:absolute;inset:0;background:#15130f}
+  .pano-stage canvas{width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+  .pano-stage canvas:active{cursor:grabbing}
+  .pano-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;color:#e9e2d6;
+    font-size:12px;letter-spacing:.08em;background:#15130f}
+  .pano-loading span{width:14px;height:14px;border:2px solid rgba(255,255,255,.25);border-top-color:#e9e2d6;border-radius:50%;animation:spin 1s linear infinite}
+  .pano-loading[hidden]{display:none}
+  .pano-error{position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;color:#e9e2d6;
+    font-size:13px;line-height:1.7;background:#15130f}
+  .pano-error[hidden]{display:none}
+  .pano-foot{position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;justify-content:space-between;gap:16px;padding:16px 20px;
+    background:linear-gradient(0deg,rgba(20,18,16,.72),rgba(20,18,16,0));color:rgba(255,255,255,.62);font-size:10px;letter-spacing:.06em}
+  .pano-foot a{color:rgba(255,255,255,.82);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:1px}
+  .pano-foot a:hover{color:#fff}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  body.pano-open{overflow:hidden}
+  body.embed #hud,body.embed #controls,body.embed #hint,body.embed #panel,body.embed #labels{display:none!important}
+  @media (max-width:760px){
+    #hud{left:10px;right:10px;top:10px;max-width:none;padding:12px 14px 12px}
+    #hud .kicker{font-size:8px;letter-spacing:.2em}
+    #hud h1{font-size:22px;margin-top:8px}
+    #hud h1 span{font-size:10px;letter-spacing:.2em;margin-top:4px}
+    #hud p{display:none}
+    #finder{display:block;margin-top:8px;padding-top:8px}
+    #finder .finder-head{font-size:8px}
+    #searchInput{margin-top:6px;padding:8px}
+    .chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px;gap:4px}
+    .chip{white-space:nowrap;font-size:9px}
+    .results{max-height:120px}
+    #panel{left:10px;right:10px;top:auto;bottom:118px;width:auto;max-height:42vh}
+    #controls{left:10px;right:10px;bottom:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:7px 8px}
+    #controls .time{grid-column:1/-1;border-right:0;padding-right:0;gap:6px}
+    #controls .time input{flex:1;width:auto}
+    button.toggle{justify-content:center;padding:7px 3px;font-size:8.5px;letter-spacing:.04em}
+    #btnMap{display:none}
+    #hint,#minimap{display:none}
+    #labels{font-size:8px}
+    .pano-modal{padding:12px}
+    .pano-shell{height:min(72vh,640px)}
+    .pano-top h3{font-size:18px}
+    .pano-foot{font-size:9px;flex-direction:column;gap:6px}
+  }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="labels"></div>
+
+<header id="hud">
+  <div class="kicker"><i></i>The Hong Kong Polytechnic University</div>
+  <h1>Campus in Massing<span>理大校園 · 立體模型</span></h1>
+  <p>A low-poly landmark study of PolyU's Hung Hom campus, built from OpenStreetMap footprints and the university's 360° virtual tour.</p>
+  <p style="font-size:10px;margin-top:6px;pointer-events:auto">© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> · <a href="./credits.html" target="_blank" rel="noopener">Credits &amp; terms</a></p>
+  <div id="finder">
+    <div class="finder-head"><span>EXPLORE THE MODEL</span><span id="finderCount"></span></div>
+    <input id="searchInput" type="search" placeholder="Search a building or place" autocomplete="off" spellcheck="false" aria-label="Search campus landmarks" />
+    <div id="catChips" class="chips" role="group" aria-label="Filter by category"></div>
+    <div id="results" class="results" hidden></div>
+  </div>
+</header>
+
+<div id="controls" aria-label="Scene controls">
+  <div class="time">
+    <span id="timeIcon">☀︎</span>
+    <input id="timeSlider" type="range" min="0" max="1" step="0.001" value="0.42" aria-label="Time of day" />
+    <span id="timeLabel">10:00</span>
+  </div>
+  <button id="btnLabels" class="toggle on" type="button">Labels</button>
+  <button id="btnMap" class="toggle on" type="button" aria-pressed="true">Map</button>
+  <button id="btnOrbit" class="toggle" type="button">Orbit</button>
+  <button id="btnReset" class="toggle" type="button">Reset</button>
+</div>
+
+<div id="minimap" aria-label="Campus minimap">
+  <canvas id="minimapCanvas"></canvas>
+</div>
+
+<aside id="panel" aria-live="polite">
+  <button class="close" id="panelClose" aria-label="Close">×</button>
+  <img class="thumb" id="panelThumb" alt="" />
+  <div class="body">
+    <div class="cat" id="panelCat">Landmark</div>
+    <h2 id="panelName">—</h2>
+    <div class="zh" id="panelZh"></div>
+    <p id="panelDesc"></p>
+    <div class="meta">
+      <div>Height<b id="panelHeight">—</b></div>
+      <div>Built form<b id="panelForm">—</b></div>
+    </div>
+    <small id="panelHeightBasis" class="basis">Model estimate · not surveyed</small>
+    <button id="panelPano" class="pano-cta" type="button" hidden>Enter 360° view <span>↗</span></button>
+    <a id="panelLink" href="https://www.polyu.edu.hk/saso/vtour/" target="_blank" rel="noopener">Open in the official 360° tour →</a>
+  </div>
+</aside>
+
+<div id="panoModal" class="pano-modal" aria-hidden="true" inert>
+  <div class="pano-shell" role="dialog" aria-modal="true" aria-labelledby="panoName">
+    <div class="pano-top">
+      <div><span class="pano-kicker">360° VIEW · OFFICIAL TOUR</span><h3 id="panoName">—</h3></div>
+      <button id="panoClose" class="pano-close" type="button" aria-label="Close 360 view">×</button>
+    </div>
+    <div id="panoStage" class="pano-stage">
+      <div id="panoLoading" class="pano-loading"><span></span>Loading panorama…</div>
+      <div id="panoError" class="pano-error" hidden>Panorama images are not available offline for this spot.</div>
+    </div>
+    <div class="pano-foot">
+      <span>Drag to look around · Scroll to zoom</span>
+      <a id="panoTourLink" href="https://www.polyu.edu.hk/saso/vtour/" target="_blank" rel="noopener">Open in the official tour →</a>
+    </div>
+  </div>
+</div>
+
+<div id="hint">Drag to orbit · Scroll to zoom<br/>Click a building to read more</div>
+
+<div id="loading"><div class="wrap">
+  <div class="t">Building the campus…</div>
+  <div class="s" id="loadingMsg">Loading landmark data</div>
+  <div class="bar"><i></i></div>
+</div></div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three/three.module.js",
+    "three/addons/": "./vendor/three/addons/"
+  }
+}
+</script>
+<script type="module" src="./src/main.js?v=20261019-hotel-entrances1"></script>
+</body>
+</html>

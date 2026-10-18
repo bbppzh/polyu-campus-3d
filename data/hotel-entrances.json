@@ -1,0 +1,289 @@
+{
+  "image": "docs/reference/hotel-ground-plan.jpg",
+  "image_sha256": "4df88c5c729fa67985529ff59fc0fa6da9612e8a5264e881a8d73e7a647f5809",
+  "image_size_px": [
+    600,
+    675
+  ],
+  "source": "https://www.rocco.hk/cms/media/1684_dia_0238.jpg",
+  "reference_system": "OSM-derived campus x/east,z/south in metres, using campus.json origin; WGS84 conversion matches extract_data.py",
+  "pixel_to_world_affine_3x2": [
+    [
+      0.09204893756220486,
+      0.10669143418649915
+    ],
+    [
+      -0.09929443493036834,
+      0.08817149239946327
+    ],
+    [
+      28.16668878249019,
+      346.77015808098923
+    ]
+  ],
+  "control_points": [
+    {
+      "id": "staff_nw",
+      "pixel": [
+        94,
+        97
+      ],
+      "reference_world_xz": [
+        27.1,
+        365.6
+      ],
+      "predicted_world_xz": [
+        27.18772872509172,
+        365.3517876572681
+      ],
+      "residual_m": 0.26325975060893453
+    },
+    {
+      "id": "staff_ne",
+      "pixel": [
+        150,
+        97
+      ],
+      "reference_world_xz": [
+        32.17,
+        371.24
+      ],
+      "predicted_world_xz": [
+        32.34246922857519,
+        371.32650797171203
+      ],
+      "residual_m": 0.19294886362725475
+    },
+    {
+      "id": "staff_sw",
+      "pixel": [
+        94,
+        580
+      ],
+      "reference_world_xz": [
+        -20.61,
+        408.0
+      ],
+      "predicted_world_xz": [
+        -20.771483346276185,
+        407.93861848620884
+      ],
+      "residual_m": 0.17275578531513455
+    },
+    {
+      "id": "staff_se",
+      "pixel": [
+        150,
+        580
+      ],
+      "reference_world_xz": [
+        -15.53,
+        413.64
+      ],
+      "predicted_world_xz": [
+        -15.616742842792718,
+        413.9133388006528
+      ],
+      "residual_m": 0.28677241973049983
+    },
+    {
+      "id": "podium_C",
+      "pixel": [
+        495,
+        221
+      ],
+      "reference_world_xz": [
+        52.1,
+        418.88
+      ],
+      "predicted_world_xz": [
+        51.786842756170195,
+        419.0683178235877
+      ],
+      "residual_m": 0.36541902255339953
+    },
+    {
+      "id": "podium_X",
+      "pixel": [
+        495,
+        624
+      ],
+      "reference_world_xz": [
+        11.47,
+        454.84
+      ],
+      "predicted_world_xz": [
+        11.771185479231754,
+        454.6014292605714
+      ],
+      "residual_m": 0.384224791771103
+    }
+  ],
+  "independent_check_points": [
+    {
+      "id": "inner_north",
+      "pixel": [
+        173,
+        226
+      ],
+      "reference_world_xz": [
+        21.56,
+        384.86
+      ],
+      "predicted_world_xz": [
+        21.650612686488387,
+        385.15453347753225
+      ],
+      "residual_m": 0.30815682426303315
+    },
+    {
+      "id": "courtyard_corner",
+      "pixel": [
+        173,
+        496
+      ],
+      "reference_world_xz": [
+        -5.22,
+        408.56
+      ],
+      "predicted_world_xz": [
+        -5.158884744711067,
+        408.96083642538736
+      ],
+      "residual_m": 0.40546875877969085
+    },
+    {
+      "id": "setback_corner",
+      "pixel": [
+        307,
+        496
+      ],
+      "reference_world_xz": [
+        7.02,
+        422.19
+      ],
+      "predicted_world_xz": [
+        7.175672888624387,
+        423.2574886063783
+      ],
+      "residual_m": 1.0787798538163826
+    }
+  ],
+  "fit_rmse_m": 0.288610953534076,
+  "check_rmse_m": 0.6887504423921911,
+  "entries": [
+    {
+      "id": "hotel",
+      "image_pixel": [
+        234,
+        502
+      ],
+      "registered_world_xz": [
+        -0.13966616299877543,
+        415.9980428651606
+      ],
+      "host_context_id": 236028379,
+      "wall_edge_index": 2,
+      "wall_world_xz": [
+        0.7455955014295306,
+        415.20306100363433
+      ],
+      "tangent_world_xz": [
+        -0.6681500426872845,
+        -0.7440265589728502
+      ],
+      "outward_world_xz": [
+        -0.7440265589728502,
+        0.6681500426872845
+      ],
+      "snap_distance_m": 1.1898253546895532,
+      "wgs84_lon_lat": [
+        114.1795072394219,
+        22.300743865921806
+      ],
+      "door_width_m": 5.0,
+      "door_height_m": 3.2,
+      "canopy_width_m": 7.2,
+      "canopy_depth_m": 2.2,
+      "threshold_model_y_m": 0.02,
+      "dimensions_basis": "visual simplification, not measured; GF datum is model zero"
+    },
+    {
+      "id": "school",
+      "image_pixel": [
+        390,
+        226
+      ],
+      "registered_world_xz": [
+        41.62523213748684,
+        408.3065746960026
+      ],
+      "host_context_id": 236028379,
+      "wall_edge_index": 4,
+      "wall_world_xz": [
+        42.16952547393538,
+        407.81795863206554
+      ],
+      "tangent_world_xz": [
+        0.6680215718852107,
+        0.744141908170755
+      ],
+      "outward_world_xz": [
+        0.744141908170755,
+        -0.6680215718852107
+      ],
+      "snap_distance_m": 0.7314375530690418,
+      "wgs84_lon_lat": [
+        114.17990944853472,
+        22.30081067524306
+      ],
+      "door_width_m": 3.8,
+      "door_height_m": 3.2,
+      "canopy_width_m": 6.0,
+      "canopy_depth_m": 2.2,
+      "threshold_model_y_m": 0.02,
+      "dimensions_basis": "visual simplification, not measured; GF datum is model zero"
+    },
+    {
+      "id": "staff",
+      "image_pixel": [
+        94,
+        391
+      ],
+      "registered_world_xz": [
+        -2.004835144436573,
+        391.2742064227103
+      ],
+      "host_context_id": 236028367,
+      "wall_edge_index": 5,
+      "wall_world_xz": [
+        -1.9098294570500514,
+        391.38111022802184
+      ],
+      "tangent_world_xz": [
+        0.7474784660769432,
+        -0.6642860398587795
+      ],
+      "outward_world_xz": [
+        -0.6642860398587795,
+        -0.7474784660769432
+      ],
+      "snap_distance_m": 0.143019244250127,
+      "wgs84_lon_lat": [
+        114.17948145635116,
+        22.300959371175793
+      ],
+      "door_width_m": 2.4,
+      "door_height_m": 3.2,
+      "canopy_width_m": 4.6,
+      "canopy_depth_m": 2.2,
+      "threshold_model_y_m": 0.02,
+      "dimensions_basis": "visual simplification, not measured; GF datum is model zero"
+    }
+  ],
+  "limitations": [
+    "Controls manually digitized from 600x675 architect image and matched to existing OSM footprints, not site measurements.",
+    "Low control residual does not establish geographic or as-built accuracy.",
+    "Door sizes, canopy details and GF vertical datum remain model estimates; 2026 site changes not confirmed."
+  ]
+}

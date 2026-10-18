@@ -1,0 +1,18 @@
+{
+  "Hotel ICON": {
+    "height": 114.0,
+    "heightBasis": "114 m architectural envelope and 28 floors: CVU/CTBUH Hotel ICON record; angular massing from Rocco Design photographs/diagram. Plan dimensions approximated."
+  },
+  "Jockey Club Innovation Tower": {
+    "heightBasis": "71.2 m architectural envelope: CVU/CTBUH record; 15 storeys and sloping layered profile from ZHA built-project photographs. Plan/profile approximated.",
+    "height": 71.2
+  },
+  "Li Ka Shing Tower": {
+    "heightBasis": "Retained model height estimate, not measured. Interlocking blocks and top executive drum reconstructed from Wong Tung project photographs and description.",
+    "height": 60.8
+  },
+  "Block Z": {
+    "heightBasis": "Visual massing estimate for two 12-storey wings and a low teaching block, informed by PolyU gallery C0088/C0132 and contractor project description. Not a surveyed height.",
+    "height": 48.0
+  }
+}

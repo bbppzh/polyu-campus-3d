@@ -1,0 +1,5 @@
+{
+  "tested_rooftop_props": 334,
+  "errors": [],
+  "scope": "Calls actual buildContextDetails; checks generated roof props against closed context polygons and exact roof elevation."
+}

@@ -1,0 +1,5 @@
+{
+  "scope": "2 m grid check of four tower envelopes against neighbouring mapped solids at 20 m; shared lower podiums intentionally excluded. Not exhaustive CSG collision detection.",
+  "overlaps": [],
+  "university_house_teaching_overlap_samples": []
+}

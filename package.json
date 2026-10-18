@@ -1,0 +1,12 @@
+{
+  "name": "polyu-campus-3d",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Low-poly Three.js study of the PolyU Hung Hom campus",
+  "type": "module",
+  "scripts": {
+    "serve": "python3 -m http.server 8080"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://bbppzh.github.io/polyu-campus-3d/"
+}

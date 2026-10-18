@@ -1,0 +1,81 @@
+PolyU Campus 3D Personal-Use License 1.0
+Effective date: 2026-10-19
+
+Copyright (c) 2026 bbppzh.
+All rights reserved except for the permissions expressly granted below.
+
+1. Scope
+These terms govern current and future distributions of PolyU Campus 3D
+code, original models, documentation, artwork and other project materials
+to the extent the relevant copyright is owned or controlled by bbppzh
+(the "Covered Work"). This is a custom restricted license, not an open-source
+license. Sections 5 and 6 take precedence over any restriction below.
+
+2. Personal use and inspection
+You may access the official viewer, download a copy, and run it for your own
+private, non-commercial viewing and exploration. You may read the source for private
+inspection. Copies reasonably necessary for that use, including browser
+caching and a personal backup, are permitted. Keep the copyright and license
+notices intact. You may share links to the official repository and viewer.
+
+3. Uses requiring prior written permission
+Except where sections 5 or 6 provide otherwise, you must obtain prior written
+permission from the relevant copyright holder before:
+(a) Academic or educational reuse: reproducing, adapting, incorporating,
+    submitting, presenting, deploying or distributing the Covered Work, in
+    whole or in part, in coursework, assessed assignments, student projects,
+    competitions, theses, dissertations, research projects, publications,
+    teaching materials, classroom activities or institutional training.
+    This includes presenting the viewer or a derivative as your own project.
+(b) Commercial use: selling, licensing, monetising, using in advertising or
+    paid services, or incorporating the Covered Work into a business product
+    or service, whether or not it directly earns revenue.
+(c) Other reuse: modifying, translating, extracting, repackaging, hosting,
+    publishing, distributing or sublicensing the Covered Work or derivatives
+    beyond the personal-use permission in section 2.
+Credit or citation alone is not permission for these uses. No additional
+copyright, patent or trademark license is granted by implication.
+
+4. The original project
+These terms restrict permissions offered to other people; they do not limit
+a copyright holder's use of their own work, or permissions separately given
+to the original project team to develop, demonstrate and submit this project.
+No ownership of any other contributor's work is transferred by this notice.
+
+5. Earlier MIT releases and third-party materials
+Versions and materials previously distributed under the MIT License remain
+available under that license. This change does not revoke, narrow or replace
+permissions already granted under MIT, including permission to reuse and
+redistribute earlier copies under MIT. Unchanged material obtained under MIT
+does not lose those permissions merely because it also appears here.
+New copyrightable material not previously released under MIT is offered under
+these current terms unless expressly marked otherwise. Third-party materials retain their own licenses and copyrights. In particular,
+Three.js remains under MIT, OpenStreetMap-derived geographic data under ODbL,
+and Poly Haven textures under CC0. University and architect reference images,
+plans and tour photographs retain their respective owners' copyrights;
+this license grants no rights in those materials. See THIRD-PARTY-NOTICES.md
+and vendor/three/LICENSE. These terms impose no extra restrictions on
+independently licensed third-party materials.
+
+6. Legal and platform rights
+Nothing here removes rights or exceptions that applicable law provides,
+including any applicable fair dealing or fair use. This notice does not claim
+exclusive copyright in abstract ideas, methods, geographic facts or building designs, or
+restrict independent creation that does not use protected project material.
+For public GitHub repositories, the rights to view or fork that GitHub's terms
+require are preserved; they do not grant further rights in newly restricted
+material for academic, commercial or other reuse.
+
+7. Permission requests
+Contact the repository owner, bbppzh, through GitHub:
+https://github.com/bbppzh
+A written grant must identify the material, permitted use and relevant
+copyright holder. Silence, a public download, a fork or an attribution is not
+such a grant. If you breach these current terms, permissions granted by this
+license terminate to the extent permitted by law; rights preserved by
+sections 5 and 6 are unaffected.
+
+8. Disclaimer
+The Covered Work is provided "as is", without warranties of any kind.
+To the extent permitted by law, its authors and copyright holders are not
+liable for claims, damages or other liability arising from its use.

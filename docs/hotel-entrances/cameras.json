@@ -1,0 +1,47 @@
+[
+  {
+    "id": "hotel",
+    "eye_blender_xyz": [
+      -36.667633056640625,
+      -17.90962791442871,
+      1.7000000476837158
+    ],
+    "target_blender_xyz": [
+      -20.30641746520996,
+      -9.937135696411133,
+      2.0
+    ],
+    "eye_height_m": 1.7,
+    "ground_datum": "model GF zero"
+  },
+  {
+    "id": "school",
+    "eye_blender_xyz": [
+      38.224185943603516,
+      6.085720062255859,
+      1.7000000476837158
+    ],
+    "target_blender_xyz": [
+      21.861595153808594,
+      -1.8839478492736816,
+      2.0
+    ],
+    "eye_height_m": 1.7,
+    "ground_datum": "model GF zero"
+  },
+  {
+    "id": "staff",
+    "eye_blender_xyz": [
+      -30.809585571289062,
+      30.99493408203125,
+      1.7000000476837158
+    ],
+    "target_blender_xyz": [
+      -22.921974182128906,
+      14.592629432678223,
+      2.0
+    ],
+    "eye_height_m": 1.7,
+    "ground_datum": "model GF zero"
+  }
+]

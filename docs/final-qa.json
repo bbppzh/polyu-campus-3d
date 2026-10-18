@@ -1,0 +1,382 @@
+{
+  "model_count": 30,
+  "checked_rooftop_objects": 133,
+  "roof_cap_checks": [
+    {
+      "model": "lks",
+      "body": "LKS_executive_drum",
+      "roof": "LKS_drum_roof",
+      "upper_surface_separation": 0.16
+    },
+    {
+      "model": "lks",
+      "body": "LKS_drum_spandrel_4",
+      "roof": "LKS_drum_roof",
+      "upper_surface_separation": 0.16
+    },
+    {
+      "model": "hotel_icon",
+      "body": "ICON_teaching_block",
+      "roof": "ICON_teaching_roof",
+      "upper_surface_separation": 0.2
+    },
+    {
+      "model": "hotel_icon",
+      "body": "ICON_vertical_core",
+      "roof": "ICON_core_roof",
+      "upper_surface_separation": 0.25
+    },
+    {
+      "model": "hotel_icon",
+      "body": "ICON_main_hotel_slab",
+      "roof": "ICON_hotel_roof",
+      "upper_surface_separation": 0.25
+    },
+    {
+      "model": "blockz",
+      "body": "Z_south_wing",
+      "roof": "Z_south_roof",
+      "upper_surface_separation": 0.22
+    },
+    {
+      "model": "blockz",
+      "body": "Z_north_wing",
+      "roof": "Z_north_roof",
+      "upper_surface_separation": 0.22
+    }
+  ],
+  "issues": [],
+  "models": [
+    {
+      "name": "Li Ka Shing Tower",
+      "slug": "lks",
+      "sha256": "33b6e0909aeec235551d7044767a1439f34011353fb01d555924d57ac9898014",
+      "meshes": 93,
+      "triangles": 5040,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 60.800001218914986
+    },
+    {
+      "name": "Jockey Club Innovation Tower",
+      "slug": "jcit",
+      "sha256": "1272733a5d327a0a24111b25d5e394f4245d3b7da9f7ffd3ef0d5791b68fdca5",
+      "meshes": 17,
+      "triangles": 25856,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 71.19999694824219
+    },
+    {
+      "name": "Jockey Club Auditorium",
+      "slug": "jca",
+      "sha256": "a0aac4898ef47891e50e3fec9259d53062868a67cf39c9a9c08e8c5c66e50a33",
+      "meshes": 13,
+      "triangles": 2420,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 18.399999618530273
+    },
+    {
+      "name": "Global Student Hub",
+      "slug": "gsh",
+      "sha256": "d8ce04a888e8998e18c7fa4d574d5be9461684b2846bc3eef67e0501f0bf8084",
+      "meshes": 50,
+      "triangles": 776,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 15.991999477148056
+    },
+    {
+      "name": "Shaw Sports Complex",
+      "slug": "shaw",
+      "sha256": "3e9cdf97e381d787fa9d83a30925b8f5e84f5a36d94fdbf93fe322d4ece4d8e6",
+      "meshes": 13,
+      "triangles": 2840,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 18.100000381469727
+    },
+    {
+      "name": "Block X",
+      "slug": "blockx",
+      "sha256": "eaa29666597bdaee4ccb5d4710090195c57f1747cb258e0043babd67594c1dff",
+      "meshes": 58,
+      "triangles": 984,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 44.50199584662914
+    },
+    {
+      "name": "Block Z",
+      "slug": "blockz",
+      "sha256": "0b5b5b833a8d57b74c20fa222062c467d4373db7d05f2dd8d280203ead3bb95c",
+      "meshes": 48,
+      "triangles": 20280,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 49.0
+    },
+    {
+      "name": "Chan Sui Wai Building",
+      "slug": "chan",
+      "sha256": "7bcd3ed9e1841b722a92156afaab053781afab07d8f69f76f936f17375a624c9",
+      "meshes": 34,
+      "triangles": 600,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 24.652000784873962
+    },
+    {
+      "name": "Chan Tai Ho Building",
+      "slug": "taio",
+      "sha256": "4d67039e02659c602bf436c499c9aea42bcd49be1d684fe28a30e2edadede879",
+      "meshes": 27,
+      "triangles": 564,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 24.652000784873962
+    },
+    {
+      "name": "Anita Chan Lai Ling Building",
+      "slug": "anita",
+      "sha256": "77ae7d3fdd5130bc916d0993769de271697ac4dcddccdaad15ab297cd488ad4a",
+      "meshes": 33,
+      "triangles": 476,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 19.202001214027405
+    },
+    {
+      "name": "Chow Yei Ching Building",
+      "slug": "chow",
+      "sha256": "449f980838737d136d1dead51077c4db6244e40421439514a57a8a4b2ff69dca",
+      "meshes": 66,
+      "triangles": 984,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 31.101999640464783
+    },
+    {
+      "name": "Mong Man Wai Building",
+      "slug": "mong",
+      "sha256": "db958c62ef1c6cbc6904877807118e84ab70f5c55dfddbe8269ed6145d2ed318",
+      "meshes": 35,
+      "triangles": 532,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 29.6519992351532
+    },
+    {
+      "name": "Ng Wing Hong Building",
+      "slug": "ng",
+      "sha256": "440c823eb146b83b6ca266858b495bb6e2cfcac59512a408dd6f08a867e70eee",
+      "meshes": 23,
+      "triangles": 468,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 31.152000784873962
+    },
+    {
+      "name": "Yip Kit Chuen Building",
+      "slug": "yip",
+      "sha256": "6904a7bfb32861d934c5a4e61be4c2de2e57eaeeeb647df2d581dfb6569d915c",
+      "meshes": 41,
+      "triangles": 684,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 31.101999640464783
+    },
+    {
+      "name": "Seal of Love Foundation Building",
+      "slug": "seal",
+      "sha256": "d20ff0ef0abd0a85d6f60c07919fa44e567f5b75e61303fe01a6adc7f5ea0a91",
+      "meshes": 42,
+      "triangles": 1032,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 22.399999976158142
+    },
+    {
+      "name": "CMA Building",
+      "slug": "cma",
+      "sha256": "31a03a80582a331f28238b7011fe62a9136dd2ceff48cbd4a5e5f1c4da7a270c",
+      "meshes": 24,
+      "triangles": 416,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 24.802002668380737
+    },
+    {
+      "name": "Chung Sze Yuen Building",
+      "slug": "chung",
+      "sha256": "80e285ed32f59d1128016fc09a8a0f1c78533db1166efe42d7d1c9dd62ae93aa",
+      "meshes": 33,
+      "triangles": 476,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 15.999999642372131
+    },
+    {
+      "name": "Lui Che Woo Building",
+      "slug": "lui",
+      "sha256": "f41be00ebbfb56e2f7245b8990625cd1d87452a6a4cc62f2f27ea6a74ad4ab4e",
+      "meshes": 34,
+      "triangles": 588,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 24.601999640464783
+    },
+    {
+      "name": "Stanley Ho Building",
+      "slug": "stanley",
+      "sha256": "04d5005010528bd29cdeb95bab06bce1dbeb7c13a5af5a1b6414f25458ab9261",
+      "meshes": 34,
+      "triangles": 520,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 20.477000430226326
+    },
+    {
+      "name": "Choi Kai Yau Building",
+      "slug": "choi",
+      "sha256": "8f559810475a2e0c1f027fc35563e9271a1e747d048b809dd8510962a09a974c",
+      "meshes": 61,
+      "triangles": 1012,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 34.551998138427734
+    },
+    {
+      "name": "Shirley Chan Building",
+      "slug": "shirley",
+      "sha256": "e7501e589c5d8b159ee64300d727dc32fb2087c07bdb5b3c0e5db770a066ae1f",
+      "meshes": 52,
+      "triangles": 720,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 44.152000427246094
+    },
+    {
+      "name": "GH Block",
+      "slug": "gh",
+      "sha256": "c6c6067c4c42df239f21515765cce51f6c598e09f5a2a43951f04310b344b39b",
+      "meshes": 24,
+      "triangles": 588,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 24.700000405311584
+    },
+    {
+      "name": "Fong Shu Chuen Hall",
+      "slug": "fong",
+      "sha256": "9956e17477d9a24ee93d61115232f285cd845b836fbddcc72d23acb051c8546f",
+      "meshes": 56,
+      "triangles": 672,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 6.9519995748996735
+    },
+    {
+      "name": "Tang Ping Yuan Building",
+      "slug": "tang",
+      "sha256": "a65a16aac632a1be12df8a5761ccd96fed4b7d56791336bf45c2d813953d29ae",
+      "meshes": 92,
+      "triangles": 1344,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 21.152000814676285
+    },
+    {
+      "name": "Lee Shau Kee Building",
+      "slug": "leeshaukee",
+      "sha256": "69ab59654afea36b84e48d13549cdb3a20086044d25bee3ac9f1fdbbf9b9886e",
+      "meshes": 18,
+      "triangles": 424,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 22.702001571655273
+    },
+    {
+      "name": "House of Innovation",
+      "slug": "hoi",
+      "sha256": "4c6b1e6aeedf8ab7bc2d6787604344c065cd1aff163fbe9ddb9d40cf06faad34",
+      "meshes": 51,
+      "triangles": 612,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 18.077000811696053
+    },
+    {
+      "name": "Industrial Centre",
+      "slug": "industrial",
+      "sha256": "1d9d51603447ecadde67ad7fe19822ac2f0a1b83eb7335450b0ac1cd13228454",
+      "meshes": 23,
+      "triangles": 528,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 28.702000856399536
+    },
+    {
+      "name": "Communal Building",
+      "slug": "communal",
+      "sha256": "32e7db2a561604030e206bc4d83d9f750af876515ff208c211d81f2456100f35",
+      "meshes": 20,
+      "triangles": 272,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 21.902002334594727
+    },
+    {
+      "name": "Pao Yue-kong Library",
+      "slug": "library",
+      "sha256": "b0c29337e85f089ae9436f5c25181a63a45e3a02bc1f25264a02f22bd179353f",
+      "meshes": 26,
+      "triangles": 442,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": 0.0,
+      "actual_y_max": 19.424999997019768
+    },
+    {
+      "name": "Hotel ICON",
+      "slug": "hotel_icon",
+      "sha256": "7a440ac3da12ae07c88165317271c80804fc28a05b32b95a50d3807f9f81b4d7",
+      "meshes": 44,
+      "triangles": 13544,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "actual_y_min": -1.9669532775878906e-06,
+      "actual_y_max": 114.0
+    }
+  ],
+  "scope": "Bottom-centre and bottom-vertex samples of named rooftop details; not a certification of complete collision freedom or surveyed fidelity."
+}

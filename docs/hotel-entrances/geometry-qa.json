@@ -1,0 +1,2364 @@
+{
+  "status": "PASS",
+  "model_sha256": "7a440ac3da12ae07c88165317271c80804fc28a05b32b95a50d3807f9f81b4d7",
+  "registration_fit_rmse_m": 0.288610953534076,
+  "registration_holdout_rmse_m": 0.6887504423921911,
+  "primary_door_canopy_bottom_corners_checked": 24,
+  "all_entrance_bottom_corners_checked": 96,
+  "objects_checked": 24,
+  "entries": [
+    {
+      "id": "hotel",
+      "export_position_error_m": 6.147804982060506e-07,
+      "plan_to_wall_snap_m": 1.1898253546895532,
+      "approach_samples": 186,
+      "blocked_approach_samples": 0
+    },
+    {
+      "id": "school",
+      "export_position_error_m": 6.438598095805755e-08,
+      "plan_to_wall_snap_m": 0.7314375530690418,
+      "approach_samples": 186,
+      "blocked_approach_samples": 0
+    },
+    {
+      "id": "staff",
+      "export_position_error_m": 2.8301359729950187e-07,
+      "plan_to_wall_snap_m": 0.143019244250127,
+      "approach_samples": 186,
+      "blocked_approach_samples": 0
+    }
+  ],
+  "objects": [
+    {
+      "mesh": "ICON_entrance_hotel_bracket_1",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -22.6856,
+            3.3,
+            8.4851
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -22.59206,
+            3.3,
+            8.58927
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -21.71837,
+            3.3,
+            7.61651
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -21.62482,
+            3.3,
+            7.72067
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -22.6856,
+            3.72,
+            8.4851
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -22.59206,
+            3.72,
+            8.58927
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -21.71837,
+            3.72,
+            7.61651
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -21.62482,
+            3.72,
+            7.72067
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -22.15521240234375,
+            3.509999990463257,
+            8.102889060974121
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_hotel_bracket_-1",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -19.21122,
+            3.3,
+            12.35404
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -19.11768,
+            3.3,
+            12.45821
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -18.24399,
+            3.3,
+            11.48545
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -18.15044,
+            3.3,
+            11.58961
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -19.21122,
+            3.72,
+            12.35404
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -19.11768,
+            3.72,
+            12.45821
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -18.24399,
+            3.72,
+            11.48545
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -18.15044,
+            3.72,
+            11.58961
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -18.680831909179688,
+            3.509999990463257,
+            11.971827507019043
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_hotel_canopy",
+      "is_primary_door_or_canopy": true,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -24.00636,
+            3.72,
+            8.42122
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -22.36951,
+            3.72,
+            6.95129
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -19.19568,
+            3.72,
+            13.77821
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -17.55883,
+            3.72,
+            12.30828
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -24.00636,
+            3.9,
+            8.42122
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -22.36951,
+            3.9,
+            6.95129
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -19.19568,
+            3.9,
+            13.77821
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -17.55883,
+            3.9,
+            12.30828
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -20.782594680786133,
+            3.809999942779541,
+            10.364751815795898
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_hotel_divider",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -20.17766,
+            0.02,
+            9.78119
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -20.13757,
+            0.02,
+            9.82583
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -20.13302,
+            0.02,
+            9.7411
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -20.09293,
+            0.02,
+            9.78574
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -20.17766,
+            3.22,
+            9.78119
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -20.13757,
+            3.22,
+            9.82583
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -20.13302,
+            3.22,
+            9.7411
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -20.09293,
+            3.22,
+            9.78574
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -20.135292053222656,
+            1.6200000047683716,
+            9.783461570739746
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_hotel_door",
+      "is_primary_door_or_canopy": true,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -21.79079,
+            0.02,
+            7.91003
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -21.64198,
+            0.02,
+            7.7764
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -18.45004,
+            0.02,
+            11.63016
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -18.30123,
+            0.02,
+            11.49653
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -21.79079,
+            3.22,
+            7.91003
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -21.64198,
+            3.22,
+            7.7764
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -18.45004,
+            3.22,
+            11.63016
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -18.30123,
+            3.22,
+            11.49653
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -20.046009063720703,
+            1.6200000047683716,
+            9.703283309936523
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_hotel_header",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -21.94826,
+            3.2,
+            7.80951
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -21.73993,
+            3.2,
+            7.62243
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -18.36697,
+            3.2,
+            11.7975
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -18.15864,
+            3.2,
+            11.61041
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -21.94826,
+            3.34,
+            7.80951
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -21.73993,
+            3.34,
+            7.62243
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -18.36697,
+            3.34,
+            11.7975
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -18.15864,
+            3.34,
+            11.61041
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -20.053449630737305,
+            3.2699999809265137,
+            9.709964752197266
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_hotel_jamb_1",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -21.94825,
+            0.02,
+            7.80951
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -21.84135,
+            0.02,
+            7.92856
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -21.73993,
+            0.02,
+            7.62243
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -21.63302,
+            0.02,
+            7.74148
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -21.94825,
+            3.3,
+            7.80951
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -21.84135,
+            3.3,
+            7.92856
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -21.73993,
+            3.3,
+            7.62243
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -21.63302,
+            3.3,
+            7.74148
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -21.790637969970703,
+            1.659999966621399,
+            7.775496006011963
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_hotel_jamb_-1",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -18.47388,
+            0.02,
+            11.67845
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -18.36697,
+            0.02,
+            11.7975
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -18.26555,
+            0.02,
+            11.49137
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -18.15864,
+            0.02,
+            11.61042
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -18.47388,
+            3.3,
+            11.67845
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -18.36697,
+            3.3,
+            11.7975
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -18.26555,
+            3.3,
+            11.49137
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -18.15864,
+            3.3,
+            11.61042
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -18.316259384155273,
+            1.659999966621399,
+            11.644433975219727
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_school_bracket_1",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            22.77881,
+            3.3,
+            3.65415
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            22.87233,
+            3.3,
+            3.75833
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            23.74619,
+            3.3,
+            2.78572
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            23.83972,
+            3.3,
+            2.8899
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            22.77881,
+            3.72,
+            3.65415
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            22.87233,
+            3.72,
+            3.75833
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            23.74619,
+            3.72,
+            2.78572
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            23.83972,
+            3.72,
+            2.8899
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            23.309261322021484,
+            3.509999990463257,
+            3.2720284461975098
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_school_bracket_-1",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            20.10672,
+            3.3,
+            0.67758
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            20.20024,
+            3.3,
+            0.78176
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            21.07411,
+            3.3,
+            -0.19084
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            21.16763,
+            3.3,
+            -0.08666
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            20.10672,
+            3.72,
+            0.67758
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            20.20024,
+            3.72,
+            0.78176
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            21.07411,
+            3.72,
+            -0.19084
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            21.16763,
+            3.72,
+            -0.08666
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            20.637174606323242,
+            3.509999990463257,
+            0.2954607903957367
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_school_canopy",
+      "is_primary_door_or_canopy": true,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            19.51523,
+            3.72,
+            -0.04119
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            21.15234,
+            3.72,
+            -1.51084
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            23.52336,
+            3.72,
+            4.42366
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            25.16047,
+            3.72,
+            2.95402
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            19.51523,
+            3.9,
+            -0.04119
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            21.15234,
+            3.9,
+            -1.51084
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            23.52336,
+            3.9,
+            4.42366
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            25.16047,
+            3.9,
+            2.95402
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            22.337846755981445,
+            3.809999942779541,
+            1.4564139842987063
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_school_divider",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            21.64808,
+            0.02,
+            2.03531
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            21.68816,
+            0.02,
+            2.07996
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            21.69273,
+            0.02,
+            1.99523
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            21.73281,
+            0.02,
+            2.03988
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            21.64808,
+            3.22,
+            2.03531
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            21.68816,
+            3.22,
+            2.07996
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            21.69273,
+            3.22,
+            1.99523
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            21.73281,
+            3.22,
+            2.03988
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            21.69044303894043,
+            1.6200000047683716,
+            2.037592887878418
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_school_door",
+      "is_primary_door_or_canopy": true,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            20.25749,
+            0.02,
+            0.77069
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            20.40632,
+            0.02,
+            0.63708
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            22.79597,
+            0.02,
+            3.59843
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            22.9448,
+            0.02,
+            3.46482
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            20.25749,
+            3.22,
+            0.77069
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            20.40632,
+            3.22,
+            0.63708
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            22.79597,
+            3.22,
+            3.59843
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            22.9448,
+            3.22,
+            3.46482
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            21.601146697998047,
+            1.6200000047683716,
+            2.11775541305542
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_school_header",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            20.11492,
+            3.2,
+            0.65678
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            20.32328,
+            3.2,
+            0.46974
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            22.89389,
+            3.2,
+            3.75241
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            23.10225,
+            3.2,
+            3.56537
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            20.11492,
+            3.34,
+            0.65678
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            20.32328,
+            3.34,
+            0.46974
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            22.89389,
+            3.34,
+            3.75241
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            23.10225,
+            3.34,
+            3.56537
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            21.60858726501465,
+            3.2699999809265137,
+            2.1110751628875732
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_school_jamb_1",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            22.78701,
+            0.02,
+            3.63335
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            22.89389,
+            0.02,
+            3.75241
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            22.99537,
+            0.02,
+            3.4463
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            23.10225,
+            0.02,
+            3.56537
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            22.78701,
+            3.3,
+            3.63335
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            22.89389,
+            3.3,
+            3.75241
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            22.99537,
+            3.3,
+            3.4463
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            23.10225,
+            3.3,
+            3.56537
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            22.944631576538086,
+            1.659999966621399,
+            3.5993590354919434
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_school_jamb_-1",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            20.11492,
+            0.02,
+            0.65678
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            20.22181,
+            0.02,
+            0.77585
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            20.32328,
+            0.02,
+            0.46974
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            20.43017,
+            0.02,
+            0.5888
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            20.11492,
+            3.3,
+            0.65678
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            20.22181,
+            3.3,
+            0.77585
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            20.32328,
+            3.3,
+            0.46974
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            20.43017,
+            3.3,
+            0.5888
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            20.272544860839844,
+            1.659999966621399,
+            0.6227913498878479
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_staff_bracket_1",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -22.534,
+            3.3,
+            -16.00768
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -22.42935,
+            3.3,
+            -16.10068
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -21.67043,
+            3.3,
+            -15.03596
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -21.56578,
+            3.3,
+            -15.12896
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -22.534,
+            3.72,
+            -16.00768
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -22.42935,
+            3.72,
+            -16.10068
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -21.67043,
+            3.72,
+            -15.03596
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -21.56578,
+            3.72,
+            -15.12896
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -22.04989242553711,
+            3.509999990463257,
+            -15.56832218170166
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_staff_bracket_-1",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -24.47745,
+            3.3,
+            -14.28054
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -24.3728,
+            3.3,
+            -14.37354
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -23.61388,
+            3.3,
+            -13.30882
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -23.50923,
+            3.3,
+            -13.40182
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -24.47745,
+            3.72,
+            -14.28054
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -24.3728,
+            3.72,
+            -14.37354
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -23.61388,
+            3.72,
+            -13.30882
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -23.50923,
+            3.72,
+            -13.40182
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -23.993337631225586,
+            3.509999990463257,
+            -13.841178894042969
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_staff_canopy",
+      "is_primary_door_or_canopy": true,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -25.79703,
+            3.72,
+            -14.36538
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -24.3356,
+            3.72,
+            -12.72093
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -22.35863,
+            3.72,
+            -17.4211
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -20.8972,
+            3.72,
+            -15.77665
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -25.79703,
+            3.9,
+            -14.36538
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -24.3356,
+            3.9,
+            -12.72093
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -22.35863,
+            3.9,
+            -17.4211
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -20.8972,
+            3.9,
+            -15.77665
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -23.347116470336914,
+            3.809999942779541,
+            -15.071015357971191
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_staff_divider",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -22.81154,
+            0.02,
+            -14.4232
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -22.77168,
+            0.02,
+            -14.37836
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -22.76669,
+            0.02,
+            -14.46306
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -22.72683,
+            0.02,
+            -14.41821
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -22.81154,
+            3.22,
+            -14.4232
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -22.77168,
+            3.22,
+            -14.37836
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -22.76669,
+            3.22,
+            -14.46306
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -22.72683,
+            3.22,
+            -14.41821
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -22.76918601989746,
+            1.6200000047683716,
+            -14.420708656311035
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_staff_door",
+      "is_primary_door_or_canopy": true,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -23.65288,
+            0.02,
+            -13.60862
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -23.52002,
+            0.02,
+            -13.45912
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -21.85893,
+            0.02,
+            -15.2029
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -21.72607,
+            0.02,
+            -15.05341
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -23.65288,
+            3.22,
+            -13.60862
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -23.52002,
+            3.22,
+            -13.45912
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -21.85893,
+            3.22,
+            -15.2029
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -21.72607,
+            3.22,
+            -15.05341
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -22.689472198486328,
+            1.6200000047683716,
+            -14.331011772155762
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_staff_header",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -23.82064,
+            3.2,
+            -13.52642
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -23.63464,
+            3.2,
+            -13.31712
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -21.7576,
+            3.2,
+            -15.35985
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -21.5716,
+            3.2,
+            -15.15055
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -23.82064,
+            3.34,
+            -13.52642
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -23.63464,
+            3.34,
+            -13.31712
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -21.7576,
+            3.34,
+            -15.35985
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -21.5716,
+            3.34,
+            -15.15055
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -22.696115493774414,
+            3.2699999809265137,
+            -14.338486671447754
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_staff_jamb_1",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -21.87719,
+            0.02,
+            -15.25356
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -21.7576,
+            0.02,
+            -15.35985
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -21.69119,
+            0.02,
+            -15.04427
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -21.5716,
+            0.02,
+            -15.15055
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -21.87719,
+            3.3,
+            -15.25356
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -21.7576,
+            3.3,
+            -15.35985
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -21.69119,
+            3.3,
+            -15.04427
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -21.5716,
+            3.3,
+            -15.15055
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -21.724393844604492,
+            1.659999966621399,
+            -15.202057838439941
+          ],
+          "inside_solids": []
+        }
+      ]
+    },
+    {
+      "mesh": "ICON_entrance_staff_jamb_-1",
+      "is_primary_door_or_canopy": false,
+      "bottom_corner_count": 4,
+      "points": [
+        {
+          "kind": "bottom_corner",
+          "index": 0,
+          "xyz": [
+            -23.82064,
+            0.02,
+            -13.52642
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 1,
+          "xyz": [
+            -23.70104,
+            0.02,
+            -13.6327
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 2,
+          "xyz": [
+            -23.63464,
+            0.02,
+            -13.31712
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "bottom_corner",
+          "index": 3,
+          "xyz": [
+            -23.51504,
+            0.02,
+            -13.42341
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 0,
+          "xyz": [
+            -23.82064,
+            3.3,
+            -13.52642
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 1,
+          "xyz": [
+            -23.70104,
+            3.3,
+            -13.6327
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 2,
+          "xyz": [
+            -23.63464,
+            3.3,
+            -13.31712
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "top_corner",
+          "index": 3,
+          "xyz": [
+            -23.51504,
+            3.3,
+            -13.42341
+          ],
+          "inside_solids": []
+        },
+        {
+          "kind": "centre",
+          "index": 0,
+          "xyz": [
+            -23.667837142944336,
+            1.659999966621399,
+            -13.47491455078125
+          ],
+          "inside_solids": []
+        }
+      ]
+    }
+  ],
+  "issues": [],
+  "scope": "All exported entrance-object bottom/top corners and centres, owner/foreign Hotel solids and neighbouring context; approach sampled at two heights. Not a surveyed/as-built position or vertical-level certification."
+}
