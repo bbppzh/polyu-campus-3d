@@ -135,6 +135,9 @@ box('GSH_door', bx + bnx * 1.2, by + bny * 1.2, 2.1, 9.0, 0.9, 4.2, rot, GLASS)
 
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from trim_adjacent import trim_neighbour
+trim_neighbour('Chow Yei Ching Building', (cx,cz), .35)
+trim_neighbour('Yip Kit Chuen Building', (cx,cz), .35)
 from roof_support import finalize_scene
 print('SUPPORT_QA', 'build_gsh', json.dumps(finalize_scene()), flush=True)
 bpy.context.view_layer.update()

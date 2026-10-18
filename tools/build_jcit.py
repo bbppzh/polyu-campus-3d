@@ -12,8 +12,30 @@ OUT=os.path.join(ROOT,'assets','models','jcit.glb')
 data=json.load(open(os.path.join(ROOT,'data','campus.json')))
 lm=next(l for l in data['landmarks'] if l['name']=='Jockey Club Innovation Tower')
 height=float(lm['height']);fp=np.array(lm['footprint'])-lm['center']
-es=np.roll(fp,-1,axis=0)-fp;e=es[np.linalg.norm(es,axis=1).argmax()];u=e/np.linalg.norm(e);v=np.array([-u[1],u[0]])
-q=fp@np.array([u,v]).T;mid=(q.min(0)+q.max(0))/2
+# Fit the long slab to the mapped compound rather than its longest single
+# boundary edge (that edge faces Block X and is not the tower's long axis).
+# Select the best-contained orientation while rejecting neighbouring footprints.
+def contains(points,poly):
+    result=np.zeros(len(points),bool)
+    for a,b in zip(poly,np.roll(poly,-1,axis=0)):
+        if abs(b[1]-a[1])<1e-9:continue
+        result ^= ((a[1]>points[:,1])!=(b[1]>points[:,1])) & (points[:,0]<(b[0]-a[0])*(points[:,1]-a[1])/(b[1]-a[1])+a[0])
+    return result
+sample=np.array([(x,z) for x in np.arange(-35.5,35.6,1) for z in np.arange(-14.5,14.6,1)
+                 if max(abs(x)-30.5,0)**2+max(abs(z)-9.5,0)**2<=5.0**2])
+axis=np.linalg.eigh(np.cov(fp.T))[1][:,-1]
+if axis[0]>0:axis=-axis
+reference=math.atan2(axis[1],axis[0]);scores=[]
+neighbours=[np.array(l['footprint'])-lm['center'] for l in data['landmarks'] if l is not lm]
+for angle in np.arange(reference-math.radians(35),reference+math.radians(35),math.radians(.5)):
+    cu=np.array([math.cos(angle),math.sin(angle)]);cv=np.array([-cu[1],cu[0]])
+    points=sample@np.array([cu,cv])
+    outside=np.count_nonzero(~contains(points,fp))
+    collision=sum(np.count_nonzero(contains(points,poly)) for poly in neighbours)
+    scores.append((outside+collision*20,abs(angle-reference),angle))
+angle=min(scores)[2];u=np.array([math.cos(angle),math.sin(angle)]);v=np.array([-u[1],u[0]])
+mid=np.zeros(2) # landmark centre is the compound anchor, not a rotated bbox corner
+print('JCIT compound alignment degrees',round(math.degrees(angle),2))
 M=128;BASE=9.2
 # Rounded rectangles have straight long faces and small rounded ends.
 def rounded(a,b,r):
@@ -26,6 +48,8 @@ def rounded(a,b,r):
     for s in np.arange(M)*cum[-1]/M:
         k=min(len(pts)-1,np.searchsorted(cum,s,side='right')-1);t=(s-cum[k])/max(dist[k],1e-9);ans.append(pts[k]*(1-t)+pts[(k+1)%len(pts)]*t)
     return np.array(ans)
+# Centre the slab in the mapped compound. The previous 15 m lateral offset
+# displaced the podium into the Communal Building.
 plan=rounded(34.5,13.6,5.0)
 def ring(t,offset=0):
     # Full-height slab has gently varying width; the high end and sloped crown
@@ -37,7 +61,7 @@ def ring(t,offset=0):
     if offset:
         radial=uv/np.maximum(np.linalg.norm(uv,axis=1)[:,None],1e-9);uv+=radial*offset
     yy=BASE+(height-.35-BASE)*t-10.0*((plan[:,0]+34.5)/69)*(t**5)
-    uv+=mid+np.array([0,-15.0]);xz=uv[:,0,None]*u+uv[:,1,None]*v
+    uv+=mid+np.array([0,0.0]);xz=uv[:,0,None]*u+uv[:,1,None]*v
     return np.c_[xz[:,0],yy,xz[:,1]]
 def loft(rows):
     vv=np.vstack(rows);ff=[]
@@ -128,7 +152,7 @@ prims.append(Prim(cv,np.array(cf),'white',smooth=False))
 # Compact low podium aligned with the tower, avoiding an unrelated circular base.
 rows=[]
 for yy,a,b in [(0,31.5,12.0),(BASE,36,15)]:
-    base=rounded(a,b,5.5)+mid+np.array([0,-15.0]);xz=base[:,0,None]*u+base[:,1,None]*v
+    base=rounded(a,b,5.5)+mid+np.array([0,0.0]);xz=base[:,0,None]*u+base[:,1,None]*v
     rows.append(np.c_[xz[:,0],np.full(M,yy),xz[:,1]])
 prims.append(solid_loft(rows,'white'))
 # --- write GLB ---------------------------------------------------------------

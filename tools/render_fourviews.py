@@ -22,4 +22,6 @@ for slug in slugs:
   cam=bpy.data.objects.new('QC_CAMERA',cd);sc.collection.objects.link(cam);cam.location=center+Vector(d).normalized()*max(dim.length*2,60);cam.rotation_euler=(center-cam.location).to_track_quat('-Z','Y').to_euler();sc.camera=cam
   sc.render.image_settings.file_format='PNG';sc.render.filepath=str(OUT/f'{slug}-{view}.png');bpy.ops.render.render(write_still=True)
  print('RENDER_OK',slug,flush=True)
-(OUT/'metrics.json').write_text(json.dumps(metrics,indent=2))
+prior=json.loads((OUT/'metrics.json').read_text()) if (OUT/'metrics.json').exists() else []
+by_slug={m['slug']:m for m in prior};by_slug.update({m['slug']:m for m in metrics})
+(OUT/'metrics.json').write_text(json.dumps(list(by_slug.values()),indent=2))

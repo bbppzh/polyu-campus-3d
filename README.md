@@ -298,3 +298,32 @@ the app falls back to the in-code version if the GLB is missing.
   (`brick_wall_001`, `large_sandstone_blocks`).
 - This is an unofficial, non-commercial student project. Geometry is simplified and
   heights are estimated; it is not a survey or an official university representation.
+
+
+## Collision fixes — 2026-10-19
+
+JCIT now fits its long axis to the mapped compound rather than a single perimeter
+edge; its arbitrary lateral offset is removed. The auditorium roof is clipped to
+the hall perimeter, and the Student Hub's adjoining walls are trimmed at Chow Yei
+Ching / Yip Kit Chuen. Original geographic records remain in `data/campus.json`.
+
+`data/scene-layout.json` is a derived rendering layout. It removes overlapping
+background building volumes, supports holes in the remaining footprints, and
+keeps entire tree crowns clear of buildings and roads. Generic awnings are checked
+by polygon containment and edge crossings. Heights and architectural proportions
+remain approximations; see [the detailed check record](docs/COLLISION-FIX-20261019.md).
+
+After changing any landmark GLB or the source map, regenerate the layout before
+publishing (Python needs `tools/requirements-geometry.txt`):
+
+```sh
+python3 tools/build_scene_layout.py
+node tools/check_scene_layout.mjs /tmp/campus-details.json
+python3 tools/check_scene_intersections.py /tmp/campus-details.json
+python3 tools/check_model_intersections.py
+python3 tools/audit_models.py
+python3 tools/check_hotel_entrances.py
+```
+
+The layout check rejects stale model/source hashes. `tools/rebuild_all.py` only
+rebuilds models; run the commands above afterwards.

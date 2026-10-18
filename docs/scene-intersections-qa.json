@@ -1,0 +1,8 @@
+{
+  "context_pieces": 447,
+  "procedural_details": 4400,
+  "trees": 170,
+  "max_context_overlap_m2": 0,
+  "errors": [],
+  "scope": "Exact planar polygon intersections: rendered context pieces against exported landmark projections, context pairs, actual procedural detail footprints against landmark projections/taller neighbours, every full tree crown against buildings. Vertical projection is conservative; it is not an as-built survey."
+}

@@ -459,18 +459,24 @@ function makeFacadeMaterial(THREE, color, opts = {}) {
   return mat;
 }
 
-function shapeFromFootprint(THREE, footprint) {
+function shapeFromFootprint(THREE, footprint, holes = []) {
   const shape = new THREE.Shape();
   footprint.forEach(([x, z], i) => {
     if (i === 0) shape.moveTo(x, -z);
     else shape.lineTo(x, -z);
   });
   shape.closePath();
+  for (const ring of holes) {
+    const hole = new THREE.Path();
+    ring.forEach(([x, z], i) => i === 0 ? hole.moveTo(x, -z) : hole.lineTo(x, -z));
+    hole.closePath();
+    shape.holes.push(hole);
+  }
   return shape;
 }
 
 function extrudeBuilding(THREE, footprint, height, opts = {}) {
-  const shape = shapeFromFootprint(THREE, footprint);
+  const shape = shapeFromFootprint(THREE, footprint, opts.holes);
   const bevel = opts.bevel ?? 0.35;
   const geom = new THREE.ExtrudeGeometry(shape, {
     depth: height,
@@ -636,7 +642,35 @@ function seededRand(seed) {
   };
 }
 
-function buildTrees(THREE, landmarks, areas) {
+function pointInRing(x, z, poly) {
+  let inside = false;
+  for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+    const a = poly[i], b = poly[j];
+    if ((a[1] > z) !== (b[1] > z) && x < (b[0] - a[0]) * (z - a[1]) / (b[1] - a[1]) + a[0]) inside = !inside;
+  }
+  return inside;
+}
+
+function pointInFootprint(x, z, shape) {
+  return pointInRing(x, z, shape.footprint) && !(shape.holes || []).some(ring => pointInRing(x, z, ring));
+}
+
+function footprintsOverlap(a, b) {
+  if (a.footprint.some(([x,z]) => pointInFootprint(x,z,b))) return true;
+  if (b.footprint.some(([x,z]) => pointInFootprint(x,z,a))) return true;
+  const cross=(a,b,c)=>(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]);
+  for (const ra of [a.footprint,...(a.holes||[])]) {
+    for (const rb of [b.footprint,...(b.holes||[])]) {
+      for(let i=0;i<ra.length;i++)for(let j=0;j<rb.length;j++){
+        const p=ra[i],q=ra[(i+1)%ra.length],r=rb[j],t=rb[(j+1)%rb.length];
+        if(cross(p,q,r)*cross(p,q,t)<-1e-10 && cross(r,t,p)*cross(r,t,q)<-1e-10)return true;
+      }
+    }
+  }
+  return false;
+}
+
+function buildTrees(THREE, landmarks, areas, obstacles = []) {
   const rand = seededRand(20261018);
   const count = 170;
   const trunkGeom = new THREE.CylinderGeometry(0.5, 0.7, 4, 5);
@@ -654,6 +688,7 @@ function buildTrees(THREE, landmarks, areas) {
     const c = l.center || centroid(l.footprint || [[0, 0]]);
     return { x: c[0], z: c[1], r: Math.sqrt(footprintArea(l.footprint || [[0, 0]])) * 0.62 + 8 };
   });
+  const exclusions = obstacles.map(shape => ({ shape, bounds: footprintBounds(shape.footprint) }));
   const dummy = new THREE.Object3D();
   let placed = 0;
   let guard = 0;
@@ -668,6 +703,7 @@ function buildTrees(THREE, landmarks, areas) {
       if (Math.hypot(x - b.x, z - b.z) < b.r) { ok = false; break; }
     }
     if (!ok) continue;
+    if (exclusions.some(({shape, bounds: b}) => x >= b.minX && x <= b.maxX && z >= b.minZ && z <= b.maxZ && pointInFootprint(x, z, shape))) continue;
     const h = 3.2 + rand() * 2.6;
     const spread = 2.8 + rand() * 2.4;
     dummy.position.set(x, h * 0.5, z);
@@ -1044,7 +1080,7 @@ function buildJCITTower(THREE, l, group, landmarks, materials, mats) {
   }
 }
 
-function buildContextDetails(THREE, context, materials) {
+function buildContextDetails(THREE, context, materials, landmarkEnvelopes = []) {
   const group = new THREE.Group();
   const whiteMat = new THREE.MeshStandardMaterial({ color: '#d6d0c2', roughness: 0.85 });
   const roofMat = new THREE.MeshStandardMaterial({ color: '#918b80', roughness: 0.95 });
@@ -1054,18 +1090,6 @@ function buildContextDetails(THREE, context, materials) {
   materials.push(whiteMat, roofMat, darkMat, glassMat, greenMat);
   const buckets = { white: [], roof: [], dark: [], glass: [], green: [] };
   const rand = seededRand(3141);
-  const insidePoly = (poly, x, z) => {
-    let inside = false;
-    for (let i = 0; i < poly.length; i++) {
-      const a = poly[i];
-      const b = poly[(i + 1) % poly.length];
-      if ((a[1] > z) !== (b[1] > z)) {
-        const xin = (b[0] - a[0]) * (z - a[1]) / (b[1] - a[1] + 1e-12) + a[0];
-        if (x < xin) inside = !inside;
-      }
-    }
-    return inside;
-  };
   const add = (bucket, w, h, d, x, y, z) => {
     const g = new THREE.BoxGeometry(w, h, d);
     g.translate(x, y, z);
@@ -1082,16 +1106,17 @@ function buildContextDetails(THREE, context, materials) {
     g.translate(x, y, z);
     buckets[bucket].push(g);
   };
-  const fitsRoof = (poly, x, z, w, d) => {
+  const fitsRoof = (shape, x, z, w, d) => {
     const nx = Math.max(2, Math.ceil(w / 0.6));
     const nz = Math.max(2, Math.ceil(d / 0.6));
     for (let i = 0; i <= nx; i++) {
       for (let j = 0; j <= nz; j++) {
-        if (!insidePoly(poly, x + w * (i / nx - 0.5), z + d * (j / nz - 0.5))) return false;
+        if (!pointInFootprint(x + w * (i / nx - 0.5), z + d * (j / nz - 0.5), shape)) return false;
       }
     }
     return true;
   };
+  const blockingShapes = [...context, ...landmarkEnvelopes].map(shape => ({shape, bounds: footprintBounds(shape.footprint)}));
   const excludedContextIds = new Set([236028367, 236028374, 236028379]);
   for (let i = 0; i < context.length; i++) {
     const b = context[i];
@@ -1105,18 +1130,20 @@ function buildContextDetails(THREE, context, materials) {
     const span = Math.min(bb.w, bb.d);
     // roof parapet follows the actual footprint edges (concave/L-shaped safe)
     if (h > 3) {
-      for (let k = 0; k < b.footprint.length; k++) {
-        const a = b.footprint[k];
-        const c = b.footprint[(k + 1) % b.footprint.length];
-        const dx = c[0] - a[0];
-        const dz = c[1] - a[1];
-        const len = Math.hypot(dx, dz);
-        if (len < 0.6) continue;
-        const ang = Math.atan2(-dz, dx);
-        const g = new THREE.BoxGeometry(len + 0.3, 0.7, 0.38);
-        g.rotateY(ang);
-        g.translate((a[0] + c[0]) / 2, h + 0.35, (a[1] + c[1]) / 2);
-        buckets.white.push(g);
+      for (const ring of [b.footprint, ...(b.holes || [])]) {
+        for (let k = 0; k < ring.length; k++) {
+          const a = ring[k];
+          const c = ring[(k + 1) % ring.length];
+          const dx = c[0] - a[0];
+          const dz = c[1] - a[1];
+          const len = Math.hypot(dx, dz);
+          if (len < 0.6) continue;
+          const ang = Math.atan2(-dz, dx);
+          const g = new THREE.BoxGeometry(len + 0.3, 0.7, 0.38);
+          g.rotateY(ang);
+          g.translate((a[0] + c[0]) / 2, h + 0.35, (a[1] + c[1]) / 2);
+          buckets.white.push(g);
+      }
       }
     }
     // Roof props sit on the roof, with their entire base inside the polygon.
@@ -1125,16 +1152,16 @@ function buildContextDetails(THREE, context, materials) {
       const pz = cz + (rand() - 0.5) * bb.d * 0.25;
       const pw = Math.min(10, span * 0.25), pd = Math.min(8, span * 0.2);
       const ph = 1.4 + rand() * 1.2;
-      if (fitsRoof(b.footprint, px, pz, pw + 0.2, pd + 0.2)) add('roof', pw, ph, pd, px, h + ph / 2, pz);
+      if (fitsRoof(b, px, pz, pw + 0.2, pd + 0.2)) add('roof', pw, ph, pd, px, h + ph / 2, pz);
       const vx = cx + bb.w * 0.2, vz = cz - bb.d * 0.18, vh = 1.5 + rand();
-      if (fitsRoof(b.footprint, vx, vz, 0.7, 0.7)) add('dark', 0.5, vh, 0.5, vx, h + vh / 2, vz);
+      if (fitsRoof(b, vx, vz, 0.7, 0.7)) add('dark', 0.5, vh, 0.5, vx, h + vh / 2, vz);
     }
     if (area > 900) {
       const wx = cx - bb.w * 0.22, wz = cz + bb.d * 0.2, r = Math.min(2.2, span * 0.06);
-      if (fitsRoof(b.footprint, wx, wz, r * 2 + 0.2, r * 2 + 0.2)) addCyl('white', r, 2.6, wx, h + 1.3, wz);
+      if (fitsRoof(b, wx, wz, r * 2 + 0.2, r * 2 + 0.2)) addCyl('white', r, 2.6, wx, h + 1.3, wz);
     }
     // shopfront + awning follow one real footprint edge (not a bbox side)
-    if (area > 40 && h > 4) {
+    if (area > 40 && h > 4 && !b.clipped) {
       let bestEdge = null;
       for (let e = 0; e < b.footprint.length; e++) {
         const a = b.footprint[e];
@@ -1147,8 +1174,15 @@ function buildContextDetails(THREE, context, materials) {
         const mz = (a[1] + c[1]) / 2;
         let nx = dz / len;
         let nz = -dx / len;
-        if ((mx - cx) * nx + (mz - cz) * nz < 0) { nx = -nx; nz = -nz; }
-        if (!bestEdge || len > bestEdge.len) bestEdge = { mx, mz, dx, dz, len, nx, nz };
+        if (pointInFootprint(mx + nx * .05, mz + nz * .05, b)) { nx = -nx; nz = -nz; }
+        // Exact edge crossings and containment protect the full awning,
+        // including narrow neighbours missed by a centre/corner/grid sample.
+        const width = Math.min(len * .62, 18) + .8;
+        const radius = width/2 + 1.4;
+        const obstacles = blockingShapes.filter(({shape, bounds: q}) => shape !== b && q.minX < mx+radius && q.maxX > mx-radius && q.minZ < mz+radius && q.maxZ > mz-radius);
+        const awning = {footprint: [[-.5,.2],[.5,.2],[.5,1.3],[-.5,1.3]].map(([along,normal]) => [mx+dx/len*along*width+nx*normal,mz+dz/len*along*width+nz*normal])};
+        const clear = !obstacles.some(({shape}) => footprintsOverlap(awning,shape));
+        if (clear && (!bestEdge || len > bestEdge.len)) bestEdge = { mx, mz, dx, dz, len, nx, nz };
       }
       if (bestEdge) {
         const w = Math.min(bestEdge.len * 0.62, 18.0);
@@ -1164,7 +1198,7 @@ function buildContextDetails(THREE, context, materials) {
       const gx = cx + bb.w * 0.1;
       const gz = cz;
       const gw = Math.min(10, bb.w * 0.3), gd = Math.min(6, bb.d * 0.2);
-      if (fitsRoof(b.footprint, gx, gz, gw + 0.2, gd + 0.2)) {
+      if (fitsRoof(b, gx, gz, gw + 0.2, gd + 0.2)) {
         add('green', gw, 0.55, gd, gx, h + 0.275, gz);
       }
     }
@@ -1256,6 +1290,7 @@ function buildEntranceSigns(THREE, landmarks, materials, group, hotelRegistratio
 }
 
 export function createCampus(THREE, data, opts = {}) {
+  const renderContext = data.sceneLayout?.context || data.context || [];
   const group = new THREE.Group();
   const materials = [];
   const landmarks = [];
@@ -2113,11 +2148,11 @@ export function createCampus(THREE, data, opts = {}) {
   const excludedContextIds = new Set([236028367, 236028374, 236028379]);
   const campusGeoms = [];
   const cityGeoms = [];
-  (data.context || []).forEach((b, i) => {
+  renderContext.forEach((b, i) => {
     if (!b.footprint || b.footprint.length < 3) return;
     if (excludedContextIds.has(b.id)) return;
     const h = Math.max(4, b.height || 16);
-    const g = extrudeBuilding(THREE, b.footprint, h, { bevel: 0 });
+    const g = extrudeBuilding(THREE, b.footprint, h, { bevel: 0, holes: b.holes });
     const [cx, cz] = b.center || centroid(b.footprint);
     const isCampus =
       cx > -185 && cx < 205 && cz > -350 && cz < 265;
@@ -2141,7 +2176,7 @@ export function createCampus(THREE, data, opts = {}) {
   mergeInto(cityGeoms.filter((x) => x.i % 3 === 0), cityMat);
   mergeInto(cityGeoms.filter((x) => x.i % 3 === 1), cityMat2);
   mergeInto(cityGeoms.filter((x) => x.i % 3 === 2), cityMat3);
-  group.add(buildContextDetails(THREE, data.context || [], materials));
+  group.add(buildContextDetails(THREE, renderContext, materials, data.sceneLayout?.landmarkEnvelopes || []));
   }
 
   // ---- ground plane details ------------------------------------------------
@@ -2154,7 +2189,7 @@ export function createCampus(THREE, data, opts = {}) {
     group.add(areasGroup);
   }
   if (!opts.noTrees) {
-    const trees = buildTrees(THREE, data.landmarks || [], data.areas);
+    const trees = buildTrees(THREE, data.landmarks || [], data.areas, data.sceneLayout?.treeObstacles || []);
     group.add(trees);
   }
   if (!opts.noRoofs) {

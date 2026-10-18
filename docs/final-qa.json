@@ -1,6 +1,6 @@
 {
   "model_count": 30,
-  "checked_rooftop_objects": 133,
+  "checked_rooftop_objects": 130,
   "roof_cap_checks": [
     {
       "model": "lks",
@@ -61,7 +61,7 @@
     {
       "name": "Jockey Club Innovation Tower",
       "slug": "jcit",
-      "sha256": "1272733a5d327a0a24111b25d5e394f4245d3b7da9f7ffd3ef0d5791b68fdca5",
+      "sha256": "b47d99c9fed013527134e3a60ed59fa8bd4f03209ef8571692d2a52d9ff45baa",
       "meshes": 17,
       "triangles": 25856,
       "finite": true,
@@ -72,9 +72,9 @@
     {
       "name": "Jockey Club Auditorium",
       "slug": "jca",
-      "sha256": "a0aac4898ef47891e50e3fec9259d53062868a67cf39c9a9c08e8c5c66e50a33",
+      "sha256": "e55b450807b7a56a3854de6a5f7990abbc13ec6a4f9ffb8ab399bfa3d6541fdf",
       "meshes": 13,
-      "triangles": 2420,
+      "triangles": 1768,
       "finite": true,
       "degenerate_triangles": 0,
       "actual_y_min": 0.0,
@@ -83,9 +83,9 @@
     {
       "name": "Global Student Hub",
       "slug": "gsh",
-      "sha256": "d8ce04a888e8998e18c7fa4d574d5be9461684b2846bc3eef67e0501f0bf8084",
-      "meshes": 50,
-      "triangles": 776,
+      "sha256": "fc9f3102018a0113e562eeeaaf8e1866c83aa80bf1d44a06c86e9ae69a1a72f2",
+      "meshes": 44,
+      "triangles": 692,
       "finite": true,
       "degenerate_triangles": 0,
       "actual_y_min": 0.0,
