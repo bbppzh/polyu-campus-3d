@@ -109,7 +109,7 @@ removes unsupported rooftop decoration and refreshes every model preview.
 ## 單體模型
 
 以下 30 張預覽直接由目前的 GLB 生成；沒有實景依據的屋頂棚架、獨立支柱、草坪花槽及佔位設備已移除。
-[放大查看全部單體模型](https://bbppzh.github.io/polyu-campus-3d/docs/models/) · [修正與檢查記錄](docs/STANDALONE-MODELS-20261019.md)
+[放大查看全部單體模型](https://bbppzh.github.io/polyu-campus-3d/docs/models/) · [修正與檢查記錄](docs/STANDALONE-MODELS-20261019.md) · [六棟構件對齊修正](docs/FACADE-ALIGNMENT-20261019.md)
 
 | 模型 | 模型 | 模型 |
 | --- | --- | --- |
