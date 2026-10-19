@@ -118,14 +118,9 @@ for k in range(5):
     box(f'ACL_slit_{k}', bx + bnx * 0.2 + bvx * off, by + bny * 0.2 + bvy * off,
         11.0, 0.8, 0.25, 4.2, rot, GLASS)
 
-# roof terrace pergola and planters
-for k in range(4):
-    t = 0.15 + 0.7 * k / 3
-    box(f'ACL_pergola_col_{k}', midx + bvx * (t - 0.5) * elen, midy + bvy * (t - 0.5) * elen,
-        h + 1.0, 0.35, 0.35, 1.6, 0.0, WHITE)
-for k in range(4):
-    box(f'ACL_pergola_beam_{k}', midx + bvx * (-0.35 + k * 0.23) * elen, midy + bvy * (-0.35 + k * 0.23) * elen,
-        h + 1.8, 0.15, 0.15, 3.2, rot, WHITE)
+# A complete supported pergola; dimensions are visual approximations.
+import sys
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 for k, t in enumerate((-0.25, 0.05, 0.3)):
     box(f'ACL_planter_{k}', midx + t * 16, midy - 8, h + 0.5, 6.0, 1.4, 0.55, 0.0, GREEN)
 

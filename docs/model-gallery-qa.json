@@ -1,0 +1,6 @@
+{
+  "previews_checked": 30,
+  "legacy_urls_checked": 30,
+  "errors": [],
+  "scope": "All README single-model images and legacy URLs are byte-identical to renders whose source GLB hashes match current exported models."
+}

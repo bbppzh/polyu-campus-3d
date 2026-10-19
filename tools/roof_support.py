@@ -5,13 +5,26 @@ Independent of the building's world-axis orientation and concave footprint.
 import bpy,math,re,json,os
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
-DETAIL=re.compile(r'planter|_bed_|_lawn_|_garden|tree|trunk|_court$|_line_|_fence|_pole_|_lamp_|_roof_plant|_roof_ac|_ac_\d|_vent_\d|_pergola|_pav|_rail_')
+DETAIL=re.compile(r'planter|_bed_|_lawn_|_garden|tree|trunk|_court$|_line_|_fence|_pole_|_lamp_|_roof_plant|_roof_ac|_ac_\d|_vent_\d|_pergola|_pav')
+
+# These objects were invented decoration/equipment rather than sourced campus
+# features. Remove them at export, consistently for every named model.
+UNVERIFIED_ROOF_PROPS=re.compile(r'pergola|planter|_bed_|_lawn_|_garden|tree|trunk|_roof_plant|_roof_ac|_ac_\d|_vent_\d|_water_tank|_tank(?:_|$)|_pav(?:_|$)|_roof_canopy|^Z_terrace_(?:glass_canopy|canopy_column)|^GSH_(?:rail|guard)_',re.I)
+
+def remove_unverified_roof_props():
+    removed=[]
+    for ob in list(bpy.context.scene.objects):
+        if ob.type=='MESH' and UNVERIFIED_ROOF_PROPS.search(ob.name):
+            removed.append(ob.name);bpy.data.objects.remove(ob,do_unlink=True)
+    return removed
 
 def bounds(obs):
     vv=[o.matrix_world@Vector(p) for o in obs for p in o.bound_box]
     return Vector(tuple(min(v[k] for v in vv) for k in range(3))),Vector(tuple(max(v[k] for v in vv) for k in range(3)))
 
 def finalize_scene():
+    removed=remove_unverified_roof_props()
+    if removed:print('UNVERIFIED_ROOF_PROPS_REMOVED',json.dumps(removed),flush=True)
     bpy.context.view_layer.update();objects=[o for o in bpy.context.scene.objects if o.type=='MESH']
     details=[o for o in objects if DETAIL.search(o.name.lower())]
     bodies=[o for o in objects if o not in details and not re.search(r'mull|transom|_fin_|_pier_|_step_|_door|_canopy|_atrium|_port|_frame|_slit|_sill|_ribbon',o.name.lower())]

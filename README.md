@@ -72,6 +72,8 @@ zoom, Esc closes. Deep link: `?select=library&pano=1`.
 The four landmark silhouettes were rebuilt on 2026-10-18 against architect and
 university exterior photographs. See [the revision, references and QA](docs/FINAL-REVISION.md).
 Widths, curves, platform levels and unverified heights remain visual estimates.
+The 2026-10-19 [standalone model update](docs/STANDALONE-MODELS-20261019.md)
+removes unsupported rooftop decoration and refreshes every model preview.
 
 ## What is in the scene
 
@@ -82,8 +84,7 @@ Widths, curves, platform levels and unverified heights remain visual estimates.
   the surrounding named academic buildings.
 - **PBR facades**: real CC0 brick and sandstone textures (diffuse + normal +
   roughness) tinted to PolyU's palette, with procedural punched/ribbon windows,
-  mullions, storey bands, stone plinths, ground-floor shopfront glazing, roof parapets
-  and roof-plant boxes.
+  mullions, storey bands, stone plinths, ground-floor shopfront glazing and roof parapets.
 - **Landmark-specific form**: custom GLBs for all 30 named buildings. The latest
   four are LKS (interlocking straight blocks and an elevated executive drum),
   JCIT (71.2 m envelope, layered curved slab and sloping crown), Hotel ICON
@@ -95,48 +96,34 @@ Widths, curves, platform levels and unverified heights remain visual estimates.
 - **Campus fabric**: the connected podium buildings around the core, in PolyU's
   red-brick and stone palette, with the surrounding Hung Hom city block massing
   muted behind it (~400 buildings).
-- **Context detail pass**: ~400 surrounding buildings now get one of three facade
-  variants (brick / stone / city tones), a roof parapet ring, roof plant/AC/vents,
-  a ground-floor shopfront + awning strip, footprint-contained rooftop equipment and
-  occasional roof gardens — all merged by material to keep draw calls low.
-- **Ground**: roads, footpaths, steps, pitches, gardens, pools and about 170 low-poly
-  trees, all from OSM.
+- **Context detail pass**: surrounding buildings use brick, stone or city tones,
+  perimeter parapets and checked ground-floor shopfront/awning strips, merged by
+  material. The rendering footprints resolve overlapping source building records.
+- **Ground**: roads, footpaths, steps, pitches, gardens and pools from OSM,
+  plus 170 procedurally placed trees with building and road clearance.
 - **Atmosphere**: Victoria Harbour with a gentle swell, a hazy Hong Kong skyline ring,
   and a dawn/day/sunset/night sky with lit windows at night.
 
 ![Facade close-up: real brick texture with normal/roughness relief](docs/facade.png)
-![Jockey Club Auditorium: custom curved shell and glazed foyer](docs/jca3d.png)
-![Hotel ICON: angular tower, teaching block and podium](docs/fourview/hotel_icon-iso.png)
-![LKS: interlocking blocks and elevated drum](docs/fourview/lks-iso.png)
-![Block Z: high wings, low block and terraces](docs/fourview/blockz-iso.png)
-![Block X: rooftop sports court, floodlights and fencing](docs/blockx3d.png)
-![Communal Building: glazed atrium and roof skylight](docs/communal3d.png)
-![Shaw Sports Complex: barrel-vault roof and glazed atrium](docs/shaw3d.png)
-![Global Student Hub: glass pavilion and roof terrace](docs/gsh3d.png)
-![Lee Shau Kee Building: long block with glazed atrium](docs/leeshaukee3d.png)
-![Industrial Centre: custom massing from repaired OSM footprint](docs/industrial3d.png)
-![Batch 3: template-generated GLBs for 18 named buildings](docs/auto-batch3.png)
-![Shirley Chan Building: hand-authored brick tower and glass crown](docs/shirley3d.png)
-![Choi Kai Yau Building: banded brick block and glass crown](docs/choi3d.png)
-![Chow Yei Ching Building: brick slab with vertical fins](docs/chow3d.png)
-![Mong Man Wai Building: balcony bands, glass stair core and roof terrace](docs/mong3d.png)
-![Ng Wing Hong Building: stepped brick/white tower](docs/ng3d.png)
-![Yip Kit Chuen Building: glass curtain wall and colonnade](docs/yip3d.png)
-![Chan Sui Wai Building: white louvre screen over glass](docs/chansui3d.png)
-![Chan Tai Ho Building: stone tower with glazed atrium and portico](docs/taiho3d.png)
-![Lui Che Woo Building: white tower with vertical glass slits](docs/lui3d.png)
-![GH Block: brick slab with diamond glass corner and water tank](docs/gh3d.png)
-![CMA Building: planted terraces and rooftop pergola](docs/cma3d.png)
-![Anita Chan Lai Ling Building: glazed portal and roof pergola](docs/anita3d.png)
-![House of Innovation: glass lantern with mullion grid](docs/hoi3d.png)
-![Chung Sze Yuen Building: ribbon glazing and floating roof](docs/chung3d.png)
-![Seal of Love Foundation Building: cylindrical glass stair tower](docs/seal3d.png)
-![Stanley Ho Building: balconies and vertical green wall](docs/stanley3d.png)
-![Fong Shu Chuen Hall: low hall with deep canopy and clerestory lantern](docs/fong3d.png)
-![Tang Ping Yuan Building: stacked brick/glass/white volumes](docs/tang3d.png)
-![Jockey Club Innovation Tower: standalone GLB sculptural shell](docs/jcit.png)
-![Library entrance signage](docs/sign.png)
-![Custom library GLB: glazed entrance and roof lantern](docs/library3d.png)
+
+## 單體模型
+
+以下 30 張預覽直接由目前的 GLB 生成；沒有實景依據的屋頂棚架、獨立支柱、草坪花槽及佔位設備已移除。
+[放大查看全部單體模型](https://bbppzh.github.io/polyu-campus-3d/docs/models/) · [修正與檢查記錄](docs/STANDALONE-MODELS-20261019.md)
+
+| 模型 | 模型 | 模型 |
+| --- | --- | --- |
+| **Li Ka Shing Tower**<br>李嘉誠樓<br>[![Li Ka Shing Tower](docs/models/lks.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#lks) | **Jockey Club Innovation Tower**<br>賽馬會創新樓<br>[![Jockey Club Innovation Tower](docs/models/jcit.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#jcit) | **Jockey Club Auditorium**<br>賽馬會綜藝館<br>[![Jockey Club Auditorium](docs/models/jca.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#jca) |
+| **Global Student Hub**<br>黃民鄧潔華伉儷環球學生薈<br>[![Global Student Hub](docs/models/gsh.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#gsh) | **Shaw Sports Complex**<br>邵逸夫體育館<br>[![Shaw Sports Complex](docs/models/shaw.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#shaw) | **Block X**<br>X座<br>[![Block X](docs/models/blockx.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#blockx) |
+| **Block Z**<br>Z座<br>[![Block Z](docs/models/blockz.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#blockz) | **Chan Sui Wai Building**<br>陳瑞槐樓<br>[![Chan Sui Wai Building](docs/models/chan.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#chan) | **Chan Tai Ho Building**<br>陳大河樓<br>[![Chan Tai Ho Building](docs/models/taio.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#taio) |
+| **Anita Chan Lai Ling Building**<br>陳麗玲樓<br>[![Anita Chan Lai Ling Building](docs/models/anita.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#anita) | **Chow Yei Ching Building**<br>周亦卿樓<br>[![Chow Yei Ching Building](docs/models/chow.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#chow) | **Mong Man Wai Building**<br>蒙民偉樓<br>[![Mong Man Wai Building](docs/models/mong.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#mong) |
+| **Ng Wing Hong Building**<br>伍永康樓<br>[![Ng Wing Hong Building](docs/models/ng.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#ng) | **Yip Kit Chuen Building**<br>葉傑全樓<br>[![Yip Kit Chuen Building](docs/models/yip.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#yip) | **Seal of Love Foundation Building**<br>正愛慈善基金樓<br>[![Seal of Love Foundation Building](docs/models/seal.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#seal) |
+| **CMA Building**<br>香港中華廠商聯合會樓<br>[![CMA Building](docs/models/cma.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#cma) | **Chung Sze Yuen Building**<br>鍾士元樓<br>[![Chung Sze Yuen Building](docs/models/chung.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#chung) | **Lui Che Woo Building**<br>呂志和樓<br>[![Lui Che Woo Building](docs/models/lui.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#lui) |
+| **Stanley Ho Building**<br>何鴻燊樓<br>[![Stanley Ho Building](docs/models/stanley.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#stanley) | **Choi Kai Yau Building**<br>蔡繼有樓<br>[![Choi Kai Yau Building](docs/models/choi.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#choi) | **Shirley Chan Building**<br>陳鮑雪瑩樓<br>[![Shirley Chan Building](docs/models/shirley.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#shirley) |
+| **GH Block**<br>GH棟<br>[![GH Block](docs/models/gh.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#gh) | **Fong Shu Chuen Hall**<br>方樹泉堂<br>[![Fong Shu Chuen Hall](docs/models/fong.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#fong) | **Tang Ping Yuan Building**<br>唐炳源樓<br>[![Tang Ping Yuan Building](docs/models/tang.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#tang) |
+| **Lee Shau Kee Building**<br>李兆基樓<br>[![Lee Shau Kee Building](docs/models/leeshaukee.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#leeshaukee) | **House of Innovation**<br>創新館<br>[![House of Innovation](docs/models/hoi.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#hoi) | **Industrial Centre**<br>工業中心<br>[![Industrial Centre](docs/models/industrial.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#industrial) |
+| **Communal Building**<br>文康大樓<br>[![Communal Building](docs/models/communal.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#communal) | **Pao Yue-kong Library**<br>包玉剛圖書館<br>[![Pao Yue-kong Library](docs/models/library.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#library) | **Hotel ICON**<br>唯港薈<br>[![Hotel ICON](docs/models/hotel_icon.png)](https://bbppzh.github.io/polyu-campus-3d/docs/models/#hotel_icon) |
+
 ![Dusk over the campus](docs/dusk.png)
 ![Night, with lit windows](docs/night.png)
 

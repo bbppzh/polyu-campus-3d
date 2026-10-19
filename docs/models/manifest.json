@@ -1,0 +1,605 @@
+{
+  "source": "Rendered from the current exported GLBs; no historical Blender scene or image reused.",
+  "models": [
+    {
+      "name": "Li Ka Shing Tower",
+      "nameZh": "李嘉誠樓",
+      "slug": "lks",
+      "model": "assets/models/lks.glb",
+      "preview": "docs/models/lks.png",
+      "model_sha256": "33b6e0909aeec235551d7044767a1439f34011353fb01d555924d57ac9898014",
+      "preview_sha256": "6287c8a2e2bce29228aff25ab0d711092af7ca8eac0b91dfe4ba75623497e379",
+      "bounds_min": [
+        -21.59000015258789,
+        -24.079999923706055,
+        0.0
+      ],
+      "bounds_max": [
+        23.260000228881836,
+        23.459999084472656,
+        60.80000305175781
+      ],
+      "legacy_preview": "docs/lks3d.png"
+    },
+    {
+      "name": "Jockey Club Innovation Tower",
+      "nameZh": "賽馬會創新樓",
+      "slug": "jcit",
+      "model": "assets/models/jcit.glb",
+      "preview": "docs/models/jcit.png",
+      "model_sha256": "b47d99c9fed013527134e3a60ed59fa8bd4f03209ef8571692d2a52d9ff45baa",
+      "preview_sha256": "9e1e6475729582032e47ea31d9919b9a34eed573c01d0c48ac443ff20b363d9a",
+      "bounds_min": [
+        -30.047788619995117,
+        -36.20418167114258,
+        0.0
+      ],
+      "bounds_max": [
+        30.047788619995117,
+        36.20418167114258,
+        71.19999694824219
+      ],
+      "legacy_preview": "docs/jcit.png"
+    },
+    {
+      "name": "Jockey Club Auditorium",
+      "nameZh": "賽馬會綜藝館",
+      "slug": "jca",
+      "model": "assets/models/jca.glb",
+      "preview": "docs/models/jca.png",
+      "model_sha256": "bd98f2157a2fc7795aaa737a29bcf6ec91c38264c5fd103947e8b99c43d0c1a3",
+      "preview_sha256": "1a30f7789c12672adb8aa48d2c04e77a8d70892c85e6cb25a17da24b198063eb",
+      "bounds_min": [
+        -14.880000114440918,
+        -14.343788146972656,
+        0.0
+      ],
+      "bounds_max": [
+        18.440000534057617,
+        10.84000015258789,
+        18.399999618530273
+      ],
+      "legacy_preview": "docs/jca3d.png"
+    },
+    {
+      "name": "Global Student Hub",
+      "nameZh": "黃民鄧潔華伉儷環球學生薈",
+      "slug": "gsh",
+      "model": "assets/models/gsh.glb",
+      "preview": "docs/models/gsh.png",
+      "model_sha256": "eafe7dc134e343b7a450d1e497c1de0064d23ff3525cdb0741487f60af3b76b2",
+      "preview_sha256": "fc6fe5b59700541778bae0f8481fb354d7e92b967e8b8a19831b6bf8974175b5",
+      "bounds_min": [
+        -10.570255279541016,
+        -12.050049781799316,
+        0.0
+      ],
+      "bounds_max": [
+        11.12024974822998,
+        13.313986778259277,
+        13.300000190734863
+      ],
+      "legacy_preview": "docs/gsh3d.png"
+    },
+    {
+      "name": "Shaw Sports Complex",
+      "nameZh": "邵逸夫體育館",
+      "slug": "shaw",
+      "model": "assets/models/shaw.glb",
+      "preview": "docs/models/shaw.png",
+      "model_sha256": "c8d6588dcf1c1726d150b62810f24d35154ccbbe01c03b5a3d76ae9894818b76",
+      "preview_sha256": "f046add59241b928f2a82a73c6e2ece8b375cba6016b926bea582a7656837b34",
+      "bounds_min": [
+        -27.484079360961914,
+        -25.719999313354492,
+        0.0
+      ],
+      "bounds_max": [
+        25.059999465942383,
+        25.780000686645508,
+        18.100000381469727
+      ],
+      "legacy_preview": "docs/shaw3d.png"
+    },
+    {
+      "name": "Block X",
+      "nameZh": "X座",
+      "slug": "blockx",
+      "model": "assets/models/blockx.glb",
+      "preview": "docs/models/blockx.png",
+      "model_sha256": "9e6620d52ffd4de817c7fde54a5d31d72196b286e412d77efdb863c269a551f1",
+      "preview_sha256": "5a18b18de10e5ae1cacd26c8d7d42abd734799c21d30e7b637c82697ae1c55cb",
+      "bounds_min": [
+        -44.93000030517578,
+        -36.7599983215332,
+        0.0
+      ],
+      "bounds_max": [
+        42.36000061035156,
+        38.93000030517578,
+        44.50199508666992
+      ],
+      "legacy_preview": "docs/blockx3d.png"
+    },
+    {
+      "name": "Block Z",
+      "nameZh": "Z座",
+      "slug": "blockz",
+      "model": "assets/models/blockz.glb",
+      "preview": "docs/models/blockz.png",
+      "model_sha256": "2f4c36aa2aa643793e21fdb43b466eb78763ab5743bb0a9a29cf037966bc15aa",
+      "preview_sha256": "c3b82f624e2a06b225eeffba788c9833ec46446d46b28f694d9cefdc822c34bd",
+      "bounds_min": [
+        -47.082061767578125,
+        -73.08164978027344,
+        0.0
+      ],
+      "bounds_max": [
+        50.03607177734375,
+        81.91160583496094,
+        49.0
+      ],
+      "legacy_preview": "docs/blockz3d.png"
+    },
+    {
+      "name": "Chan Sui Wai Building",
+      "nameZh": "陳瑞槐樓",
+      "slug": "chan",
+      "model": "assets/models/chan.glb",
+      "preview": "docs/models/chan.png",
+      "model_sha256": "9681a72d4a85340bcd0270c51eaeb9be25590c742762c6ee6ea89df4be71c651",
+      "preview_sha256": "e4621a2df71dd9772d6b830d6508778a85e945f5ce1f1d3405ebc342b96273e9",
+      "bounds_min": [
+        -23.579999923706055,
+        -14.170000076293945,
+        0.0
+      ],
+      "bounds_max": [
+        23.209999084472656,
+        15.109323501586914,
+        22.850000381469727
+      ],
+      "legacy_preview": "docs/chansui3d.png"
+    },
+    {
+      "name": "Chan Tai Ho Building",
+      "nameZh": "陳大河樓",
+      "slug": "taio",
+      "model": "assets/models/taio.glb",
+      "preview": "docs/models/taio.png",
+      "model_sha256": "447a7e0e3ac5114fd9e32c14484ff234e906635683b355e45341e4cf83e868f8",
+      "preview_sha256": "fbed337eee8cf4dd87d3d785e1fea205b40539f1e144863c099a69aa67748c06",
+      "bounds_min": [
+        -15.663808822631836,
+        -21.940000534057617,
+        0.0
+      ],
+      "bounds_max": [
+        14.0600004196167,
+        22.510000228881836,
+        22.850000381469727
+      ],
+      "legacy_preview": "docs/taiho3d.png"
+    },
+    {
+      "name": "Anita Chan Lai Ling Building",
+      "nameZh": "陳麗玲樓",
+      "slug": "anita",
+      "model": "assets/models/anita.glb",
+      "preview": "docs/models/anita.png",
+      "model_sha256": "26a5b8147aa03457ec731dc55b756c90343cb18ef4a4f949aeebea101e4ef405",
+      "preview_sha256": "6bf451a9da08b8c444e16e89314c4de28de082a439b96959b124414710aca7cc",
+      "bounds_min": [
+        -13.359999656677246,
+        -21.690000534057617,
+        0.0
+      ],
+      "bounds_max": [
+        16.619611740112305,
+        18.700000762939453,
+        16.0
+      ],
+      "legacy_preview": "docs/anita3d.png"
+    },
+    {
+      "name": "Chow Yei Ching Building",
+      "nameZh": "周亦卿樓",
+      "slug": "chow",
+      "model": "assets/models/chow.glb",
+      "preview": "docs/models/chow.png",
+      "model_sha256": "8a88ed49b0c10f4b626e02ddb6fad2398855446588f2e1ab90d1687e7a06a2fc",
+      "preview_sha256": "03eec90f2bc5021bdd2f63041cdf1de9c7a3226167590aed70f0d323f5607179",
+      "bounds_min": [
+        -16.430927276611328,
+        -22.68000030517578,
+        0.0
+      ],
+      "bounds_max": [
+        14.220000267028809,
+        22.3700008392334,
+        29.299999237060547
+      ],
+      "legacy_preview": "docs/chow3d.png"
+    },
+    {
+      "name": "Mong Man Wai Building",
+      "nameZh": "蒙民偉樓",
+      "slug": "mong",
+      "model": "assets/models/mong.glb",
+      "preview": "docs/models/mong.png",
+      "model_sha256": "f9a8e253addd572ba390a0770d5245646fd66bf789fc8a74c3cdab5de7e5de0a",
+      "preview_sha256": "18cf3ff9f51de76fffab61758dc693101b74ce5c47ee90a2b853ee0e5a5742e2",
+      "bounds_min": [
+        -15.640607833862305,
+        -22.75,
+        0.0
+      ],
+      "bounds_max": [
+        14.369999885559082,
+        22.899999618530273,
+        29.65199851989746
+      ],
+      "legacy_preview": "docs/mong3d.png"
+    },
+    {
+      "name": "Ng Wing Hong Building",
+      "nameZh": "伍永康樓",
+      "slug": "ng",
+      "model": "assets/models/ng.glb",
+      "preview": "docs/models/ng.png",
+      "model_sha256": "fc0f7b4e3274044bcf5c93bedaa330cd1660af510a9a011423d8cae6a8e06945",
+      "preview_sha256": "fdcd7722ff9afe9111606ad69091b6b1c37701ad1438eb5baf6547423e9e0b3a",
+      "bounds_min": [
+        -23.309999465942383,
+        -13.520000457763672,
+        0.0
+      ],
+      "bounds_max": [
+        23.360000610351562,
+        16.05655860900879,
+        29.350000381469727
+      ],
+      "legacy_preview": "docs/ng3d.png"
+    },
+    {
+      "name": "Yip Kit Chuen Building",
+      "nameZh": "葉傑全樓",
+      "slug": "yip",
+      "model": "assets/models/yip.glb",
+      "preview": "docs/models/yip.png",
+      "model_sha256": "4b33d594e7f72754a3e22a70f83adfb28bac7c6fbccbd33c0b0751efc52ad335",
+      "preview_sha256": "4033a5648daa71fe6a7497fb55e83a0a171ea8c08b08692d4a846109746699c7",
+      "bounds_min": [
+        -17.08146858215332,
+        -22.760000228881836,
+        0.0
+      ],
+      "bounds_max": [
+        14.25,
+        22.799999237060547,
+        29.299999237060547
+      ],
+      "legacy_preview": "docs/yip3d.png"
+    },
+    {
+      "name": "Seal of Love Foundation Building",
+      "nameZh": "正愛慈善基金樓",
+      "slug": "seal",
+      "model": "assets/models/seal.glb",
+      "preview": "docs/models/seal.png",
+      "model_sha256": "0ef6723b7b431d736ef1e1fb55ccdc5c41ae4e4a05ea928e9b0af8eb9309ff29",
+      "preview_sha256": "acda101a17735813114c4cf519ac1e17110ff742252d0ffbe50a2d488fe1aaef",
+      "bounds_min": [
+        -25.130001068115234,
+        -15.104458808898926,
+        0.0
+      ],
+      "bounds_max": [
+        22.235015869140625,
+        17.260000228881836,
+        22.399999618530273
+      ],
+      "legacy_preview": "docs/seal3d.png"
+    },
+    {
+      "name": "CMA Building",
+      "nameZh": "香港中華廠商聯合會樓",
+      "slug": "cma",
+      "model": "assets/models/cma.glb",
+      "preview": "docs/models/cma.png",
+      "model_sha256": "cd7a6036f0667098e1d90f869762e405eef352d61488ceee16621db8287d1c50",
+      "preview_sha256": "203024e1521b2a6b50e82aff989bb51ed9c1a0171d748ee30c483690a007f58c",
+      "bounds_min": [
+        -23.110000610351562,
+        -14.390000343322754,
+        0.0
+      ],
+      "bounds_max": [
+        24.360000610351562,
+        15.017728805541992,
+        20.5
+      ],
+      "legacy_preview": "docs/cma3d.png"
+    },
+    {
+      "name": "Chung Sze Yuen Building",
+      "nameZh": "鍾士元樓",
+      "slug": "chung",
+      "model": "assets/models/chung.glb",
+      "preview": "docs/models/chung.png",
+      "model_sha256": "1eeb97763391a25ac196b2f0e9fdcfa2e24844b35087c5aa3049db86d695d2f6",
+      "preview_sha256": "a2a5a6a90737f4d100ac1e8d043b75d7c49634f2cf1ed54d4067b1ec3c47a27f",
+      "bounds_min": [
+        -31.658349990844727,
+        -16.16339874267578,
+        0.0
+      ],
+      "bounds_max": [
+        33.28834915161133,
+        19.6200008392334,
+        16.0
+      ],
+      "legacy_preview": "docs/chung3d.png"
+    },
+    {
+      "name": "Lui Che Woo Building",
+      "nameZh": "呂志和樓",
+      "slug": "lui",
+      "model": "assets/models/lui.glb",
+      "preview": "docs/models/lui.png",
+      "model_sha256": "6c9acd1392ff5a0347a7f8773eba352de2b780d76b881a186b9ac80930a863a8",
+      "preview_sha256": "691c4f8b5be54ac5311b06cc939fd86da5249f0bb7dd5eab39179c7228dd32a2",
+      "bounds_min": [
+        -15.299908638000488,
+        -22.979999542236328,
+        0.0
+      ],
+      "bounds_max": [
+        13.989999771118164,
+        22.190000534057617,
+        22.799999237060547
+      ],
+      "legacy_preview": "docs/lui3d.png"
+    },
+    {
+      "name": "Stanley Ho Building",
+      "nameZh": "何鴻燊樓",
+      "slug": "stanley",
+      "model": "assets/models/stanley.glb",
+      "preview": "docs/models/stanley.png",
+      "model_sha256": "a556530826843e9a2ed1f0adeb2a19aa811797650e4deef5b8f35aa87f041bca",
+      "preview_sha256": "e51dc46429a5fb0ba8dd74dae9a5d7e2b8e583e8929fd2332727f1533bd428e0",
+      "bounds_min": [
+        -23.3799991607666,
+        -14.808472633361816,
+        0.0
+      ],
+      "bounds_max": [
+        22.940000534057617,
+        17.260000228881836,
+        18.600000381469727
+      ],
+      "legacy_preview": "docs/stanley3d.png"
+    },
+    {
+      "name": "Choi Kai Yau Building",
+      "nameZh": "蔡繼有樓",
+      "slug": "choi",
+      "model": "assets/models/choi.glb",
+      "preview": "docs/models/choi.png",
+      "model_sha256": "21b51d47a4c7c876a2daad4465f99e8bc92e6a3aef29a9b564ccdefc9b843e38",
+      "preview_sha256": "dee70b076defe1ec9e0d2de355aaf632ee605ea4fa375dfb708c41e8e746702c",
+      "bounds_min": [
+        -23.079999923706055,
+        -17.300155639648438,
+        0.0
+      ],
+      "bounds_max": [
+        24.079999923706055,
+        14.680000305175781,
+        32.54999923706055
+      ],
+      "legacy_preview": "docs/choi3d.png"
+    },
+    {
+      "name": "Shirley Chan Building",
+      "nameZh": "陳鮑雪瑩樓",
+      "slug": "shirley",
+      "model": "assets/models/shirley.glb",
+      "preview": "docs/models/shirley.png",
+      "model_sha256": "b0348174656d2f79958bfc5eaf0fb0c7bd7170238283dcb9d1bc442eac5306b6",
+      "preview_sha256": "e5abcd8afcda52073067240081ece70f8f0ce05809d7fe5e351034f501930bd1",
+      "bounds_min": [
+        -12.770000457763672,
+        -20.0,
+        0.0
+      ],
+      "bounds_max": [
+        14.728225708007812,
+        19.450000762939453,
+        42.150001525878906
+      ],
+      "legacy_preview": "docs/shirley3d.png"
+    },
+    {
+      "name": "GH Block",
+      "nameZh": "GH棟",
+      "slug": "gh",
+      "model": "assets/models/gh.glb",
+      "preview": "docs/models/gh.png",
+      "model_sha256": "5ea3698bb8b578f951078da8ccc0e98b6edda8148b51f3a3aa6521cefaf6cfdf",
+      "preview_sha256": "b67452e54bfea0fea8fb13b7bbd136dac39cdf6e33857581e06fdfdf7f000d13",
+      "bounds_min": [
+        -14.845534324645996,
+        -23.55553436279297,
+        0.0
+      ],
+      "bounds_max": [
+        13.699999809265137,
+        27.029998779296875,
+        21.600000381469727
+      ],
+      "legacy_preview": "docs/gh3d.png"
+    },
+    {
+      "name": "Fong Shu Chuen Hall",
+      "nameZh": "方樹泉堂",
+      "slug": "fong",
+      "model": "assets/models/fong.glb",
+      "preview": "docs/models/fong.png",
+      "model_sha256": "03d22d14057725fda445624a0c334093e40ff83a5ad48cb2b1f675cb476b4327",
+      "preview_sha256": "94a875b5fb08ce91d3869dcdf1211508169a66fe045baf1a626dcf56a1eeabd5",
+      "bounds_min": [
+        -17.839208602905273,
+        -19.93000030517578,
+        0.0
+      ],
+      "bounds_max": [
+        13.430000305175781,
+        19.93000030517578,
+        6.400000095367432
+      ],
+      "legacy_preview": "docs/fong3d.png"
+    },
+    {
+      "name": "Tang Ping Yuan Building",
+      "nameZh": "唐炳源樓",
+      "slug": "tang",
+      "model": "assets/models/tang.glb",
+      "preview": "docs/models/tang.png",
+      "model_sha256": "dcf6d5a3e8959725a61669302638d6cabbfb23f5ac631ea05ffbca2e131124fa",
+      "preview_sha256": "13d378ed2099153ac607e4577ee539f025dbccaac2b35e12e828cd0a48759b10",
+      "bounds_min": [
+        -13.720000267028809,
+        -21.979999542236328,
+        0.0
+      ],
+      "bounds_max": [
+        13.729999542236328,
+        26.040000915527344,
+        20.600000381469727
+      ],
+      "legacy_preview": "docs/tang3d.png"
+    },
+    {
+      "name": "Lee Shau Kee Building",
+      "nameZh": "李兆基樓",
+      "slug": "leeshaukee",
+      "model": "assets/models/leeshaukee.glb",
+      "preview": "docs/models/leeshaukee.png",
+      "model_sha256": "0530c643483a3afaae39f2b51a7b901ca0f89d6cbeacbeec3433693f59f5894f",
+      "preview_sha256": "7924ee5095c47e88d9d39d7b42c7768c5696e4a2e690a3260dfafd3e917aabc7",
+      "bounds_min": [
+        -52.56999969482422,
+        -37.439693450927734,
+        0.0
+      ],
+      "bounds_max": [
+        46.380001068115234,
+        21.100000381469727,
+        21.700000762939453
+      ],
+      "legacy_preview": "docs/leeshaukee3d.png"
+    },
+    {
+      "name": "House of Innovation",
+      "nameZh": "創新館",
+      "slug": "hoi",
+      "model": "assets/models/hoi.glb",
+      "preview": "docs/models/hoi.png",
+      "model_sha256": "3a990ba55b945a565efba7c2d5cefbd737eeca8da2f9fbff63ddaae146176547",
+      "preview_sha256": "c4168d9b4d2c938855fa24b384857a4d4929938613f829294af2a74c40aad5d1",
+      "bounds_min": [
+        -8.510000228881836,
+        -8.539999961853027,
+        0.0
+      ],
+      "bounds_max": [
+        8.40999984741211,
+        11.579999923706055,
+        16.549999237060547
+      ],
+      "legacy_preview": "docs/hoi3d.png"
+    },
+    {
+      "name": "Industrial Centre",
+      "nameZh": "工業中心",
+      "slug": "industrial",
+      "model": "assets/models/industrial.glb",
+      "preview": "docs/models/industrial.png",
+      "model_sha256": "7078e2e7b0470cdd738823adfdc0a56121e26e373bf590c1ea70960ca2cc501d",
+      "preview_sha256": "d0607d8953fa925e6667bee77ed8f86c65646cfcaf5393979002a84f018c9800",
+      "bounds_min": [
+        -24.149999618530273,
+        -25.200000762939453,
+        0.0
+      ],
+      "bounds_max": [
+        23.260000228881836,
+        26.6299991607666,
+        26.299999237060547
+      ],
+      "legacy_preview": "docs/industrial3d.png"
+    },
+    {
+      "name": "Communal Building",
+      "nameZh": "文康大樓",
+      "slug": "communal",
+      "model": "assets/models/communal.glb",
+      "preview": "docs/models/communal.png",
+      "model_sha256": "ca369fc94132f20ba188f38b641000bdeff6624b7541325461a17fe21904ac21",
+      "preview_sha256": "3145cfd7ba5554b2dd747b1c4d5aacc0ec0a985d634d4a26a21c8b3efbbf29a5",
+      "bounds_min": [
+        -24.15999984741211,
+        -24.020000457763672,
+        0.0
+      ],
+      "bounds_max": [
+        27.391164779663086,
+        23.920000076293945,
+        21.075000762939453
+      ],
+      "legacy_preview": "docs/communal3d.png"
+    },
+    {
+      "name": "Pao Yue-kong Library",
+      "nameZh": "包玉剛圖書館",
+      "slug": "library",
+      "model": "assets/models/library.glb",
+      "preview": "docs/models/library.png",
+      "model_sha256": "b0c29337e85f089ae9436f5c25181a63a45e3a02bc1f25264a02f22bd179353f",
+      "preview_sha256": "9ccc6ea2f78e595657e22d9e4e50f952319d00ddd453eea8afe2937d1af39b10",
+      "bounds_min": [
+        -34.29999923706055,
+        -42.310001373291016,
+        0.0
+      ],
+      "bounds_max": [
+        42.93000030517578,
+        40.89799499511719,
+        19.424999237060547
+      ],
+      "legacy_preview": "docs/library3d.png"
+    },
+    {
+      "name": "Hotel ICON",
+      "nameZh": "唯港薈",
+      "slug": "hotel_icon",
+      "model": "assets/models/hotel_icon.glb",
+      "preview": "docs/models/hotel_icon.png",
+      "model_sha256": "493a53d717597ad6507446b7636e2918f1b0ac2c36fbf654be5b5545359afedd",
+      "preview_sha256": "652d6acc9e45ac1898a28970727e5b98371d3db0c481b29290dba3f345741a0b",
+      "bounds_min": [
+        -41.290000915527344,
+        -49.2400016784668,
+        -1.9073486328125e-06
+      ],
+      "bounds_max": [
+        31.420000076293945,
+        40.0,
+        114.0
+      ],
+      "legacy_preview": "docs/hotel3d.png"
+    }
+  ]
+}

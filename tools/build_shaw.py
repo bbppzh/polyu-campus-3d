@@ -163,6 +163,8 @@ for k in range(5):
 
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from roof_assemblies import fit_vault
+fit_vault('SHAW_vault',['SHAW_vault_glass_-28','SHAW_vault_glass_28'],'SHAW_hall',loc,5.5,WHITE,remove=['SHAW_band'])
 from roof_support import finalize_scene
 print('SUPPORT_QA', 'build_shaw', json.dumps(finalize_scene()), flush=True)
 bpy.context.view_layer.update()

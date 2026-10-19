@@ -199,31 +199,10 @@ for k in range(5):
     off = -width / 2 + width * (k + 1) / 6
     box(f'JCA_mullion_{k}', bx + bnx * 2.8 + bvx * off, by + bny * 2.8 + bvy * off, 3.2, 0.15, 0.2, 6.0, rot, WHITE)
 
-# Trim the rectangular roof grid to the real hall perimeter. Its former
-# axis-aligned eaves extended through Ng Wing Hong Building.
-# A convex perimeter permits exact plane clipping of both the closed shell
-# and the open glazed ridge, preserving the curved roof profile.
-from mathutils import Vector
-roof_poly = loc[:]
-area = sum(a[0]*b[1]-b[0]*a[1] for a,b in zip(roof_poly,roof_poly[1:]+roof_poly[:1]))
-for name in ['JCA_roof', 'JCA_roof_glass']:
-    ob=bpy.data.objects[name]
-    bm=bmesh.new();bm.from_mesh(ob.data)
-    for a,b in zip(roof_poly,roof_poly[1:]+roof_poly[:1]):
-        dx,dy=b[0]-a[0],b[1]-a[1]
-        normal=Vector((dy,-dx,0)).normalized() * (1 if area>0 else -1)
-        geom=list(bm.verts)+list(bm.edges)+list(bm.faces)
-        cut=bmesh.ops.bisect_plane(bm,geom=geom,dist=1e-6,
-            plane_co=Vector((a[0],a[1],0))+normal*.03,
-            plane_no=normal,clear_outer=True,clear_inner=False)
-        if name=='JCA_roof':
-            border=[e for e in cut['geom_cut'] if isinstance(e,bmesh.types.BMEdge) and e.is_boundary]
-            if border:bmesh.ops.holes_fill(bm,edges=border,sides=0)
-    bmesh.ops.recalc_face_normals(bm,faces=bm.faces)
-    bm.to_mesh(ob.data);bm.free();ob.data.update()
-
 import sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+from roof_assemblies import fit_vault
+fit_vault('JCA_roof',['JCA_roof_glass'],'JCA_hall',loc,2.4,WHITE)
 from roof_support import finalize_scene
 print('SUPPORT_QA', 'build_jca', json.dumps(finalize_scene()), flush=True)
 bpy.context.view_layer.update()

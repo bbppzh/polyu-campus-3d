@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "model_sha256": "7a440ac3da12ae07c88165317271c80804fc28a05b32b95a50d3807f9f81b4d7",
+  "model_sha256": "493a53d717597ad6507446b7636e2918f1b0ac2c36fbf654be5b5545359afedd",
   "registration_fit_rmse_m": 0.288610953534076,
   "registration_holdout_rmse_m": 0.6887504423921911,
   "primary_door_canopy_bottom_corners_checked": 24,

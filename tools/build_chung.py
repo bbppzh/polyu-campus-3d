@@ -123,11 +123,8 @@ for k, y in enumerate((6.0, 8.8, 11.6)):
 box('CSY_roof_canopy', bx + bnx * 1.2, by + bny * 1.2, ROOF + 0.45, rw + 4.0, 3.8, 0.35, rot, WHITE)
 for k, t in enumerate((-0.3, 0.0, 0.3)):
     box(f'CSY_planter_{k}', midx + t * 24, midy + 8, ROOF + 1.2, 7.0, 1.5, 0.55, 0.0, GREEN)
-for k in range(4):
-    t = 0.2 + 0.6 * k / 3
-    box(f'CSY_pergola_col_{k}', midx + (t - 0.5) * 30, midy - 6, ROOF + 1.5, 0.35, 0.35, 1.6, 0.0, WHITE)
-for k in range(3):
-    box(f'CSY_pergola_beam_{k}', midx, midy - 8 + k * 2.5, ROOF + 2.4, 30.0, 0.15, 0.15, 0.0, WHITE)
+import sys
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 
 # entrance
 width = 14.0

@@ -133,6 +133,9 @@ def batch_facade_details():
     bpy.ops.object.select_all(action='DESELECT')
 
 def export(slug):
+    from roof_support import remove_unverified_roof_props
+    removed=remove_unverified_roof_props()
+    if removed:print('UNVERIFIED_ROOF_PROPS_REMOVED',json.dumps(removed),flush=True)
     batch_facade_details()
     bpy.context.view_layer.update()
     bpy.ops.wm.save_as_mainfile(filepath=os.path.join(ROOT,'assets','models',slug+'.blend'))

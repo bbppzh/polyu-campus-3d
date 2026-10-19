@@ -100,7 +100,7 @@ rot = math.atan2(bvy, bvx)
 # cantilevered balconies
 for k, y in enumerate((8.5, 12.5, 16.5)):
     box(f'SHB_balcony_{k}', bx + bnx * 0.9, by + bny * 0.9, y, elen * 0.76, 1.8, 0.24, rot, WHITE)
-    box(f'SHB_rail_{k}', bx + bnx * 1.8, by + bny * 1.8, y + 0.55, elen * 0.76, 0.12, 0.9, rot, GLASS)
+    box(f'SHB_rail_{k}', bx + bnx * 1.72, by + bny * 1.72, y + 0.55, elen * 0.76, 0.12, 0.9, rot, GLASS)
 
 # vertical green wall on a short end facade
 gw_w, gw_h = 6.0, 11.0
@@ -115,11 +115,8 @@ for k in range(4):
 # roof garden pergola
 for k, t in enumerate((-0.25, 0.05, 0.3)):
     box(f'SHB_planter_{k}', midx + t * 18, midy + 8, ROOF + 1.1, 6.0, 1.5, 0.55, 0.0, GREEN)
-for k in range(4):
-    t = 0.2 + 0.6 * k / 3
-    box(f'SHB_pergola_col_{k}', midx + (t - 0.5) * 24, midy - 6, ROOF + 1.4, 0.35, 0.35, 1.8, 0.0, WHITE)
-for k in range(3):
-    box(f'SHB_pergola_beam_{k}', midx, midy - 8 + k * 2.5, ROOF + 2.3, 24.0, 0.15, 0.15, 0.0, WHITE)
+import sys
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 
 # entrance
 width = 14.0

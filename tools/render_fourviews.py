@@ -20,6 +20,10 @@ for slug in slugs:
  for view,d in views.items():
   cd=bpy.data.cameras.new('QC_CAMERA');cd.type='ORTHO';cd.ortho_scale=max(dim.x,dim.y,dim.z)*1.38
   cam=bpy.data.objects.new('QC_CAMERA',cd);sc.collection.objects.link(cam);cam.location=center+Vector(d).normalized()*max(dim.length*2,60);cam.rotation_euler=(center-cam.location).to_track_quat('-Z','Y').to_euler();sc.camera=cam
+  inv=cam.rotation_euler.to_matrix().transposed();projected=[inv@(p-center) for p in pts]
+  xmin,xmax=min(p.x for p in projected),max(p.x for p in projected);ymin,ymax=min(p.y for p in projected),max(p.y for p in projected)
+  cam.location+=cam.rotation_euler.to_matrix()@Vector(((xmin+xmax)/2,(ymin+ymax)/2,0))
+  cd.ortho_scale=max(xmax-xmin,(ymax-ymin)*(800/700))*1.17
   sc.render.image_settings.file_format='PNG';sc.render.filepath=str(OUT/f'{slug}-{view}.png');bpy.ops.render.render(write_still=True)
  print('RENDER_OK',slug,flush=True)
 prior=json.loads((OUT/'metrics.json').read_text()) if (OUT/'metrics.json').exists() else []

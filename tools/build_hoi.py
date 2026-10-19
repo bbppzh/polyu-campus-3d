@@ -100,12 +100,9 @@ for k, z in enumerate((7.0, 10.0, 13.0)):
 # brick service core at one side
 box('HOI_core', min(xs) + 3.2, midy, (PODIUM + GLASS_TOP) / 2, 4.0, 8.0, GLASS_TOP - PODIUM, 0.0, BRICK)
 
-# roof terrace pergola / planters
-for k in range(4):
-    t = 0.2 + 0.6 * k / 3
-    box(f'HOI_pergola_col_{k}', midx + (t - 0.5) * 12, midy - 3, GLASS_TOP + 1.2, 0.35, 0.35, 1.4, 0.0, WHITE)
-for k in range(3):
-    box(f'HOI_pergola_beam_{k}', midx, midy - 5 + k * 3, GLASS_TOP + 1.95, 12.0, 0.15, 0.15, 0.0, WHITE)
+# A complete supported pergola; dimensions are visual approximations.
+import sys
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 for k, t in enumerate((-0.2, 0.15)):
     box(f'HOI_planter_{k}', midx + t * 12, midy + 6, GLASS_TOP + 1.0, 5.0, 1.4, 0.55, 0.0, GREEN)
 box('HOI_roof_plant', midx + 3, midy + 2, GLASS_TOP + 1.0, 4.0, 3.0, 1.4, 0.0, WHITE)

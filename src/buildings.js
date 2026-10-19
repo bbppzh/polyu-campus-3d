@@ -1083,38 +1083,14 @@ function buildJCITTower(THREE, l, group, landmarks, materials, mats) {
 function buildContextDetails(THREE, context, materials, landmarkEnvelopes = []) {
   const group = new THREE.Group();
   const whiteMat = new THREE.MeshStandardMaterial({ color: '#d6d0c2', roughness: 0.85 });
-  const roofMat = new THREE.MeshStandardMaterial({ color: '#918b80', roughness: 0.95 });
-  const darkMat = new THREE.MeshStandardMaterial({ color: '#646d70', roughness: 0.7, metalness: 0.12 });
   const glassMat = new THREE.MeshStandardMaterial({ color: '#294c57', roughness: 0.22, metalness: 0.2 });
-  const greenMat = new THREE.MeshStandardMaterial({ color: '#6d8d5b', roughness: 1 });
-  materials.push(whiteMat, roofMat, darkMat, glassMat, greenMat);
-  const buckets = { white: [], roof: [], dark: [], glass: [], green: [] };
-  const rand = seededRand(3141);
-  const add = (bucket, w, h, d, x, y, z) => {
-    const g = new THREE.BoxGeometry(w, h, d);
-    g.translate(x, y, z);
-    buckets[bucket].push(g);
-  };
-  const addCyl = (bucket, r, h, x, y, z) => {
-    const g = new THREE.CylinderGeometry(r, r, h, 8);
-    g.translate(x, y, z);
-    buckets[bucket].push(g);
-  };
+  materials.push(whiteMat, glassMat);
+  const buckets = { white: [], glass: [] };
   const addRot = (bucket, w, h, d, x, y, z, rot) => {
     const g = new THREE.BoxGeometry(w, h, d);
     g.rotateY(rot);
     g.translate(x, y, z);
     buckets[bucket].push(g);
-  };
-  const fitsRoof = (shape, x, z, w, d) => {
-    const nx = Math.max(2, Math.ceil(w / 0.6));
-    const nz = Math.max(2, Math.ceil(d / 0.6));
-    for (let i = 0; i <= nx; i++) {
-      for (let j = 0; j <= nz; j++) {
-        if (!pointInFootprint(x + w * (i / nx - 0.5), z + d * (j / nz - 0.5), shape)) return false;
-      }
-    }
-    return true;
   };
   const blockingShapes = [...context, ...landmarkEnvelopes].map(shape => ({shape, bounds: footprintBounds(shape.footprint)}));
   const excludedContextIds = new Set([236028367, 236028374, 236028379]);
@@ -1145,20 +1121,6 @@ function buildContextDetails(THREE, context, materials, landmarkEnvelopes = []) 
           buckets.white.push(g);
       }
       }
-    }
-    // Roof props sit on the roof, with their entire base inside the polygon.
-    if (area > 280) {
-      const px = cx + (rand() - 0.5) * bb.w * 0.25;
-      const pz = cz + (rand() - 0.5) * bb.d * 0.25;
-      const pw = Math.min(10, span * 0.25), pd = Math.min(8, span * 0.2);
-      const ph = 1.4 + rand() * 1.2;
-      if (fitsRoof(b, px, pz, pw + 0.2, pd + 0.2)) add('roof', pw, ph, pd, px, h + ph / 2, pz);
-      const vx = cx + bb.w * 0.2, vz = cz - bb.d * 0.18, vh = 1.5 + rand();
-      if (fitsRoof(b, vx, vz, 0.7, 0.7)) add('dark', 0.5, vh, 0.5, vx, h + vh / 2, vz);
-    }
-    if (area > 900) {
-      const wx = cx - bb.w * 0.22, wz = cz + bb.d * 0.2, r = Math.min(2.2, span * 0.06);
-      if (fitsRoof(b, wx, wz, r * 2 + 0.2, r * 2 + 0.2)) addCyl('white', r, 2.6, wx, h + 1.3, wz);
     }
     // shopfront + awning follow one real footprint edge (not a bbox side)
     if (area > 40 && h > 4 && !b.clipped) {
@@ -1193,17 +1155,8 @@ function buildContextDetails(THREE, context, materials, landmarkEnvelopes = []) 
         addRot('white', w + 0.8, 0.22, 1.1, bestEdge.mx + bestEdge.nx * 0.75, 3.2, bestEdge.mz + bestEdge.nz * 0.75, rot);
       }
     }
-    // occasional roof garden
-    if (area > 700 && h < 30 && i % 5 === 0) {
-      const gx = cx + bb.w * 0.1;
-      const gz = cz;
-      const gw = Math.min(10, bb.w * 0.3), gd = Math.min(6, bb.d * 0.2);
-      if (fitsRoof(b, gx, gz, gw + 0.2, gd + 0.2)) {
-        add('green', gw, 0.55, gd, gx, h + 0.275, gz);
-      }
-    }
   }
-  const mats = { white: whiteMat, roof: roofMat, dark: darkMat, glass: glassMat, green: greenMat };
+  const mats = { white: whiteMat, glass: glassMat };
   for (const key of Object.keys(buckets)) {
     if (!buckets[key].length) continue;
     const merged = mergeGeometries(buckets[key], false);

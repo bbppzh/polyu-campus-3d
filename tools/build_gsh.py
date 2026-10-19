@@ -90,20 +90,9 @@ for i in range(n):
 bw = max(xs) - min(xs); bd = max(ys) - min(ys)
 for i, (tx, ty) in enumerate(((-0.18, -0.15), (0.18, 0.15), (0.0, 0.22))):
     box(f'GSH_planter_{i}', midx + tx * bw, midy + ty * bd, h + 0.9, bw * 0.18, bd * 0.14, 0.7, 0.0, GREEN)
-# pergola on roof
-for i in range(4):
-    box(f'GSH_pergola_{i}', midx - 4 + i * 2.6, midy + 2, h + 3.0, 0.18, 6.0, 0.18, 0.0, WHITE)
-box('GSH_pergola_top', midx - 0.5, midy + 2, h + 3.1, 10.0, 0.18, 0.18, 0.0, WHITE)
-# Pergola beams need columns that reach the actual roof slab.
-for i, (px, py) in enumerate(((midx-3.8,midy-.8),(midx+3.6,midy-.8),(midx-3.8,midy+4.8),(midx+3.6,midy+4.8))):
-    box(f'GSH_pergola_col_{i}',px,py,h+1.705,.18,.18,2.41,0,WHITE)
-# roof railing
-rail_x = min(10.0, (max(xs) - min(xs)) / 2 - 1.5)
-rail_y0 = -min(11.0, (max(ys) - min(ys)) / 2 - 1.5)
-for side in (-1, 1):
-    for k in range(6):
-        box(f'GSH_rail_{side}_{k}', midx + side * rail_x, midy + rail_y0 + k * (2 * abs(rail_y0) / 5), h + 1.5, 0.12, 0.12, 2.2, 0.0, DARK)
-
+# A complete supported pergola; dimensions are visual approximations.
+import sys
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 # entrance on nearest edge
 best = None
 poly = [(x - cx, z - cz) for x, z in fp]

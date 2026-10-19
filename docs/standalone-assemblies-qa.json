@@ -1,0 +1,170 @@
+{
+  "models": [
+    {
+      "slug": "lks",
+      "sha256": "33b6e0909aeec235551d7044767a1439f34011353fb01d555924d57ac9898014",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "jcit",
+      "sha256": "b47d99c9fed013527134e3a60ed59fa8bd4f03209ef8571692d2a52d9ff45baa",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "jca",
+      "sha256": "bd98f2157a2fc7795aaa737a29bcf6ec91c38264c5fd103947e8b99c43d0c1a3",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "gsh",
+      "sha256": "eafe7dc134e343b7a450d1e497c1de0064d23ff3525cdb0741487f60af3b76b2",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "shaw",
+      "sha256": "c8d6588dcf1c1726d150b62810f24d35154ccbbe01c03b5a3d76ae9894818b76",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "blockx",
+      "sha256": "9e6620d52ffd4de817c7fde54a5d31d72196b286e412d77efdb863c269a551f1",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "blockz",
+      "sha256": "2f4c36aa2aa643793e21fdb43b466eb78763ab5743bb0a9a29cf037966bc15aa",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "chan",
+      "sha256": "9681a72d4a85340bcd0270c51eaeb9be25590c742762c6ee6ea89df4be71c651",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "taio",
+      "sha256": "447a7e0e3ac5114fd9e32c14484ff234e906635683b355e45341e4cf83e868f8",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "anita",
+      "sha256": "26a5b8147aa03457ec731dc55b756c90343cb18ef4a4f949aeebea101e4ef405",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "chow",
+      "sha256": "8a88ed49b0c10f4b626e02ddb6fad2398855446588f2e1ab90d1687e7a06a2fc",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "mong",
+      "sha256": "f9a8e253addd572ba390a0770d5245646fd66bf789fc8a74c3cdab5de7e5de0a",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "ng",
+      "sha256": "fc0f7b4e3274044bcf5c93bedaa330cd1660af510a9a011423d8cae6a8e06945",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "yip",
+      "sha256": "4b33d594e7f72754a3e22a70f83adfb28bac7c6fbccbd33c0b0751efc52ad335",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "seal",
+      "sha256": "0ef6723b7b431d736ef1e1fb55ccdc5c41ae4e4a05ea928e9b0af8eb9309ff29",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "cma",
+      "sha256": "cd7a6036f0667098e1d90f869762e405eef352d61488ceee16621db8287d1c50",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "chung",
+      "sha256": "1eeb97763391a25ac196b2f0e9fdcfa2e24844b35087c5aa3049db86d695d2f6",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "lui",
+      "sha256": "6c9acd1392ff5a0347a7f8773eba352de2b780d76b881a186b9ac80930a863a8",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "stanley",
+      "sha256": "a556530826843e9a2ed1f0adeb2a19aa811797650e4deef5b8f35aa87f041bca",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "choi",
+      "sha256": "21b51d47a4c7c876a2daad4465f99e8bc92e6a3aef29a9b564ccdefc9b843e38",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "shirley",
+      "sha256": "b0348174656d2f79958bfc5eaf0fb0c7bd7170238283dcb9d1bc442eac5306b6",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "gh",
+      "sha256": "5ea3698bb8b578f951078da8ccc0e98b6edda8148b51f3a3aa6521cefaf6cfdf",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "fong",
+      "sha256": "03d22d14057725fda445624a0c334093e40ff83a5ad48cb2b1f675cb476b4327",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "tang",
+      "sha256": "dcf6d5a3e8959725a61669302638d6cabbfb23f5ac631ea05ffbca2e131124fa",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "leeshaukee",
+      "sha256": "0530c643483a3afaae39f2b51a7b901ca0f89d6cbeacbeec3433693f59f5894f",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "hoi",
+      "sha256": "3a990ba55b945a565efba7c2d5cefbd737eeca8da2f9fbff63ddaae146176547",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "industrial",
+      "sha256": "7078e2e7b0470cdd738823adfdc0a56121e26e373bf590c1ea70960ca2cc501d",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "communal",
+      "sha256": "ca369fc94132f20ba188f38b641000bdeff6624b7541325461a17fe21904ac21",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "library",
+      "sha256": "b0c29337e85f089ae9436f5c25181a63a45e3a02bc1f25264a02f22bd179353f",
+      "unverified_roof_props": []
+    },
+    {
+      "slug": "hotel_icon",
+      "sha256": "493a53d717597ad6507446b7636e2918f1b0ac2c36fbf654be5b5545359afedd",
+      "unverified_roof_props": []
+    }
+  ],
+  "vaults": [
+    {
+      "slug": "jca",
+      "sha256": "bd98f2157a2fc7795aaa737a29bcf6ec91c38264c5fd103947e8b99c43d0c1a3",
+      "underside_triangles_checked": 630,
+      "max_abs_gap_m": 3.552713678800501e-15
+    },
+    {
+      "slug": "shaw",
+      "sha256": "c8d6588dcf1c1726d150b62810f24d35154ccbbe01c03b5a3d76ae9894818b76",
+      "underside_triangles_checked": 908,
+      "max_abs_gap_m": 1.736566446197685e-11
+    }
+  ],
+  "errors": [],
+  "scope": "Actual exported GLBs. All 30 named models checked for removed unsupported roof-decoration categories; curved roof underside triangle centres against the matching hall top. Structural joints may touch; not a complete triangle-pair collision certification."
+}

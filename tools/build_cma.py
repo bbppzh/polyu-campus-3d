@@ -100,18 +100,12 @@ rot = math.atan2(bvy, bvx)
 # three planted terraces
 for k, y in enumerate((9.0, 14.0, 19.0)):
     box(f'CMA_terrace_{k}', bx + bnx * 0.9, by + bny * 0.9, y, elen * 0.8, 1.8, 0.25, rot, WHITE)
-    box(f'CMA_rail_{k}', bx + bnx * 1.75, by + bny * 1.75, y + 0.55, elen * 0.8, 0.12, 0.85, rot, GLASS)
+    box(f'CMA_rail_{k}', bx + bnx * 1.70, by + bny * 1.70, y + 0.55, elen * 0.8, 0.12, 0.85, rot, GLASS)
     box(f'CMA_planter_{k}', bx + bnx * 1.25, by + bny * 1.25, y + 0.45, elen * 0.7, 0.7, 0.6, rot, GREEN)
 
-# rooftop pergola
-for k in range(4):
-    t = 0.12 + 0.76 * k / 3
-    px = midx + bvx * (t - 0.5) * elen
-    py = midy + bvy * (t - 0.5) * elen
-    box(f'CMA_pergola_col_{k}', px, py, TOWER_TOP + 1.4, 0.35, 0.35, 2.4, 0.0, WHITE)
-for k in range(5):
-    box(f'CMA_pergola_beam_{k}', midx + bvx * (-0.4 + k * 0.2) * elen, midy + bvy * (-0.4 + k * 0.2) * elen,
-        TOWER_TOP + 2.7, 0.16, 0.16, 3.6, rot, WHITE)
+# A complete supported pergola; dimensions are visual approximations.
+import sys
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 box('CMA_roof_plant', midx + 5, midy - 6, TOWER_TOP + 1.2, 6.0, 4.0, 1.8, 0.0, WHITE)
 
 # entrance
