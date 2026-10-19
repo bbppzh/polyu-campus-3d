@@ -90,7 +90,7 @@ removes unsupported rooftop decoration and refreshes every model preview.
   JCIT (71.2 m envelope, layered curved slab and sloping crown), Hotel ICON
   (114 m envelope, angular hotel/teaching wings and recessed sky level), and
   Block Z (two high wings, a low teaching block, terraces and a sky link).
-  Other models include the Auditorium shell, Library glazing and Block X court.
+  Other models include the Auditorium shell, Library entrance glazing and the Block X setback massing.
 - **Entrance signage**: canvas-rendered building signs with the PolyU red band, English
   name and Chinese name, mounted above the main entrance of all 30 named buildings.
 - **Campus fabric**: the connected podium buildings around the core, in PolyU's
@@ -146,7 +146,7 @@ polyu-campus-3d/
 ├── assets/
 │   ├── models/jcit.glb   71.2 m photo-referenced JCIT shell (GLB 2.0)
 │   ├── models/jcit.blend editable Blender import of the current JCIT GLB
-│   ├── models/library.glb custom library shell (glass entrance + roof lantern)
+│   ├── models/library.glb custom library shell (glass entrance)
 │   ├── models/library.blend editable Blender source for the library
 │   ├── models/jca.glb     custom auditorium shell (curved roof + glazed foyer)
 │   ├── models/jca.blend   editable Blender source for the auditorium
@@ -156,7 +156,7 @@ polyu-campus-3d/
 │   ├── models/lks.blend    editable Blender source for LKS Tower
 │   ├── models/blockz.glb   custom Block Z (roof garden + terraces)
 │   ├── models/blockz.blend editable Blender source for Block Z
-│   ├── models/blockx.glb   custom Block X (rooftop sports court)
+│   ├── models/blockx.glb   custom Block X (setback massing + clear roof)
 │   ├── models/blockx.blend editable Blender source for Block X
 │   ├── models/communal.glb custom Communal Building (glazed atrium)
 │   ├── models/communal.blend editable Blender source for the Communal Building

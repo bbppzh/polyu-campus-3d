@@ -1,0 +1,90 @@
+{
+  "models": [
+    {
+      "slug": "library",
+      "before_sha256": "b0c29337e85f089ae9436f5c25181a63a45e3a02bc1f25264a02f22bd179353f",
+      "after_sha256": "deb53a241f0f62150ab05093f0cca5687066822db78be089648070ba3a5529ac",
+      "removed_objects": [
+        "LIB_lantern",
+        "LIB_lantern_frame",
+        "LIB_skylight_-1",
+        "LIB_skylight_1"
+      ],
+      "retained_meshes_unchanged": 22
+    },
+    {
+      "slug": "leeshaukee",
+      "before_sha256": "0530c643483a3afaae39f2b51a7b901ca0f89d6cbeacbeec3433693f59f5894f",
+      "after_sha256": "a1646e235c77f2def19bbdd49304807931f96f3ed4ab7b456e923f81ec82955b",
+      "removed_objects": [
+        "LSKB_skylight"
+      ],
+      "retained_meshes_unchanged": 16
+    },
+    {
+      "slug": "communal",
+      "before_sha256": "ca369fc94132f20ba188f38b641000bdeff6624b7541325461a17fe21904ac21",
+      "after_sha256": "2ca7ab6c90513751764cb4b0f4c1b28f4de6780dfb2627eda1e454487f28c758",
+      "removed_objects": [
+        "COM_skylight",
+        "COM_skylight_rim"
+      ],
+      "retained_meshes_unchanged": 17
+    },
+    {
+      "slug": "blockx",
+      "before_sha256": "9e6620d52ffd4de817c7fde54a5d31d72196b286e412d77efdb863c269a551f1",
+      "after_sha256": "dba267410e8718644da4a47723a38b584f43d97f4c40a27cbde498c6212a3c64",
+      "removed_objects": [
+        "BLKX_court",
+        "BLKX_fence2_-1_0",
+        "BLKX_fence2_-1_1",
+        "BLKX_fence2_-1_2",
+        "BLKX_fence2_-1_3",
+        "BLKX_fence2_-1_4",
+        "BLKX_fence2_-1_5",
+        "BLKX_fence2_-1_6",
+        "BLKX_fence2_-1_7",
+        "BLKX_fence2_-1_8",
+        "BLKX_fence2_1_0",
+        "BLKX_fence2_1_1",
+        "BLKX_fence2_1_2",
+        "BLKX_fence2_1_3",
+        "BLKX_fence2_1_4",
+        "BLKX_fence2_1_5",
+        "BLKX_fence2_1_6",
+        "BLKX_fence2_1_7",
+        "BLKX_fence2_1_8",
+        "BLKX_fence_-1_0",
+        "BLKX_fence_-1_1",
+        "BLKX_fence_-1_2",
+        "BLKX_fence_-1_3",
+        "BLKX_fence_-1_4",
+        "BLKX_fence_-1_5",
+        "BLKX_fence_1_0",
+        "BLKX_fence_1_1",
+        "BLKX_fence_1_2",
+        "BLKX_fence_1_3",
+        "BLKX_fence_1_4",
+        "BLKX_fence_1_5",
+        "BLKX_lamp_0",
+        "BLKX_lamp_1",
+        "BLKX_lamp_2",
+        "BLKX_lamp_3",
+        "BLKX_line_0",
+        "BLKX_line_1",
+        "BLKX_line_2",
+        "BLKX_line_3",
+        "BLKX_line_4",
+        "BLKX_pole_0",
+        "BLKX_pole_1",
+        "BLKX_pole_2",
+        "BLKX_pole_3"
+      ],
+      "retained_meshes_unchanged": 10
+    }
+  ],
+  "removed_object_count": 51,
+  "retained_meshes_unchanged": 65,
+  "scope": "Before/after exported GLB triangles. Only named rooftop placeholder assemblies removed; all retained meshes have identical geometry to 0.00001 m rounding. Main massing, roof slabs and entrances retained."
+}

@@ -107,8 +107,8 @@
       "slug": "blockx",
       "model": "assets/models/blockx.glb",
       "preview": "docs/models/blockx.png",
-      "model_sha256": "9e6620d52ffd4de817c7fde54a5d31d72196b286e412d77efdb863c269a551f1",
-      "preview_sha256": "5a18b18de10e5ae1cacd26c8d7d42abd734799c21d30e7b637c82697ae1c55cb",
+      "model_sha256": "dba267410e8718644da4a47723a38b584f43d97f4c40a27cbde498c6212a3c64",
+      "preview_sha256": "d702de26575b0cc385b56696472ca1cec790b64416124c62ea6da26f03fbb12f",
       "bounds_min": [
         -44.93000030517578,
         -36.7599983215332,
@@ -117,7 +117,7 @@
       "bounds_max": [
         42.36000061035156,
         38.93000030517578,
-        44.50199508666992
+        35.79999923706055
       ],
       "legacy_preview": "docs/blockx3d.png"
     },
@@ -487,8 +487,8 @@
       "slug": "leeshaukee",
       "model": "assets/models/leeshaukee.glb",
       "preview": "docs/models/leeshaukee.png",
-      "model_sha256": "0530c643483a3afaae39f2b51a7b901ca0f89d6cbeacbeec3433693f59f5894f",
-      "preview_sha256": "7924ee5095c47e88d9d39d7b42c7768c5696e4a2e690a3260dfafd3e917aabc7",
+      "model_sha256": "a1646e235c77f2def19bbdd49304807931f96f3ed4ab7b456e923f81ec82955b",
+      "preview_sha256": "57dfb0b5d8ff4a5d32b35d8cc66a51a87dc1447e395c1ae56b4b420b9d136216",
       "bounds_min": [
         -52.56999969482422,
         -37.439693450927734,
@@ -497,7 +497,7 @@
       "bounds_max": [
         46.380001068115234,
         21.100000381469727,
-        21.700000762939453
+        20.700000762939453
       ],
       "legacy_preview": "docs/leeshaukee3d.png"
     },
@@ -547,8 +547,8 @@
       "slug": "communal",
       "model": "assets/models/communal.glb",
       "preview": "docs/models/communal.png",
-      "model_sha256": "ca369fc94132f20ba188f38b641000bdeff6624b7541325461a17fe21904ac21",
-      "preview_sha256": "3145cfd7ba5554b2dd747b1c4d5aacc0ec0a985d634d4a26a21c8b3efbbf29a5",
+      "model_sha256": "2ca7ab6c90513751764cb4b0f4c1b28f4de6780dfb2627eda1e454487f28c758",
+      "preview_sha256": "898cca3299c1d12e493569870f181f5b92cb00720f2d0afbe43d4a4a3a66dae1",
       "bounds_min": [
         -24.15999984741211,
         -24.020000457763672,
@@ -557,7 +557,7 @@
       "bounds_max": [
         27.391164779663086,
         23.920000076293945,
-        21.075000762939453
+        19.899999618530273
       ],
       "legacy_preview": "docs/communal3d.png"
     },
@@ -567,8 +567,8 @@
       "slug": "library",
       "model": "assets/models/library.glb",
       "preview": "docs/models/library.png",
-      "model_sha256": "b0c29337e85f089ae9436f5c25181a63a45e3a02bc1f25264a02f22bd179353f",
-      "preview_sha256": "9ccc6ea2f78e595657e22d9e4e50f952319d00ddd453eea8afe2937d1af39b10",
+      "model_sha256": "deb53a241f0f62150ab05093f0cca5687066822db78be089648070ba3a5529ac",
+      "preview_sha256": "c0c9ac9b7da872ce161e293140e01d7e072a2430b37d731500f274cf288dbf63",
       "bounds_min": [
         -34.29999923706055,
         -42.310001373291016,
@@ -577,7 +577,7 @@
       "bounds_max": [
         42.93000030517578,
         40.89799499511719,
-        19.424999237060547
+        16.799999237060547
       ],
       "legacy_preview": "docs/library3d.png"
     },

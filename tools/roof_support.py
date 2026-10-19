@@ -9,7 +9,7 @@ DETAIL=re.compile(r'planter|_bed_|_lawn_|_garden|tree|trunk|_court$|_line_|_fenc
 
 # These objects were invented decoration/equipment rather than sourced campus
 # features. Remove them at export, consistently for every named model.
-UNVERIFIED_ROOF_PROPS=re.compile(r'pergola|planter|_bed_|_lawn_|_garden|tree|trunk|_roof_plant|_roof_ac|_ac_\d|_vent_\d|_water_tank|_tank(?:_|$)|_pav(?:_|$)|_roof_canopy|^Z_terrace_(?:glass_canopy|canopy_column)|^GSH_(?:rail|guard)_',re.I)
+UNVERIFIED_ROOF_PROPS=re.compile(r'pergola|planter|_bed_|_lawn_|_garden|tree|trunk|_roof_plant|_roof_ac|_ac_\d|_vent_\d|_water_tank|_tank(?:_|$)|_pav(?:_|$)|_roof_canopy|^Z_terrace_(?:glass_canopy|canopy_column)|^GSH_(?:rail|guard)_|^LIB_(?:lantern(?:_frame)?|skylight_-?\d+)$|^LSKB_skylight$|^COM_skylight(?:_rim)?$|^BLKX_(?:court|line_\d+|fence2?_-?\d+_\d+|pole_\d+|lamp_\d+)$',re.I)
 
 def remove_unverified_roof_props():
     removed=[]

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a custom Block X sports complex with a rooftop court and terrace."""
+"""Build the Block X massing with a clear roof and setback terrace."""
 import bpy
 import bmesh
 import json
@@ -17,6 +17,7 @@ midx, midy = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
 LOWER = 26.0
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
+bpy.context.preferences.filepaths.save_version = 0
 
 
 def mat(name, color, rough=0.7, metal=0.0):
@@ -80,38 +81,7 @@ extrude(upper, LOWER, h, 'BLKX_upper', WHITE)
 extrude(loc, LOWER - 0.5, LOWER, 'BLKX_terrace_edge', WHITE)
 extrude(upper, h, h + 0.8, 'BLKX_roof_edge', WHITE)
 
-# rooftop sports court on the lower terrace, fitted to the footprint
-court_x, court_y = midx, midy
-DECK = h + 1.0
-court_w = min(24.0, (max(xs) - min(xs)) * 0.45)
-court_d = min(12.0, (max(ys) - min(ys)) * 0.40)
-box('BLKX_court', court_x, court_y, DECK, court_w, court_d, 0.35, 0.0, BLUE)
-# white court lines
-for i, (lx, ly, lw, ld) in enumerate((
-    (court_x, court_y - court_d / 2 + 0.5, court_w, 0.18), (court_x, court_y + court_d / 2 - 0.5, court_w, 0.18),
-    (court_x - court_w / 2 + 0.5, court_y, 0.18, court_d), (court_x + court_w / 2 - 0.5, court_y, 0.18, court_d),
-    (court_x, court_y, 0.18, court_d),
-)):
-    box(f'BLKX_line_{i}', lx, ly, DECK + 0.23, lw, ld, 0.08, 0.0, WHITE)
-# fence posts around court
-for side in (-1, 1):
-    for i in range(6):
-        bx = court_x + side * (court_w / 2)
-        by = court_y - court_d / 2 + (i + 0.5) * court_d / 6
-        box(f'BLKX_fence_{side}_{i}', bx, by, DECK + 1.4, 0.14, 0.14, 2.8, 0.0, DARK)
-    for i in range(9):
-        by = court_y + side * (court_d / 2)
-        bx = court_x - court_w / 2 + (i + 0.5) * court_w / 9
-        box(f'BLKX_fence2_{side}_{i}', bx, by, DECK + 1.4, 0.14, 0.14, 2.8, 0.0, DARK)
-# floodlights
-for i, (fx, fy) in enumerate(((court_x - court_w/2 + .5, court_y - court_d/2 + .5), (court_x + court_w/2 - .5, court_y - court_d/2 + .5), (court_x - court_w/2 + .5, court_y + court_d/2 - .5), (court_x + court_w/2 - .5, court_y + court_d/2 - .5))):
-    cyl(f'BLKX_pole_{i}', fx, fy, DECK + 4.175, 0.22, 8.0, DARK)
-    box(f'BLKX_lamp_{i}', fx, fy, DECK + 8.35, 1.6, 0.5, 0.35, 0.0, WHITE)
-
-# upper roof plant
-box('BLKX_roof_plant', midx - 22, midy + 15, h + 1.6, 10.0, 7.0, 2.2, 0.0, WHITE)
-for i in range(3):
-    box(f'BLKX_roof_ac_{i}', midx + 10 + i * 4, midy - 5, h + 0.7, 2.2, 1.6, 1.0, 0.0, WHITE)
+# Keep the roof clear of the removed placeholder rooftop assemblies.
 
 # entrance
 best = None

@@ -24,6 +24,7 @@ h = float(lm['height'])
 loc = [(x - cx, -(z - cz)) for (x, z) in fp]
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
+bpy.context.preferences.filepaths.save_version = 0
 
 
 def mat(name, color, rough=0.6, metal=0.0):
@@ -153,12 +154,7 @@ for zz in (4.0, 8.0, 11.4):
     box(f'LIB_transom_{int(zz)}', bx + bnx * 2.78, by + bny * 2.78, zz,
         width, 0.22, 0.18, rot, WHITE)
 
-# roof courtyard lantern
-box('LIB_lantern', 0.0, 0.0, h + 1.6, 13.0, 10.0, 3.2, 0.0, GLASS)
-box('LIB_lantern_frame', 0.0, 0.0, h + 3.25, 14.0, 11.0, 0.35, 0.0, WHITE)
-# roof skylights, two strips either side of the lantern
-for k, ox in ((-1, -22.0), (1, 22.0)):
-    box(f'LIB_skylight_{k}', ox, 0.0, h + 0.45, 12.0, 22.0, 0.55, 0.0, GLASS)
+# Keep the roof clear of the removed placeholder rooftop assemblies.
 
 # save + export
 import sys

@@ -1,6 +1,6 @@
 {
   "model_count": 30,
-  "checked_rooftop_objects": 17,
+  "checked_rooftop_objects": 12,
   "roof_cap_checks": [
     {
       "model": "lks",
@@ -105,13 +105,13 @@
     {
       "name": "Block X",
       "slug": "blockx",
-      "sha256": "9e6620d52ffd4de817c7fde54a5d31d72196b286e412d77efdb863c269a551f1",
-      "meshes": 54,
-      "triangles": 936,
+      "sha256": "dba267410e8718644da4a47723a38b584f43d97f4c40a27cbde498c6212a3c64",
+      "meshes": 10,
+      "triangles": 216,
       "finite": true,
       "degenerate_triangles": 0,
       "actual_y_min": 0.0,
-      "actual_y_max": 44.50199584662914
+      "actual_y_max": 35.79999923706055
     },
     {
       "name": "Block Z",
@@ -314,13 +314,13 @@
     {
       "name": "Lee Shau Kee Building",
       "slug": "leeshaukee",
-      "sha256": "0530c643483a3afaae39f2b51a7b901ca0f89d6cbeacbeec3433693f59f5894f",
-      "meshes": 17,
-      "triangles": 412,
+      "sha256": "a1646e235c77f2def19bbdd49304807931f96f3ed4ab7b456e923f81ec82955b",
+      "meshes": 16,
+      "triangles": 400,
       "finite": true,
       "degenerate_triangles": 0,
       "actual_y_min": 0.0,
-      "actual_y_max": 21.700000762939453
+      "actual_y_max": 20.700000762939453
     },
     {
       "name": "House of Innovation",
@@ -347,24 +347,24 @@
     {
       "name": "Communal Building",
       "slug": "communal",
-      "sha256": "ca369fc94132f20ba188f38b641000bdeff6624b7541325461a17fe21904ac21",
-      "meshes": 19,
-      "triangles": 260,
+      "sha256": "2ca7ab6c90513751764cb4b0f4c1b28f4de6780dfb2627eda1e454487f28c758",
+      "meshes": 17,
+      "triangles": 236,
       "finite": true,
       "degenerate_triangles": 0,
       "actual_y_min": 0.0,
-      "actual_y_max": 21.075000762939453
+      "actual_y_max": 19.899999618530273
     },
     {
       "name": "Pao Yue-kong Library",
       "slug": "library",
-      "sha256": "b0c29337e85f089ae9436f5c25181a63a45e3a02bc1f25264a02f22bd179353f",
-      "meshes": 26,
-      "triangles": 442,
+      "sha256": "deb53a241f0f62150ab05093f0cca5687066822db78be089648070ba3a5529ac",
+      "meshes": 22,
+      "triangles": 394,
       "finite": true,
       "degenerate_triangles": 0,
       "actual_y_min": 0.0,
-      "actual_y_max": 19.424999997019768
+      "actual_y_max": 16.799999237060547
     },
     {
       "name": "Hotel ICON",

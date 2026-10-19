@@ -4,7 +4,7 @@
   "roof_props_checked": 0,
   "trees_checked": 170,
   "tree_crown_clearance_m": 3,
-  "procedural_build_ms": 105,
+  "procedural_build_ms": 106,
   "errors": [],
   "scope": "Actual context/tree builders; GLB/source hashes, roof support samples including holes and every tree instance against buffered building/road exclusions."
 }

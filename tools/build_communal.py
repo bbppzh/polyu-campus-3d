@@ -17,6 +17,7 @@ midx, midy = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
 LOWER = 10.0
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
+bpy.context.preferences.filepaths.save_version = 0
 
 
 def mat(name, color, rough=0.7, metal=0.0):
@@ -72,15 +73,7 @@ extrude(upper, LOWER, h, 'COM_upper', WHITE)
 extrude(loc, LOWER - 0.5, LOWER, 'COM_terrace_edge', WHITE)
 extrude(upper, h, h + 0.7, 'COM_roof_edge', WHITE)
 
-# roof atrium skylight
-box('COM_skylight', midx - 3, midy + 2, h + 1.2, 14.0, 10.0, 1.0, 0.0, GLASS)
-box('COM_skylight_rim', midx - 3, midy + 2, h + 1.75, 15.0, 11.0, 0.25, 0.0, WHITE)
-box('COM_roof_plant', midx + 12, midy - 8, h + 1.5, 8.0, 6.0, 2.0, 0.0, WHITE)
-
-# terrace planters on the setback
-for i, t in enumerate((-0.3, 0.0, 0.3)):
-    bx = midx + t * (max(xs) - min(xs))
-    box(f'COM_terrace_planter_{i}', bx, min(ys) + 2.4, LOWER + 0.5, 8.0, 1.5, 0.8, 0.0, GREEN)
+# Keep the roof clear of the removed placeholder rooftop assemblies.
 
 # nearest edge, outward probe
 best = None

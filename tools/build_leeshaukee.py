@@ -17,6 +17,7 @@ midx, midy = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
 LOWER = 10.0
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
+bpy.context.preferences.filepaths.save_version = 0
 
 
 def mat(name, color, rough=0.7, metal=0.0):
@@ -72,12 +73,7 @@ extrude(upper, LOWER, h, 'LSKB_upper', WHITE)
 extrude(loc, LOWER - 0.5, LOWER, 'LSKB_terrace_edge', WHITE)
 extrude(upper, h, h + 0.7, 'LSKB_roof_edge', WHITE)
 
-# roof terrace planters and skylight
-for i, t in enumerate((-0.35, 0.0, 0.35)):
-    bx = midx + t * (max(xs) - min(xs))
-    box(f'LSKB_planter_{i}', bx, midy - 18, LOWER + 0.6, 12.0, 2.0, 1.0, 0.0, GREEN)
-box('LSKB_skylight', midx - 20, midy + 4, h + 1.2, 14.0, 8.0, 1.0, 0.0, GLASS)
-box('LSKB_roof_plant', midx + 20, midy - 8, h + 1.5, 10.0, 6.0, 2.0, 0.0, WHITE)
+# Keep the roof clear of the removed placeholder rooftop assemblies.
 
 # entrance on nearest long edge facing the core
 best = None
