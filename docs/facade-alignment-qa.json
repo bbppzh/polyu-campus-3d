@@ -1,0 +1,711 @@
+{
+  "models": [
+    {
+      "slug": "seal",
+      "sha256": "77753e3c7af34896db0182785f2ffe4d7f15ba9b361cf633096afd9716cb9d82"
+    },
+    {
+      "slug": "chung",
+      "sha256": "08d390b8503c29a3d7a985907a653537b545c8aec03dd468cdf1e0432357d93f"
+    },
+    {
+      "slug": "stanley",
+      "sha256": "c277853ce32b42340d0d1d5b7618f30045f69fac516745ce81b8f4d462b74ac7"
+    },
+    {
+      "slug": "tang",
+      "sha256": "868af3508466e29726e8e52319637cf9fcd024362f75ca79c5c3ddf021a01c3d"
+    },
+    {
+      "slug": "hoi",
+      "sha256": "b8794c183682aea63cbbf6767f699a45aaeb0c51d5a7b78b4a691174ca454b7c"
+    },
+    {
+      "slug": "gh",
+      "sha256": "d0df4b146b5ab0cf1b6e281d3c972ec9805ff12617a60559c1d80f6a3e41171e"
+    }
+  ],
+  "checks": [
+    {
+      "slug": "seal",
+      "check": "entry wall-plane registration error (m)",
+      "value": 8.496051546735828e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "canopy underside / atrium top gap (m)",
+      "value": 1.9371509552001953e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "atrium footprint outside canopy (m2)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "SOL_entry_frame_0 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "SOL_entry_frame_0 front-plane mismatch (m)",
+      "value": 4.7185177098896247e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "SOL_entry_frame_1 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "SOL_entry_frame_1 front-plane mismatch (m)",
+      "value": 3.6927006541453977e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "SOL_entry_frame_2 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "SOL_entry_frame_2 front-plane mismatch (m)",
+      "value": 4.5538713933090946e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "SOL_entry_frame_3 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "SOL_entry_frame_3 front-plane mismatch (m)",
+      "value": 1.700366196732972e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "SOL_entry_frame_4 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "SOL_entry_frame_4 front-plane mismatch (m)",
+      "value": 4.8762437421245863e-08,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "SOL_glass_tower / SOL_tower solid overlap (m2)",
+      "value": 1.4785701825499359e-06,
+      "maximum": 0.001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "missing parapet footprint edge (m)",
+      "value": 0.0,
+      "maximum": 0.001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "circular stair coverage by SOL_podium (m2)",
+      "value": 0.0,
+      "maximum": 0.001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "circular stair coverage by SOL_band_0 (m2)",
+      "value": 0.0,
+      "maximum": 0.001,
+      "pass": true
+    },
+    {
+      "slug": "seal",
+      "check": "circular stair coverage by SOL_roof_slab (m2)",
+      "value": 0.0,
+      "maximum": 0.001,
+      "pass": true
+    },
+    {
+      "slug": "chung",
+      "check": "entry wall-plane registration error (m)",
+      "value": 1.026478991611457e-06,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "chung",
+      "check": "canopy underside / atrium top gap (m)",
+      "value": 2.8312206268310547e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "chung",
+      "check": "atrium footprint outside canopy (m2)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "chung",
+      "check": "CSY_entry_frame_0 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "chung",
+      "check": "CSY_entry_frame_0 front-plane mismatch (m)",
+      "value": 6.083599091155634e-08,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "chung",
+      "check": "CSY_entry_frame_1 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "chung",
+      "check": "CSY_entry_frame_1 front-plane mismatch (m)",
+      "value": 3.082621424788101e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "chung",
+      "check": "CSY_entry_frame_2 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "chung",
+      "check": "CSY_entry_frame_2 front-plane mismatch (m)",
+      "value": 2.422795661871646e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "chung",
+      "check": "CSY_entry_frame_3 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "chung",
+      "check": "CSY_entry_frame_3 front-plane mismatch (m)",
+      "value": 1.1107635522478176e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "chung",
+      "check": "CSY_entry_frame_4 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "chung",
+      "check": "CSY_entry_frame_4 front-plane mismatch (m)",
+      "value": 4.6451818214165996e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "chung",
+      "check": "missing parapet footprint edge (m)",
+      "value": 0.0,
+      "maximum": 0.001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "entry wall-plane registration error (m)",
+      "value": 4.3388756498785597e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "canopy underside / atrium top gap (m)",
+      "value": 1.9371509552001953e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "atrium footprint outside canopy (m2)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "SHB_entry_frame_0 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "SHB_entry_frame_0 front-plane mismatch (m)",
+      "value": 4.6693760058502676e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "SHB_entry_frame_1 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "SHB_entry_frame_1 front-plane mismatch (m)",
+      "value": 7.15755446023536e-08,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "SHB_entry_frame_2 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "SHB_entry_frame_2 front-plane mismatch (m)",
+      "value": 3.3089878659353644e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "SHB_entry_frame_3 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "SHB_entry_frame_3 front-plane mismatch (m)",
+      "value": 2.391633000531357e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "SHB_entry_frame_4 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "SHB_entry_frame_4 front-plane mismatch (m)",
+      "value": 1.3176208901732878e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "green wall host-plane error (m)",
+      "value": 4.277454933032665e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "balcony 0 rail support gap (m)",
+      "value": 2.905726432800293e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "balcony 0 rail overhang (m2)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "balcony 1 rail support gap (m)",
+      "value": 2.905726432800293e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "balcony 1 rail overhang (m2)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "balcony 2 rail support gap (m)",
+      "value": 2.905726432800293e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "stanley",
+      "check": "balcony 2 rail overhang (m2)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "entry wall-plane registration error (m)",
+      "value": 5.772033206952187e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "canopy underside / atrium top gap (m)",
+      "value": 2.8312206268310547e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "atrium footprint outside canopy (m2)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "TPY_entry_frame_0 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "TPY_entry_frame_0 front-plane mismatch (m)",
+      "value": 3.5631184469586685e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "TPY_entry_frame_1 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "TPY_entry_frame_1 front-plane mismatch (m)",
+      "value": 5.627446597600283e-08,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "TPY_entry_frame_2 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "TPY_entry_frame_2 front-plane mismatch (m)",
+      "value": 1.4151887017810338e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "TPY_entry_frame_3 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "TPY_entry_frame_3 front-plane mismatch (m)",
+      "value": 3.636531258344178e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "upper slit 0 wall-plane error (m)",
+      "value": 8.00784842186486e-08,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "upper slit 1 wall-plane error (m)",
+      "value": 3.9459537416741686e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "upper slit 2 wall-plane error (m)",
+      "value": 2.495877887698228e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "upper slit 3 wall-plane error (m)",
+      "value": 1.0458020380244015e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "tang",
+      "check": "upper slit 4 wall-plane error (m)",
+      "value": 4.19097093320997e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "hoi",
+      "check": "entry wall-plane registration error (m)",
+      "value": 8.170265793777665e-08,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "hoi",
+      "check": "canopy underside / atrium top gap (m)",
+      "value": 2.8312206268310547e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "hoi",
+      "check": "atrium footprint outside canopy (m2)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "hoi",
+      "check": "HOI_entry_frame_0 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "hoi",
+      "check": "HOI_entry_frame_0 front-plane mismatch (m)",
+      "value": 7.858146089390061e-08,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "hoi",
+      "check": "HOI_entry_frame_1 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "hoi",
+      "check": "HOI_entry_frame_1 front-plane mismatch (m)",
+      "value": 3.731650548566279e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "hoi",
+      "check": "HOI_entry_frame_2 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "hoi",
+      "check": "HOI_entry_frame_2 front-plane mismatch (m)",
+      "value": 1.454198339523316e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "hoi",
+      "check": "HOI_entry_frame_3 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "hoi",
+      "check": "HOI_entry_frame_3 front-plane mismatch (m)",
+      "value": 2.596528103637752e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "hoi",
+      "check": "HOI_core / HOI_glass solid overlap (m2)",
+      "value": 0.0,
+      "maximum": 0.001,
+      "pass": true
+    },
+    {
+      "slug": "hoi",
+      "check": "core outside roof envelope (m2)",
+      "value": 0.0,
+      "maximum": 0.001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "entry wall-plane registration error (m)",
+      "value": 1.9169079634728803e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "canopy underside / atrium top gap (m)",
+      "value": 1.9371509552001953e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "atrium footprint outside canopy (m2)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "GHB_entry_frame_0 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "GHB_entry_frame_0 front-plane mismatch (m)",
+      "value": 5.121911084149389e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "GHB_entry_frame_1 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "GHB_entry_frame_1 front-plane mismatch (m)",
+      "value": 1.1894234086540223e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "GHB_entry_frame_2 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "GHB_entry_frame_2 front-plane mismatch (m)",
+      "value": 2.187872285563941e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "GHB_entry_frame_3 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "GHB_entry_frame_3 front-plane mismatch (m)",
+      "value": 3.6372544909291094e-07,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "GHB_entry_frame_4 vertical mismatch (m)",
+      "value": 0.0,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "GHB_entry_frame_4 front-plane mismatch (m)",
+      "value": 5.169109962288587e-08,
+      "maximum": 0.0001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "GHB_corner_glass_0 / GHB_tower_0 solid overlap (m2)",
+      "value": 0.0,
+      "maximum": 0.001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "GHB_corner_glass_1 / GHB_tower_1 solid overlap (m2)",
+      "value": 0.0,
+      "maximum": 0.001,
+      "pass": true
+    },
+    {
+      "slug": "gh",
+      "check": "GHB_corner_glass_2 / GHB_tower_2 solid overlap (m2)",
+      "value": 0.0,
+      "maximum": 0.001,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "scope": "Actual exported GLB vertices/triangles: entry registration, canopy/frame joints, overlapping structural layers, core/corner partitions, parapet coverage, upper windows, green-wall and balcony joints. No surveyed-fidelity or full triangle-pair certification."
+}
