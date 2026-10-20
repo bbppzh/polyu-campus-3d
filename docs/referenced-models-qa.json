@@ -1,0 +1,130 @@
+{
+  "models": [
+    {
+      "slug": "blockx",
+      "sha256": "2dcb3da057213bb216b5a85df370d9238677cfdca1bb1b6d98c395d667785534",
+      "height_m": 9.059147893894842,
+      "height_status": "visual estimate",
+      "mesh_draws": 38,
+      "embedded_images": 0
+    },
+    {
+      "slug": "leeshaukee",
+      "sha256": "d825e7381221844bcccb84c10f198f1103f149fb85467b7240ae47616e3ebf29",
+      "height_m": 48.724998474121094,
+      "height_status": "visual estimate",
+      "mesh_draws": 26,
+      "embedded_images": 1
+    },
+    {
+      "slug": "communal",
+      "sha256": "0ed8a853f849f6e1c2acef155ffe6df4494997e2e6494ce07321cc1ccc85d8ca",
+      "height_m": 19.850000381469727,
+      "height_status": "visual estimate",
+      "mesh_draws": 10,
+      "embedded_images": 1
+    },
+    {
+      "slug": "library",
+      "sha256": "2830c2bb4553d2a0aa1decd8967533b010dffa1214900dcd48b90e090cf1f8f8",
+      "height_m": 29.68000030517578,
+      "height_status": "visual estimate",
+      "mesh_draws": 19,
+      "embedded_images": 1
+    }
+  ],
+  "lsk_glazing_rows": 14,
+  "roof_landscape": [
+    {
+      "name": "BLKX_verified_vegetated_surface_0",
+      "outside_deck_m2": 0.0,
+      "base_gap_m": 0.0
+    },
+    {
+      "name": "BLKX_verified_vegetated_surface_1",
+      "outside_deck_m2": 0.0,
+      "base_gap_m": 0.0
+    },
+    {
+      "name": "BLKX_verified_vegetated_surface_2",
+      "outside_deck_m2": 0.0,
+      "base_gap_m": 0.0
+    }
+  ],
+  "ramp_posts": [
+    {
+      "name": "BLKX_ramp_guard_post_1_0",
+      "max_abs_foot_gap_m": 0.0026792250970100184
+    },
+    {
+      "name": "BLKX_ramp_guard_post_1_1",
+      "max_abs_foot_gap_m": 0.0026793765871149233
+    },
+    {
+      "name": "BLKX_ramp_guard_post_1_2",
+      "max_abs_foot_gap_m": 0.002679051240061625
+    },
+    {
+      "name": "BLKX_ramp_guard_post_1_3",
+      "max_abs_foot_gap_m": 0.0026794366058897623
+    },
+    {
+      "name": "BLKX_ramp_guard_post_1_4",
+      "max_abs_foot_gap_m": 0.0026791112588373522
+    },
+    {
+      "name": "BLKX_ramp_guard_post_1_5",
+      "max_abs_foot_gap_m": 0.002679262748942257
+    },
+    {
+      "name": "BLKX_ramp_guard_post_1_6",
+      "max_abs_foot_gap_m": 0.0026790049142224603
+    },
+    {
+      "name": "BLKX_ramp_guard_post_1_7",
+      "max_abs_foot_gap_m": 0.0026797996048752992
+    },
+    {
+      "name": "BLKX_ramp_guard_post_1_8",
+      "max_abs_foot_gap_m": 0.002679176723908938
+    },
+    {
+      "name": "BLKX_ramp_guard_post_-1_0",
+      "max_abs_foot_gap_m": 0.002679178508243396
+    },
+    {
+      "name": "BLKX_ramp_guard_post_-1_1",
+      "max_abs_foot_gap_m": 0.0026793412499062086
+    },
+    {
+      "name": "BLKX_ramp_guard_post_-1_2",
+      "max_abs_foot_gap_m": 0.0026790292015625994
+    },
+    {
+      "name": "BLKX_ramp_guard_post_-1_3",
+      "max_abs_foot_gap_m": 0.0026791939903780815
+    },
+    {
+      "name": "BLKX_ramp_guard_post_-1_4",
+      "max_abs_foot_gap_m": 0.002679061266756655
+    },
+    {
+      "name": "BLKX_ramp_guard_post_-1_5",
+      "max_abs_foot_gap_m": 0.0026792806062738705
+    },
+    {
+      "name": "BLKX_ramp_guard_post_-1_6",
+      "max_abs_foot_gap_m": 0.002678974650857313
+    },
+    {
+      "name": "BLKX_ramp_guard_post_-1_7",
+      "max_abs_foot_gap_m": 0.002679610183906611
+    },
+    {
+      "name": "BLKX_ramp_guard_post_-1_8",
+      "max_abs_foot_gap_m": 0.0026791219103881048
+    }
+  ],
+  "errors": [],
+  "scope": "Actual exported geometry/materials. Self-contained images and UVs, bounded draw counts, UI heights, LSK glazing-row count, Block X landscape/deck coverage and ramp-post foot support. Visual fidelity is separately compared against cited photographs; all dimensions remain estimates."
+}

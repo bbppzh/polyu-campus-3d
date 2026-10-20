@@ -107,18 +107,19 @@
       "slug": "blockx",
       "model": "assets/models/blockx.glb",
       "preview": "docs/models/blockx.png",
-      "model_sha256": "dba267410e8718644da4a47723a38b584f43d97f4c40a27cbde498c6212a3c64",
-      "preview_sha256": "d702de26575b0cc385b56696472ca1cec790b64416124c62ea6da26f03fbb12f",
+      "model_sha256": "2dcb3da057213bb216b5a85df370d9238677cfdca1bb1b6d98c395d667785534",
+      "preview_sha256": "b5bc430a186b63f9f6653a129e0ac025308254d371e958585b9a2d639ef8ee48",
       "bounds_min": [
-        -44.93000030517578,
-        -36.7599983215332,
+        -45.088382720947266,
+        -36.90434646606445,
         0.0
       ],
       "bounds_max": [
-        42.36000061035156,
-        38.93000030517578,
-        35.79999923706055
+        42.50651550292969,
+        39.09471130371094,
+        9.059147834777832
       ],
+      "render_engine": "CYCLES",
       "legacy_preview": "docs/blockx3d.png"
     },
     {
@@ -487,18 +488,19 @@
       "slug": "leeshaukee",
       "model": "assets/models/leeshaukee.glb",
       "preview": "docs/models/leeshaukee.png",
-      "model_sha256": "a1646e235c77f2def19bbdd49304807931f96f3ed4ab7b456e923f81ec82955b",
-      "preview_sha256": "57dfb0b5d8ff4a5d32b35d8cc66a51a87dc1447e395c1ae56b4b420b9d136216",
+      "model_sha256": "d825e7381221844bcccb84c10f198f1103f149fb85467b7240ae47616e3ebf29",
+      "preview_sha256": "d8131ce7fade95f1b92757f3bd06151a9a2ae4c38f7fd8d74dd0bd2a50e19075",
       "bounds_min": [
-        -52.56999969482422,
-        -37.439693450927734,
-        0.0
+        -53.20399856567383,
+        -35.25678634643555,
+        0.25
       ],
       "bounds_max": [
-        46.380001068115234,
-        21.100000381469727,
-        20.700000762939453
+        47.00360107421875,
+        21.773666381835938,
+        48.724998474121094
       ],
+      "render_engine": "CYCLES",
       "legacy_preview": "docs/leeshaukee3d.png"
     },
     {
@@ -547,18 +549,19 @@
       "slug": "communal",
       "model": "assets/models/communal.glb",
       "preview": "docs/models/communal.png",
-      "model_sha256": "2ca7ab6c90513751764cb4b0f4c1b28f4de6780dfb2627eda1e454487f28c758",
-      "preview_sha256": "898cca3299c1d12e493569870f181f5b92cb00720f2d0afbe43d4a4a3a66dae1",
+      "model_sha256": "0ed8a853f849f6e1c2acef155ffe6df4494997e2e6494ce07321cc1ccc85d8ca",
+      "preview_sha256": "d49d967d1ea2fd7e6efb6b8a37fc82a22f85fae30587687ebacfd7784437a7e1",
       "bounds_min": [
-        -24.15999984741211,
-        -24.020000457763672,
+        -24.352933883666992,
+        -24.2132568359375,
         0.0
       ],
       "bounds_max": [
-        27.391164779663086,
-        23.920000076293945,
-        19.899999618530273
+        26.719228744506836,
+        24.113195419311523,
+        19.850000381469727
       ],
+      "render_engine": "CYCLES",
       "legacy_preview": "docs/communal3d.png"
     },
     {
@@ -567,18 +570,19 @@
       "slug": "library",
       "model": "assets/models/library.glb",
       "preview": "docs/models/library.png",
-      "model_sha256": "deb53a241f0f62150ab05093f0cca5687066822db78be089648070ba3a5529ac",
-      "preview_sha256": "c0c9ac9b7da872ce161e293140e01d7e072a2430b37d731500f274cf288dbf63",
+      "model_sha256": "2830c2bb4553d2a0aa1decd8967533b010dffa1214900dcd48b90e090cf1f8f8",
+      "preview_sha256": "c05edc5747a739cacc93a23075b82ac6407ebe415335ff65af22eb1b34aba628",
       "bounds_min": [
         -34.29999923706055,
         -42.310001373291016,
-        0.0
+        -1.3877787807814457e-17
       ],
       "bounds_max": [
         42.93000030517578,
-        40.89799499511719,
-        16.799999237060547
+        43.82890319824219,
+        29.68000030517578
       ],
+      "render_engine": "CYCLES",
       "legacy_preview": "docs/library3d.png"
     },
     {

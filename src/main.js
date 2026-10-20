@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { createCampus, loadCampusTextures } from './buildings.js?v=20261019-roof5';
+import { createCampus, loadCampusTextures } from './buildings.js?v=20261020-facades1';
 import { createEnvironment } from './environment.js';
 
 const $ = (id) => document.getElementById(id);
@@ -1036,6 +1036,17 @@ async function loadData() {
   const res = await fetch('./data/campus.json', { cache: 'no-cache' });
   if (!res.ok) throw new Error(`campus.json: HTTP ${res.status}`);
   const data = await res.json();
+  const overridesRes = await fetch('./data/model-overrides.json', { cache: 'no-cache' });
+  if (!overridesRes.ok) throw new Error(`model-overrides.json: HTTP ${overridesRes.status}`);
+  const overrides = await overridesRes.json();
+  for (const model of overrides.models) {
+    const landmark = data.landmarks.find((l) => l.name === model.name);
+    if (landmark) {
+      landmark.sourceHeight = landmark.height;
+      landmark.height = model.height;
+      landmark.heightSource = model.heightSource;
+    }
+  }
   const entranceRes = await fetch('./data/hotel-entrances.json', { cache: 'no-cache' });
   if (!entranceRes.ok) throw new Error(`hotel-entrances.json: HTTP ${entranceRes.status}`);
   data.hotelEntranceRegistration = await entranceRes.json();
@@ -1223,12 +1234,12 @@ function animate() {
 
 async function loadAutoModels() {
   try {
-    const res = await fetch('./data/custom-models.json?v=20261019-roof5');
+    const res = await fetch('./data/custom-models.json?v=20261020-facades1');
     const list = await res.json();
     const loader = new GLTFLoader();
     const entries = await Promise.all(list.map((e) => new Promise((resolve) => {
       loader.load(
-        './' + e.file + '?v=20261019-roof5',
+        './' + e.file + '?v=20261020-facades1',
         (gltf) => resolve([e.name, gltf.scene]),
         undefined,
         () => resolve([e.name, null])
@@ -1244,7 +1255,7 @@ async function loadAutoModels() {
 function loadTangModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/tang.glb?v=20261019-roof5',
+      './assets/models/tang.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1258,7 +1269,7 @@ function loadTangModel() {
 function loadFongModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/fong.glb?v=20261019-roof5',
+      './assets/models/fong.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1272,7 +1283,7 @@ function loadFongModel() {
 function loadStanleyModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/stanley.glb?v=20261019-roof5',
+      './assets/models/stanley.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1286,7 +1297,7 @@ function loadStanleyModel() {
 function loadSealModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/seal.glb?v=20261019-roof5',
+      './assets/models/seal.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1300,7 +1311,7 @@ function loadSealModel() {
 function loadChungModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/chung.glb?v=20261019-roof5',
+      './assets/models/chung.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1314,7 +1325,7 @@ function loadChungModel() {
 function loadHoiModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/hoi.glb?v=20261019-roof5',
+      './assets/models/hoi.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1328,7 +1339,7 @@ function loadHoiModel() {
 function loadAnitaModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/anita.glb?v=20261019-roof5',
+      './assets/models/anita.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1342,7 +1353,7 @@ function loadAnitaModel() {
 function loadCmaModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/cma.glb?v=20261019-roof5',
+      './assets/models/cma.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1356,7 +1367,7 @@ function loadCmaModel() {
 function loadGhModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/gh.glb?v=20261019-roof5',
+      './assets/models/gh.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1370,7 +1381,7 @@ function loadGhModel() {
 function loadLuiModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/lui.glb?v=20261019-roof5',
+      './assets/models/lui.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1384,7 +1395,7 @@ function loadLuiModel() {
 function loadTaioModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/taio.glb?v=20261019-roof5',
+      './assets/models/taio.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1398,7 +1409,7 @@ function loadTaioModel() {
 function loadChanModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/chan.glb?v=20261019-roof5',
+      './assets/models/chan.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1412,7 +1423,7 @@ function loadChanModel() {
 function loadYipModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/yip.glb?v=20261019-roof5',
+      './assets/models/yip.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1426,7 +1437,7 @@ function loadYipModel() {
 function loadNgModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/ng.glb?v=20261019-roof5',
+      './assets/models/ng.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1440,7 +1451,7 @@ function loadNgModel() {
 function loadMongModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/mong.glb?v=20261019-roof5',
+      './assets/models/mong.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1454,7 +1465,7 @@ function loadMongModel() {
 function loadChowModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/chow.glb?v=20261019-roof5',
+      './assets/models/chow.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1468,7 +1479,7 @@ function loadChowModel() {
 function loadChoiModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/choi.glb?v=20261019-roof5',
+      './assets/models/choi.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1482,7 +1493,7 @@ function loadChoiModel() {
 function loadShirleyModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/shirley.glb?v=20261019-roof5',
+      './assets/models/shirley.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1496,7 +1507,7 @@ function loadShirleyModel() {
 function loadIndustrialModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/industrial.glb?v=20261019-roof5',
+      './assets/models/industrial.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1510,7 +1521,7 @@ function loadIndustrialModel() {
 function loadLeeShauKeeModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/leeshaukee.glb?v=20261019-roof5',
+      './assets/models/leeshaukee.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1524,7 +1535,7 @@ function loadLeeShauKeeModel() {
 function loadGSHModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/gsh.glb?v=20261019-roof5',
+      './assets/models/gsh.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1538,7 +1549,7 @@ function loadGSHModel() {
 function loadShawModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/shaw.glb?v=20261019-roof5',
+      './assets/models/shaw.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1552,7 +1563,7 @@ function loadShawModel() {
 function loadCommunalModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/communal.glb?v=20261019-roof5',
+      './assets/models/communal.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1566,7 +1577,7 @@ function loadCommunalModel() {
 function loadBlockXModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/blockx.glb?v=20261019-roof5',
+      './assets/models/blockx.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1580,7 +1591,7 @@ function loadBlockXModel() {
 function loadBlockZModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/blockz.glb?v=20261019-roof5',
+      './assets/models/blockz.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1594,7 +1605,7 @@ function loadBlockZModel() {
 function loadLKSModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/lks.glb?v=20261019-roof5',
+      './assets/models/lks.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1608,7 +1619,7 @@ function loadLKSModel() {
 function loadHotelModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/hotel_icon.glb?v=20261019-roof5',
+      './assets/models/hotel_icon.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1622,7 +1633,7 @@ function loadHotelModel() {
 function loadJCAModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/jca.glb?v=20261019-roof5',
+      './assets/models/jca.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1636,7 +1647,7 @@ function loadJCAModel() {
 function loadLibraryModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/library.glb?v=20261019-roof5',
+      './assets/models/library.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {
@@ -1650,7 +1661,7 @@ function loadLibraryModel() {
 function loadJCITModel() {
   return new Promise((resolve) => {
     new GLTFLoader().load(
-      './assets/models/jcit.glb?v=20261019-roof5',
+      './assets/models/jcit.glb?v=20261020-facades1',
       (gltf) => resolve(gltf.scene),
       undefined,
       (err) => {

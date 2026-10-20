@@ -105,13 +105,13 @@
     {
       "name": "Block X",
       "slug": "blockx",
-      "sha256": "dba267410e8718644da4a47723a38b584f43d97f4c40a27cbde498c6212a3c64",
-      "meshes": 10,
-      "triangles": 216,
+      "sha256": "2dcb3da057213bb216b5a85df370d9238677cfdca1bb1b6d98c395d667785534",
+      "meshes": 38,
+      "triangles": 6404,
       "finite": true,
       "degenerate_triangles": 0,
       "actual_y_min": 0.0,
-      "actual_y_max": 35.79999923706055
+      "actual_y_max": 9.059147893894842
     },
     {
       "name": "Block Z",
@@ -314,13 +314,13 @@
     {
       "name": "Lee Shau Kee Building",
       "slug": "leeshaukee",
-      "sha256": "a1646e235c77f2def19bbdd49304807931f96f3ed4ab7b456e923f81ec82955b",
-      "meshes": 16,
-      "triangles": 400,
+      "sha256": "d825e7381221844bcccb84c10f198f1103f149fb85467b7240ae47616e3ebf29",
+      "meshes": 26,
+      "triangles": 34448,
       "finite": true,
       "degenerate_triangles": 0,
-      "actual_y_min": 0.0,
-      "actual_y_max": 20.700000762939453
+      "actual_y_min": 0.25,
+      "actual_y_max": 48.724998474121094
     },
     {
       "name": "House of Innovation",
@@ -347,24 +347,24 @@
     {
       "name": "Communal Building",
       "slug": "communal",
-      "sha256": "2ca7ab6c90513751764cb4b0f4c1b28f4de6780dfb2627eda1e454487f28c758",
-      "meshes": 17,
-      "triangles": 236,
+      "sha256": "0ed8a853f849f6e1c2acef155ffe6df4494997e2e6494ce07321cc1ccc85d8ca",
+      "meshes": 10,
+      "triangles": 9816,
       "finite": true,
       "degenerate_triangles": 0,
       "actual_y_min": 0.0,
-      "actual_y_max": 19.899999618530273
+      "actual_y_max": 19.850000381469727
     },
     {
       "name": "Pao Yue-kong Library",
       "slug": "library",
-      "sha256": "deb53a241f0f62150ab05093f0cca5687066822db78be089648070ba3a5529ac",
-      "meshes": 22,
-      "triangles": 394,
+      "sha256": "2830c2bb4553d2a0aa1decd8967533b010dffa1214900dcd48b90e090cf1f8f8",
+      "meshes": 19,
+      "triangles": 8976,
       "finite": true,
       "degenerate_triangles": 0,
-      "actual_y_min": 0.0,
-      "actual_y_max": 16.799999237060547
+      "actual_y_min": -1.3877787807814457e-17,
+      "actual_y_max": 29.68000030517578
     },
     {
       "name": "Hotel ICON",

@@ -1,0 +1,40 @@
+{
+  "models": [
+    {
+      "slug": "library",
+      "source": "https://www.polyu.edu.hk/about-polyu/",
+      "reference_image": "https://www.polyu.edu.hk/-/media/department/home/content/about-polyu/strategic-plan_2_1080x524.jpg",
+      "features": "直向磚柱、窄窗、退入入口與端部識別塔；取消中央佔位玻璃盒。",
+      "model_sha256": "2830c2bb4553d2a0aa1decd8967533b010dffa1214900dcd48b90e090cf1f8f8",
+      "preview_sha256": "c05edc5747a739cacc93a23075b82ac6407ebe415335ff65af22eb1b34aba628",
+      "before_commit": "9f13d2a"
+    },
+    {
+      "slug": "leeshaukee",
+      "source": "https://www.polyu.edu.hk/archive/media-releases/en/index_id_1525.html",
+      "reference_image": "https://www.polyu.edu.hk/-/media/department/home/gallery/campus-environment/c0137.jpg",
+      "features": "表達官方記錄的 14 層、弧形／轉折立面、藍色橫窗與磚帶。米制高度為照片估算。",
+      "model_sha256": "d825e7381221844bcccb84c10f198f1103f149fb85467b7240ae47616e3ebf29",
+      "preview_sha256": "d8131ce7fade95f1b92757f3bd06151a9a2ae4c38f7fd8d74dd0bd2a50e19075",
+      "before_commit": "9f13d2a"
+    },
+    {
+      "slug": "communal",
+      "source": "https://www.polyu.edu.hk/saso/vtour/",
+      "reference_image": "https://www.polyu.edu.hk/saso/vtour/media/panorama_1F2411B7_444D_693C_41AE_6224A87E12AE_0/b/2/0_0.jpg",
+      "features": "磚牆與連續橫窗、退入式地下玻璃及外側承重柱。",
+      "model_sha256": "0ed8a853f849f6e1c2acef155ffe6df4494997e2e6494ce07321cc1ccc85d8ca",
+      "preview_sha256": "d49d967d1ea2fd7e6efb6b8a37fc82a22f85fae30587687ebacfd7784437a7e1",
+      "before_commit": "9f13d2a"
+    },
+    {
+      "slug": "blockx",
+      "source": "https://www.polyu.edu.hk/greencampus/GreenNet/issue/14/feature.html",
+      "reference_image": "https://www.polyu.edu.hk/giving/-/media/department/giving/content/priorities/campus-development/dec-2021-revised-version/photo06.jpg?hash=86F2BA360E138E072ADCA85279E04661&mh=1000&mw=478&rev=67cc0cee2a3e4dfaa20450d6e0455b84",
+      "features": "改為低層玻璃基座、窄服務翼、屋頂綠化與連接坡道，扶手底腳跟隨坡面。",
+      "model_sha256": "2dcb3da057213bb216b5a85df370d9238677cfdca1bb1b6d98c395d667785534",
+      "preview_sha256": "b5bc430a186b63f9f6653a129e0ac025308254d371e958585b9a2d639ef8ee48",
+      "before_commit": "9f13d2a"
+    }
+  ]
+}

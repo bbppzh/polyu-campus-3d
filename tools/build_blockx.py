@@ -1,113 +1,59 @@
 #!/usr/bin/env python3
-"""Build the Block X massing with a clear roof and setback terrace."""
-import bpy
-import bmesh
-import json
-import math
-import os
-
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-with open(os.path.join(ROOT, 'data', 'campus.json'), encoding='utf-8') as f:
-    data = json.load(f)
-lm = next(l for l in data['landmarks'] if l['name'].lower() == 'block x')
-fp = lm['footprint']; cx, cz = lm['center']; h = float(lm['height'])
-loc = [(x - cx, -(z - cz)) for x, z in fp]
-xs = [x for x, y in loc]; ys = [y for x, y in loc]
-midx, midy = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
-LOWER = 26.0
-
-bpy.ops.wm.read_factory_settings(use_empty=True)
-bpy.context.preferences.filepaths.save_version = 0
-
-
-def mat(name, color, rough=0.7, metal=0.0):
-    m = bpy.data.materials.new(name); m.use_nodes = True
-    bsdf = m.node_tree.nodes.get('Principled BSDF')
-    bsdf.inputs['Base Color'].default_value = (*color, 1.0)
-    bsdf.inputs['Roughness'].default_value = rough
-    bsdf.inputs['Metallic'].default_value = metal
-    m.diffuse_color = (*color, 1.0)
-    return m
-
-
-BRICK = mat('BLKX_brick', (0.56, 0.22, 0.17), 0.8)
-WHITE = mat('BLKX_white', (0.90, 0.87, 0.81), 0.6)
-GLASS = mat('BLKX_glass', (0.16, 0.28, 0.32), 0.12, 0.35)
-BLUE = mat('BLKX_blue', (0.16, 0.34, 0.42), 0.8)
-GREEN = mat('BLKX_green', (0.28, 0.42, 0.24), 1.0)
-DARK = mat('BLKX_dark', (0.08, 0.12, 0.14), 0.25, 0.4)
-
-
-def mesh_obj(name, verts, faces, material, smooth=False):
-    me = bpy.data.meshes.new(name); me.from_pydata(verts, [], faces); me.update()
-    bm = bmesh.new(); bm.from_mesh(me); bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
-    bm.to_mesh(me); bm.free()
-    ob = bpy.data.objects.new(name, me); bpy.context.scene.collection.objects.link(ob)
-    ob.data.materials.append(material)
-    if smooth:
-        for p in me.polygons: p.use_smooth = True
-    return ob
-
-
-def extrude(poly, z0, z1, name, material):
-    n = len(poly)
-    verts = [(x, y, z0) for x, y in poly] + [(x, y, z1) for x, y in poly]
-    faces = []
-    for i in range(n):
-        j = (i + 1) % n
-        faces.append([i, j, n + j, n + i])
-    faces.append(list(range(n, 2 * n))); faces.append(list(reversed(range(n))))
-    return mesh_obj(name, verts, faces, material)
-
-
-def box(name, x, y, z, sx, sy, sz, rot, material):
-    bpy.ops.mesh.primitive_cube_add(size=1, location=(x, y, z))
-    ob = bpy.context.view_layer.objects.active
-    ob.name = name; ob.scale = (sx, sy, sz); ob.rotation_euler.z = rot
-    ob.data.materials.append(material)
-    return ob
-
-
-def cyl(name, x, y, z, r, depth, material):
-    bpy.ops.mesh.primitive_cylinder_add(vertices=16, radius=r, depth=depth, location=(x, y, z))
-    ob = bpy.context.view_layer.objects.active; ob.name = name
-    ob.data.materials.append(material)
-    return ob
-
-
-upper = [(midx + (x - midx) * 0.82, midy + (y - midy) * 0.78) for x, y in loc]
-extrude(loc, 0.0, LOWER, 'BLKX_lower', BRICK)
-extrude(upper, LOWER, h, 'BLKX_upper', WHITE)
-extrude(loc, LOWER - 0.5, LOWER, 'BLKX_terrace_edge', WHITE)
-extrude(upper, h, h + 0.8, 'BLKX_roof_edge', WHITE)
-
-# Keep the roof clear of the removed placeholder rooftop assemblies.
-
-# entrance
-best = None
-for i in range(len(fp) - 1):
-    ax, az = fp[i][0] - cx, fp[i][1] - cz
-    bx, bz = fp[i + 1][0] - cx, fp[i + 1][1] - cz
-    dx, dz = bx - ax, bz - az; leng = math.hypot(dx, dz)
-    if leng < 1e-6: continue
-    t = max(0.0, min(1.0, (-ax * dx - az * dz) / (leng * leng)))
-    mx, mz = ax + dx * t, az + dz * t; d = math.hypot(mx, mz)
-    if best is None or d < best[0]: best = (d, mx, mz, dx / leng, dz / leng, leng)
-_, mx, mz, edx, edz, elen = best
-nx, nz = -mx, -mz; nl = math.hypot(nx, nz) or 1.0; nx /= nl; nz /= nl
-bx, by = mx, -mz; bvx, bvy = edx, -edz; bnx, bny = nx, -nz
-rot = math.atan2(bvy, bvx)
-box('BLKX_canopy', bx + bnx * 3.0, by + bny * 3.0, 4.4, 20.0, 5.0, 0.45, rot, WHITE)
-box('BLKX_door', bx + bnx * 1.4, by + bny * 1.4, 2.2, 14.0, 1.0, 4.4, rot, GLASS)
-for k in range(4):
-    off = -6.5 + 13.0 * (k + 0.5) / 4
-    box(f'BLKX_mullion_{k}', bx + bnx * 2.4 + bvx * off, by + bny * 2.4 + bvy * off, 2.2, 0.18, 0.22, 4.4, rot, WHITE)
-
-import sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from roof_support import finalize_scene
-print('SUPPORT_QA', 'build_blockx', json.dumps(finalize_scene()), flush=True)
-bpy.context.view_layer.update()
-bpy.ops.wm.save_as_mainfile(filepath=os.path.join(ROOT, 'assets', 'models', 'blockx.blend'))
-bpy.ops.export_scene.gltf(filepath=os.path.join(ROOT, 'assets', 'models', 'blockx.glb'), export_format='GLB', use_selection=False, export_apply=True)
-print('BLOCKX_OK', len(bpy.context.scene.objects), 'objects', os.path.getsize(os.path.join(ROOT, 'assets', 'models', 'blockx.glb')))
+"""Block X redevelopment: low-rise glazed base, roof landscape and circulation.
+The planted roof is supported by PolyU's 2018 GreenNet article and tour; no
+outdoor rooftop sports court/floodlight assembly is inferred from indoor uses.
+"""
+import pathlib,sys,math
+sys.path.insert(0,str(pathlib.Path(__file__).resolve().parent))
+from architecture import reset,landmark,Frame,clip,extrude
+from referenced_facades import *
+from facade_alignment import boolean
+reset();lm=landmark('Block X');F=Frame(lm);m=palette('BLKX');textured(m['concrete'],'stone')
+p=F.polyxy(F.poly)
+extrude('BLKX_base',p,0,.3,m['concrete'])
+extrude('BLKX_glazed_base',p,.3,4.1,m['glass'])
+extrude('BLKX_main_deck',p,4.1,4.4,m['concrete'])
+ribbon_facade('BLKX_ground',p,[(.4,3.95)],m['glass'],m['metal'],m['metal'],2.2)
+# Narrow low service/office wing on the campus side; the broad roof stays open.
+bar=clip(F.poly,-43,12,-17.1,-9.6);bar=F.polyxy(bar)
+extrude('BLKX_service_wing',bar,4.4,7.8,m['shadow'])
+ribbon_facade('BLKX_service',bar,[(4.65,7.45)],m['glass'],m['metal'],m['concrete'],1.8)
+roof_cap('BLKX_wing_cap',bar,7.8,m['concrete'])
+# Supported angular planting beds follow the photographed roof paths. They are
+# integral landscape surfaces, not scattered lawn boxes or floating planters.
+greenpolys=[[( -39,-6),(-8,-6),(8,5),(-24,9),(-39,6)],
+            [(-15,13),(13,7),(26,1),(30,12)],[(14,-7),(30,-6),(36,-1),(23,3)]]
+for i,q in enumerate(greenpolys):
+ q=clip(q,-44,39,-8,14)
+ surface=F.extrude(f'BLKX_verified_vegetated_surface_{i}',q,4.4,4.55,m['green'])
+ boolean(surface,extrude('landscape_clip',p,4.3,4.7,m['green']),'INTERSECT')
+# A supported ramp connects the open deck to the upper service-wing roof.
+from mathutils import Vector
+from architecture import mesh,box
+A=Vector((-35,12));B=Vector((8,-11));t=(B-A).normalized();n=Vector((-t.y,t.x))*1.65
+q=[A-n,B-n,B+n,A+n];bottom=4.4;tops=[4.57,8.08,8.08,4.57]
+vv=[(*F.xy(*v),bottom) for v in q]+[(*F.xy(*v),z) for v,z in zip(q,tops)]
+ramp=mesh('BLKX_accessible_ramp',vv,[(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)],m['concrete'])
+boolean(ramp,extrude('ramp_clip',p,4.3,9,m['concrete']),'INTERSECT')
+# Rails are complete supported assemblies: every post is seated on the ramp.
+for side in (-1,1):
+ a=A+side*n*.95+t*.08;b=B+side*n*.95-t*.08
+ dz=(8.08-4.57)*.08/(B-A).length;za=4.57+dz;zb=8.08-dz
+ pa=Vector((*F.xy(*a),za+.95));pb=Vector((*F.xy(*b),zb+.95))
+ mid=(pa+pb)/2
+ ob=box(f'BLKX_ramp_guard_top_{side}',*mid,.07,.07,(pb-pa).length,m['metal'])
+ ob.rotation_euler=(pb-pa).to_track_quat('Z','Y').to_euler()
+ for j in range(9):
+  f=j/8;pos=a.lerp(b,f);z=za+(zb-za)*f
+  F.box(f'BLKX_ramp_guard_post_{side}_{j}',pos.x,pos.y,z+.475,.055,.055,.95,m['metal'])
+# Stepped seating/circulation near JCIT; each solid starts at the main deck.
+for k in range(5):
+ q=clip(F.poly,12+k*5,17+k*5,-5,9)
+ if len(q)>2:F.extrude(f'BLKX_amphitheatre_deck_{k}',q,4.4,4.6+k*.42,m['concrete'])
+# Horizontal louvres belong to the service wall, not isolated roof posts.
+for i in range(len(bar)):
+ f=Face(bar,i)
+ if f.length<4:continue
+ for k in range(13):f.box(f'BLKX_service_louvre_{i}_{k}',0,.10,4.7+k*.22,f.length,.18,.09,m['metal'])
+f=longest_front(p,lm['center']);label('BLKX_identity','BLOCK X   ASRC',f,0,3.6,min(16,f.length*.8),m['concrete'])
+finish('blockx',f)

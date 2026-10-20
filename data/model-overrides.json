@@ -1,0 +1,37 @@
+{
+  "scope": "UI and camera bounds from revised GLBs; source OSM data is not modified. All four heights remain estimates.",
+  "models": [
+    {
+      "name": "Block X",
+      "slug": "blockx",
+      "height": 9.06,
+      "heightSource": "Visual estimate from a photo-referenced model; not surveyed",
+      "model_sha256": "2dcb3da057213bb216b5a85df370d9238677cfdca1bb1b6d98c395d667785534",
+      "bakedFacade": true
+    },
+    {
+      "name": "Lee Shau Kee Building",
+      "slug": "leeshaukee",
+      "height": 48.72,
+      "heightSource": "Visual estimate from a photo-referenced model; not surveyed",
+      "model_sha256": "d825e7381221844bcccb84c10f198f1103f149fb85467b7240ae47616e3ebf29",
+      "bakedFacade": true
+    },
+    {
+      "name": "Communal Building",
+      "slug": "communal",
+      "height": 19.85,
+      "heightSource": "Visual estimate from a photo-referenced model; not surveyed",
+      "model_sha256": "0ed8a853f849f6e1c2acef155ffe6df4494997e2e6494ce07321cc1ccc85d8ca",
+      "bakedFacade": true
+    },
+    {
+      "name": "Pao Yue-kong Library",
+      "slug": "library",
+      "height": 29.68,
+      "heightSource": "Visual estimate from a photo-referenced model; not surveyed",
+      "model_sha256": "2830c2bb4553d2a0aa1decd8967533b010dffa1214900dcd48b90e090cf1f8f8",
+      "bakedFacade": true
+    }
+  ]
+}

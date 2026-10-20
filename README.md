@@ -69,6 +69,8 @@ zoom, Esc closes. Deep link: `?select=library&pano=1`.
 
 ## Latest architectural revision
 
+The 2026-10-20 [four-building rebuild](docs/REFERENCED-REBUILD-20261020.md) replaces the flattened Library, Lee Shau Kee, Communal and Block X models with embedded facade geometry and photo-referenced massing. [Compare photographs, previous models and revised GLBs](https://bbppzh.github.io/polyu-campus-3d/docs/rebuild-20261020/). All heights remain visual estimates.
+
 The four landmark silhouettes were rebuilt on 2026-10-18 against architect and
 university exterior photographs. See [the revision, references and QA](docs/FINAL-REVISION.md).
 Widths, curves, platform levels and unverified heights remain visual estimates.
@@ -146,7 +148,7 @@ polyu-campus-3d/
 ├── assets/
 │   ├── models/jcit.glb   71.2 m photo-referenced JCIT shell (GLB 2.0)
 │   ├── models/jcit.blend editable Blender import of the current JCIT GLB
-│   ├── models/library.glb custom library shell (glass entrance)
+│   ├── models/library.glb custom library (vertical fins + recessed entrance + end tower)
 │   ├── models/library.blend editable Blender source for the library
 │   ├── models/jca.glb     custom auditorium shell (curved roof + glazed foyer)
 │   ├── models/jca.blend   editable Blender source for the auditorium
@@ -156,7 +158,7 @@ polyu-campus-3d/
 │   ├── models/lks.blend    editable Blender source for LKS Tower
 │   ├── models/blockz.glb   custom Block Z (roof garden + terraces)
 │   ├── models/blockz.blend editable Blender source for Block Z
-│   ├── models/blockx.glb   custom Block X (setback massing + clear roof)
+│   ├── models/blockx.glb   custom Block X (low-rise glazed base + planted roof + ramp)
 │   ├── models/blockx.blend editable Blender source for Block X
 │   ├── models/communal.glb custom Communal Building (glazed atrium)
 │   ├── models/communal.blend editable Blender source for the Communal Building
